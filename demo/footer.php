@@ -80,13 +80,13 @@ _________________________________________________________ -->
 
                     <h4>Contact</h4>
 
-                    <p><strong>Universal Ltd.</strong>
-                        <br>13/25 New Avenue
-                        <br>Newtown upon River
-                        <br>45Y 73J
-                        <br>England
+                    <p><strong>Career Insights Ltd.</strong>
+                        <br>Humber College
+                        <br>Humber River
+                        <br>XXX XXX
+                        <br>Ontario
                         <br>
-                        <strong>Great Britain</strong>
+                        <strong>Canada</strong>
                     </p>
 
                     <a href="contact.html" class="btn btn-small btn-template-main">Go to contact page</a>
@@ -150,8 +150,8 @@ _________________________________________________________ -->
         <div id="copyright">
         <div class="container">
             <div class="col-md-12">
-                <p class="pull-left">&copy; 2015. Your company / name goes here</p>
-                <p class="pull-right">Template by <a href="https://bootstrapious.com">Bootstrapious</a> & <a href="https://fity.cz">Fity.cz</a>
+                <p class="pull-left">&copy; 2017. Career Insights / XXX XXX</p>
+                <p class="pull-right">Template by <a href="">Web Gurus</a>
                     <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
                 </p>
             </div>

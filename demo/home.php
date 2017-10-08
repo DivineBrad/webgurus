@@ -281,10 +281,10 @@ _________________________________________________________ -->
                     <div class="col-md-12">
                         <div class="icon icon-lg"><i class="fa fa-file-code-o"></i>
                         </div>
-                        <h3 class="text-uppercase">Do you want to see more?</h3>
-                        <p class="lead">We have prepared for you more than 40 different HTML pages, including 5 variations of homepage.</p>
+                        <h3 class="text-uppercase">Do you want to know more about Insights?</h3>
+                        <p class="lead">We have prepared for you the career path finder</p>
                         <p class="text-center">
-                            <a href="index2.html" class="btn btn-template-transparent-black btn-lg">Check other homepage</a>
+                            <a href="about.php" class="btn btn-template-transparent-black btn-lg">Check our About Us</a>
                         </p>
                     </div>
 
@@ -541,60 +541,6 @@ _________________________________________________________ -->
             <!-- /.container -->
         </section>
         <!-- /.bar -->
-
-        <section class="bar background-gray no-mb">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="heading text-center">
-                            <h2>Our clients</h2>
-                        </div>
-
-                        <ul class="owl-carousel customers">
-                            <li class="item">
-                                <img src="img/customer-1.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-2.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-3.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-4.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-5.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-6.png" alt="" class="img-responsive">
-                            </li>
-                        </ul>
-                        <!-- /.owl-carousel -->
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-        <!-- *** GET IT ***
-_________________________________________________________ -->
-
-        <div id="get-it">
-            <div class="container">
-                <div class="col-md-8 col-sm-12">
-                    <h3>Do you want cool website like this one?</h3>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <a href="#" class="btn btn-template-transparent-primary">Buy this template now</a>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- *** GET IT END *** -->
-
 
         <!-- *** Footer *** 
 ___________________________________________________________-->
