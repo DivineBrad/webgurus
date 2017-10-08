@@ -14,9 +14,12 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    protected $primaryKey='user_id'; 
     protected $fillable = [
         'name', 'email', 'password',
     ];
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -26,4 +29,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function indicators(){
+        return $this->belongsToMany('App\Indicator','user_indicators','user_id','indicator_id');
+    }
+    public function careers(){
+        return $this->belongsToMany('App\Career','user_careers','user_id','career_id');
+    }
 }
