@@ -11,7 +11,7 @@ class CareerGroup extends Model
         'group_title', 'description', 
     ];
 
-    public function career(){
+    public function careers(){
         return $this->hasMany ('App\Career','career_id');
         
     }

@@ -11,7 +11,7 @@ class IndicatorType extends Model
         'type', 
     ];
     public function indicators(){
-        return $this->hasMany('App\Indicator','indicator_id');
+        return $this->hasMany('App\Indicator','type_id');
     }
 
 }
