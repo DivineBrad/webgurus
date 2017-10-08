@@ -13,9 +13,19 @@
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
+
     <!-- Bootstrap and Font Awesome css -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!--Bootstrap Sources -->
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js">
+    </script>
 
     <!-- Css animations  -->
     <link href="css/animate.css" rel="stylesheet">
@@ -421,13 +431,16 @@ _________________________________________________________ -->
                         <h4 class="modal-title" id="Login">Customer login</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="customer-orders.html" method="post">
+                        <form action="customer-orders.html" method="post" data-toggle="validator">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="email_modal" placeholder="email">
+                                <input type="email" class="form-control" id="email_modal" placeholder="email" required>
+                                <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="password_modal" placeholder="password">
+                                <input type="password" data-minlength="5"  pattern="Reg" class="form-control" id="password_modal" placeholder="password" required>
+                                <div class="help-block with-errors"></div>
                             </div>
+
 
                             <p class="text-center">
                                 <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
@@ -548,43 +561,49 @@ _________________________________________________________ -->
                         </div>
 
                         <div class="col-md-8 col-md-offset-2">
-                            <form>
+                            <form data-toggle="validator" role="form" method="post" action="#">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="firstname">Firstname</label>
-                                            <input type="text" class="form-control" id="firstname">
+                                            <input type="text" data-error="Please enter first name field." class="form-control" id="firstname" required>
+                                            <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="lastname">Lastname</label>
-                                            <input type="text" class="form-control" id="lastname">
+                                            <input type="text" data-error="Please enter last name field." class="form-control" id="lastname" required>
+                                            <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="email">Email</label>
-                                            <input type="text" class="form-control" id="email">
+                                            <input type="email" class="form-control" id="email" required>
+                                            <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="subject">Subject</label>
-                                            <input type="text" class="form-control" id="subject">
+                                            <input type="text" data-error="Please enter subject field." class="form-control" id="subject" required>
+                                            <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label for="message">Message</label>
-                                            <textarea id="message" class="form-control"></textarea>
+                                            <textarea id="message" class="form-control" required></textarea>
+                                            <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
 
                                     <div class="col-sm-12 text-center">
-                                        <button type="submit" class="btn btn-template-main"><i class="fa fa-envelope-o"></i> Send message</button>
+                                        <button class="btn btn-template-main"><i class="fa fa-envelope-o"></i> Send message</button>
 
                                     </div>
+
                                 </div>
                                 <!-- /.row -->
                             </form>
