@@ -17,7 +17,7 @@ include('head.php');
         <!-- *** LOGIN MODAL ***
 _________________________________________________________ -->
 
-        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
             <div class="modal-dialog modal-sm">
 
                 <div class="modal-content">
@@ -26,13 +26,16 @@ _________________________________________________________ -->
                         <h4 class="modal-title" id="Login">Customer login</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="customer-orders.html" method="post">
+                        <form action="customer-orders.html" method="post" data-toggle="validator">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="email_modal" placeholder="email">
+                                <input type="email" class="form-control" id="email_modal" placeholder="email" required>
+                                <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="password_modal" placeholder="password">
+                                <input type="password" data-minlength="5"  pattern="Reg" class="form-control" id="password_modal" placeholder="password" required>
+                                <div class="help-block with-errors"></div>
                             </div>
+
 
                             <p class="text-center">
                                 <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
@@ -77,26 +80,38 @@ _________________________________________________________ -->
                             <h2 class="text-uppercase">New account</h2>
 
                             <p class="lead">Not our registered customer yet?</p>
-                            <p>With registration with us new world of fashion, fantastic discounts and much more opens to you! The whole process will not take you more than a minute!</p>
+                            <p>Register with us to get updates, save choices in your account and get new career insights.</p>
                             <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
 
                             <hr>
 
-                            <form action="customer-orders.html" method="post">
+                            <form action="customer-orders.html" method="post" data-toggle="validator">
                                 <div class="form-group">
                                     <label for="name-login">Name</label>
-                                    <input type="text" class="form-control" id="name-login">
+                                    <input type="text" class="form-control" id="name-login" data-error="Please enter name field." required>
+                                    <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="email-login">Email</label>
-                                    <input type="text" class="form-control" id="email-login">
+                                    <input type="email" class="form-control" id="email-login" required>
+                                    <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password-login">Password</label>
-                                    <input type="password" class="form-control" id="password-login">
+                                    <input type="password" class="form-control" id="password-login" data-minlength="5" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                <label for="inputPasswordConfirm">Confirm Password</label>
+                                    <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#password-login" data-match-error="Whoops, these don't match" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">  
+                                        <input type="checkbox" id="terms">
+                                        <label>  Allow email notification.</label>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-user-md"></i> Register</button>
+                                    <button  class="btn btn-template-main"><i class="fa fa-user-md"></i> Register</button>
                                 </div>
                             </form>
                         </div>
@@ -107,22 +122,23 @@ _________________________________________________________ -->
                             <h2 class="text-uppercase">Login</h2>
 
                             <p class="lead">Already our customer?</p>
-                            <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                                ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                            <p class="text-muted">Please login to get more features</p>
 
                             <hr>
 
-                            <form action="customer-orders.html" method="post">
+                            <form action="customer-orders.html" method="post" data-toggle="validator">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="text" class="form-control" id="email">
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password">
+                                    <input type="password" class="form-control" id="password" data-minlength="5" required>
+                                    <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
+                                    <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
                                 </div>
                             </form>
                         </div>

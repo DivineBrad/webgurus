@@ -17,7 +17,7 @@ include('head.php');
         <!-- *** LOGIN MODAL ***
 _________________________________________________________ -->
 
-        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
             <div class="modal-dialog modal-sm">
 
                 <div class="modal-content">
@@ -40,6 +40,8 @@ _________________________________________________________ -->
                             <p class="text-center">
                                 <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
                             </p>
+                            <!--Bootstrap Sources -->
+
 
                         </form>
 
