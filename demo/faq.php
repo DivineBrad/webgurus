@@ -151,7 +151,7 @@ _________________________________________________________ -->
 
 						<a data-toggle="collapse" data-parent="#accordion" href="#faq4">
 
-						    4. How much would  <p><b><i>Careerinsights</i></b> cost me ?
+						    4. How much would <b><i>Careerinsights</i></b> cost me ?
 
 						</a>
 
