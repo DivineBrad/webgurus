@@ -77,11 +77,17 @@ _________________________________________________________ -->
                         <div class="col-md-12">
 
                             <div class="heading">
-                                <h2>About Universal</h2>
+                                <h2>About <b><i>Careerinsights</i></b></h2>
                             </div>
 
-                            <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                                ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                            <p class="lead"><p  style="font-size: 20px; text-align:justify">Welcome to <b><i>Careerinsights</i></b> on the market!  Our success is driven by the highest quality customer service.
+	<b><i>Careerinsights</i></b> is the world's largest career suggesting organization who helps a person to choose a correct career path for him/her.
+	Our Motto is to provide career guidance to users based on their personality traits, skills and their passions.
+	<b><i>Careerinsights</i></b> is a job search engine that specializes in choosing career paths for a new employee and also find a job directly from employer websites. 
+	Our site is managed by the Canada's Top 100 Employers project and indexes more direct-employer jobs than any other search 
+	engine in Canada.  Our site is used by over 6 million unique visitors from Canada each year, 
+	making <b><i>Careerinsights</i></b>.ca the most-visited Canadian career suggesting engine.<br>
+
 
                         </div>
                     </div>
@@ -95,7 +101,7 @@ _________________________________________________________ -->
 
                                                 <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3a">
 
-                                                    Accordion item no.1
+                                                    Reason's behind <b><i>Careerinsights</i></b> being number one.
 
                                                 </a>
 
@@ -108,10 +114,12 @@ _________________________________________________________ -->
                                                     <img src="img/template-easy-customize.png" alt="" class="img-responsive">
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see
-                                                        his brown belly, slightly domed and divided by arches into stiff sections.</p>
-                                                    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see
-                                                        his brown belly, slightly domed and divided by arches into stiff sections.</p>
+                                                   <b>Top three reasons why <b><i>Careerinsights</i></b> is different than other Career suggesting Boards:</b><br><br>
+	<ol style="font-size: 20px; text-align:justify">
+		<li>Provides best way to choose a career path for you.</li>
+		<li>Thousands of unadvertised positions.</li>
+		<li>Unbiased Star Ratings.</li>
+	</ol>
                                                 </div>
                                             </div>
                                         </div>
@@ -123,7 +131,7 @@ _________________________________________________________ -->
 
                                                 <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3b">
 
-                                                    Accordion item no.2
+                                                    <b><i>Careerinsights</i></b> advanced search.
 
                                                 </a>
 
@@ -136,33 +144,22 @@ _________________________________________________________ -->
                                                     <img src="img/template-easy-code.png" alt="" class="img-responsive">
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window
-                                                        at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad.</p>
-                                                    <p>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window
-                                                        at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad.</p>
+                                                    <p style="font-size: 20px; text-align:justify">Use <b><i>Careerinsights</i></b> Advanced Search option to find new job announcements in other unique ways, including by occupation and industry. 
+	Then set up an email notification to receive an alert as soon as new jobs matching your search are posted. </p>
+	<p style="font-size: 20px; text-align:justify">We also built <b><i>Careerinsights</i></b> portal from the ground-up to respect your privacy. So all your personal details are highly secured.</p>
+	<p style="font-size: 20px; text-align:justify">All we focus on is delivering the highest quality career path search results, with more direct-employer postings in Canada than any other search engine. 
+	So your search is just few steps ahead, just need to pass through an easy registration process and way to go.</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-
-                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3c">
-
-                                                    Accordion item no.3 a little too small
-
-                                                </a>
-
-                                            </h4>
-                                    </div>
+                                
                                     <div id="collapse3c" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <p>His room, a proper human room although a little too small, lay peacefully between its four familiar walls.</p>
-
-                                            <p>A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice,
-                                                gilded frame.</p>
+										
+										<h3 style="font-style: italic; font-size: 20px; text-align:justify; color:#000066">All the best folks. Have a Happy searching!</h3>
+										
                                         </div>
                                     </div>
                                 </div>
