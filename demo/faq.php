@@ -77,8 +77,7 @@ _________________________________________________________ -->
                     <div class="col-md-9 clearfix">
                         <section>
 
-                            <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                                ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                            <p class="lead">Get your all doubts regarding <b><i>Careerinsights</i></b> cleared here.</p>
 
                             <div class="panel-group" id="accordion">
 
@@ -88,7 +87,8 @@ _________________________________________________________ -->
 
 						<a data-toggle="collapse" data-parent="#accordion" href="#faq1">
 
-						    1. What to do if I have still not received the order?
+						    1. What is <b><i>Careerinsights</i></b> ?
+							
 
 						</a>
 
@@ -96,13 +96,8 @@ _________________________________________________________ -->
                                     </div>
                                     <div id="faq1" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
-                                                semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                                            <ul>
-                                                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                                                <li>Aliquam tincidunt mauris eu risus.</li>
-                                                <li>Vestibulum auctor dapibus neque.</li>
-                                            </ul>
+                                            <p><b><i>Careerinsights</i></b> is the world's largest career suggesting organization who helps a person to choose a correct career path for him/her.</p>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -114,7 +109,7 @@ _________________________________________________________ -->
 
 						<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
 
-						    2. What are the postal rates?
+						    2. How is <b><i>Careerinsights</i></b> different from other career related website ?
 
 						</a>
 
@@ -122,9 +117,7 @@ _________________________________________________________ -->
                                     </div>
                                     <div id="collapseTwo" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                                            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            <p><b><i>Careerinsights</i></b> is a job search engine that specializes in choosing career paths for a new employee and also find a job directly from employer websites. We are the first one who came up with such concept.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +130,7 @@ _________________________________________________________ -->
 
 						<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
 
-						    3. Do you send overseas?
+						    3. How do I choose my career path from the suggestion provided ?
 
 						</a>
 
@@ -145,9 +138,8 @@ _________________________________________________________ -->
                                     </div>
                                     <div id="collapseThree" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                                            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                                            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                           <p><b><i>Careerinsights</i></b>  provides career guidance to users based on their personality traits, skills and their passions. So you should choose a career path which suits your passion well. 
+										   If your passion will be your career then work won't be work anymore it would be like playing a game.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -159,7 +151,7 @@ _________________________________________________________ -->
 
 						<a data-toggle="collapse" data-parent="#accordion" href="#faq4">
 
-						    4. Why are you more expensive than others?
+						    4. How much would <b><i>Careerinsights</i></b> cost me ?
 
 						</a>
 
@@ -167,13 +159,8 @@ _________________________________________________________ -->
                                     </div>
                                     <div id="faq4" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
-                                                semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                                            <ul>
-                                                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                                                <li>Aliquam tincidunt mauris eu risus.</li>
-                                                <li>Vestibulum auctor dapibus neque.</li>
-                                            </ul>
+                                            <p>Get best suggestion from  <p><b><i>Careerinsights</i></b> as you'd like for free, without worrying about subscriptions or up-front fees. Our Motto is to help a person choose a right career path for them and we are happy to help.</p>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -185,7 +172,7 @@ _________________________________________________________ -->
 
 						<a data-toggle="collapse" data-parent="#accordion" href="#faq5">
 
-						    5. Another important question
+						    5. What are job alerts ?
 
 						</a>
 
@@ -193,13 +180,9 @@ _________________________________________________________ -->
                                     </div>
                                     <div id="faq5" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
-                                                semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                                            <ul>
-                                                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                                                <li>Aliquam tincidunt mauris eu risus.</li>
-                                                <li>Vestibulum auctor dapibus neque.</li>
-                                            </ul>
+                                            <p>With jobs alerts, you can find a suitable for job for you after you choose your career path and recieve an email when 
+											new results meet your search criteria.</p>
+                                            
                                         </div>
                                     </div>
                                 </div>
