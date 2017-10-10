@@ -61,13 +61,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>New account / Sign in</h1>
+                        <h1>Admin Sign in</h1>
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
                             <li><a href="index.html">Home</a>
                             </li>
-                            <li>New account / Sign in</li>
+                            <li>Admin Sign in</li>
                         </ul>
 
                     </div>
@@ -76,10 +76,9 @@
         </div>
 
         <div id="content">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-md-6">
+            <div class="container container-table">
+                <div class="row vertical-center-row">
+                    <div class="text-center col-md-4 col-md-offset-4">
                         <div class="box">
                             <h2 class="text-uppercase">Admin Login</h2>
 
@@ -87,16 +86,17 @@
                             <p class="text-muted">Please login to Administrate the websites.</p>
 
                             <hr>
-
+                        
+                         
                             <form action="customer-orders.html" method="post" data-toggle="validator">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" required>
+                                    <input type="email" size="5" class="form-control" id="email" required>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password" data-minlength="5" required>
+                                    <input type="password" size="10" class="form-control" id="password" data-minlength="5" required>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="text-center">
@@ -105,15 +105,13 @@
                             </form>
                         </div>
                     </div>
-
+                    
                 </div>
-                <!-- /.row -->
 
             </div>
             <!-- /.container -->
         </div>
-        <!-- /#content -->
-
+        <!-- /#content -->    
 
         <?php
         include('footer.php');
