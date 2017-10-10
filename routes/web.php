@@ -11,11 +11,16 @@
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
 Route::get('/insights', function () {
     return view('insights');
 });
 
+
 Route::resource('/test','TestController');
+
+Route::resource('/','HomeController');
+Route::resource('/insights','InsightsController');
+Route::resource('/admin','AdminController');

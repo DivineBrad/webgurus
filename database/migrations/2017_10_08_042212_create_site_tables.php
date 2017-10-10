@@ -19,6 +19,13 @@ class CreateSiteTables extends Migration
             $table->integer('age');
             $table->timestamps();
         });
+        Schema::create('tests', function (Blueprint $table) {
+            $table->increments('test_id');
+            $table->string('name')->unique();
+            $table->integer('age');
+            $table->timestamps();
+        });
+
     }
 
     /**
