@@ -57,6 +57,9 @@
         include('header.php');
         ?>
 
+        <!-- *** LOGIN MODAL ***
+_________________________________________________________ -->
+
         <div id="heading-breadcrumbs">
             <div class="container">
                 <div class="row">

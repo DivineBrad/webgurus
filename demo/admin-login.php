@@ -61,13 +61,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>New account / Sign in</h1>
+                        <h1>Admin Sign in</h1>
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
                             <li><a href="index.html">Home</a>
                             </li>
-                            <li>New account / Sign in</li>
+                            <li>Admin Sign in</li>
                         </ul>
 
                     </div>
@@ -76,69 +76,27 @@
         </div>
 
         <div id="content">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-md-6">
+            <div class="container container-table">
+                <div class="row vertical-center-row">
+                    <div class="text-center col-md-6 col-md-offset-3">
                         <div class="box">
-                            <h2 class="text-uppercase">New account</h2>
+                            <h2 class="text-uppercase">Admin Login</h2>
 
-                            <p class="lead">Not our registered customer yet?</p>
-                            
-                            <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>.</p>
+                            <p class="lead">Administrator Here.</p>
+                            <p class="text-muted">Please login to Administrate the websites.</p>
 
                             <hr>
-
-                            <form action="customer-orders.html" method="post" data-toggle="validator">
-                                <div class="form-group">
-                                    <label for="name-login">Name</label>
-                                    <input type="text" class="form-control" id="name-login" data-error="Please enter name field." required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email-login">Email</label>
-                                    <input type="email" class="form-control" id="email-login" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password-login">Password</label>
-                                    <input type="password" class="form-control" id="password-login" data-minlength="5" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                <label for="inputPasswordConfirm">Confirm Password</label>
-                                    <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#password-login" data-match-error="Whoops, these don't match" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">  
-                                        <input type="checkbox" id="terms">
-                                        <label>  Allow email notification.</label>
-                                </div>
-                                <div class="text-center">
-                                    <button  class="btn btn-template-main"><i class="fa fa-user-md"></i> Register</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="box">
-                            <h2 class="text-uppercase">Login</h2>
-
-                            <p class="lead">Already our customer?</p>
-                            <p class="text-muted">Please login to get more features</p>
-
-                            <hr>
-
+                        
+                         
                             <form action="customer-orders.html" method="post" data-toggle="validator">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" required>
+                                    <input type="email" size="5" class="form-control" id="email" required>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password" data-minlength="5" required>
+                                    <input type="password" size="10" class="form-control" id="password" data-minlength="5" required>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="text-center">
@@ -147,15 +105,13 @@
                             </form>
                         </div>
                     </div>
-
+                    
                 </div>
-                <!-- /.row -->
 
             </div>
             <!-- /.container -->
         </div>
-        <!-- /#content -->
-
+        <!-- /#content -->    
 
         <?php
         include('footer.php');

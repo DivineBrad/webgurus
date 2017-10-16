@@ -51,7 +51,7 @@
 <body>
 
     <div id="all">
-    <?php include('header.php'); ?>
+    @include('includes.header')
 
         <section>
             <!-- *** HOMEPAGE CAROUSEL ***
@@ -414,9 +414,7 @@ _________________________________________________________ -->
         <!-- *** FOOTER ***
 _________________________________________________________ -->
 
-<?php
-        include('footer.php');
-        ?>
+@include('includes.footer')
 
 
         <!-- *** FOOTER END *** -->

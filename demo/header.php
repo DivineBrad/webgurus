@@ -128,12 +128,14 @@ _________________________________________________________ -->
                         <h4 class="modal-title" id="Login">Customer login</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="customer-orders.html" method="post">
+                        <form action="customer-orders.html" method="post" data-toggle="validator">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="email_modal" placeholder="email">
+                                <input type="email" class="form-control" id="email_modal" placeholder="email" required>
+                                <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="password_modal" placeholder="password">
+                                <input type="password" class="form-control" minlength="5" id="password_modal" placeholder="password" required>
+                                <div class="help-block with-errors"></div>
                             </div>
 
                             <p class="text-center">
