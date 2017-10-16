@@ -13,8 +13,8 @@
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
 <!-- Bootstrap and Font Awesome css -->
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 <!-- Css animations  -->
 <link href="css/animate.css" rel="stylesheet">
@@ -48,9 +48,7 @@
 
     <div id="all">
 
-    <?php
-    include('header.php');
-    ?>
+    @include('includes.header')
 
 
         <div id="heading-breadcrumbs">
@@ -100,9 +98,9 @@
                                     <i class="fa fa-map-marker"></i>
                                 </div>
                                 <h3>Address</h3>
-                                <p>13/25 New Avenue
-                                    <br>New Heaven, 45Y 73J
-                                    <br>England, <strong>Great Britain</strong>
+                                <p> 205 Humber College Blvd
+                                    <br>ON M9W 5L7,Etobicoke
+                                    <br>Toronto, <Canada
                                 </p>
                             </div>
                             <!-- /.box-simple -->
@@ -223,10 +221,7 @@
         <!-- *** FOOTER ***
 _________________________________________________________ -->
 
-        <?php
-        include('footer.php');
-        ?>
-
+@include('includes.footer')
 
 
     </div>

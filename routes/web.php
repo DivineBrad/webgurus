@@ -14,13 +14,25 @@
 /* Route::get('/', function () {
     return view('welcome');
 }); */
-Route::get('/insights', function () {
-    return view('insights');
+
+
+Route::get('/about',function () {
+    return view('pages.about');
 });
 
+Route::get('/faq', function () {
+    return view('pages.faq');
+});
+Route::get('/policy', function () {
+    return view('pages.policy');
+});
 
 Route::resource('/test','TestController');
 
 Route::resource('/','HomeController');
 Route::resource('/insights','InsightsController');
+Route::resource('/careers','CareersController');
+Route::resource('/contact','ContactController');
 Route::resource('/admin','AdminController');
+Route::resource('/admin/login','AdminLoginController');
+Route::resource('/admin/authenticate','AdminAuthenticateController');

@@ -7,7 +7,7 @@ _________________________________________________________ -->
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-5 contact">
-                            <p class="hidden-sm hidden-xs">Contact us on +xxx xxx xxxx or welcome@careerinsights.com.</p>
+                            <p class="hidden-sm hidden-xs">Contact us on +647 999 1111 or welcome@careerinsights.com.</p>
                             <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>  <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
                             </p>
                         </div>
@@ -57,26 +57,27 @@ _________________________________________________________ -->
 
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown active">
-                                    <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                                    <a href="/" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
                                     
                                 </li>
                                 <li class="dropdown use-yamm yamm-fw">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Insights</a>
+                                    <a href="/insights" class="dropdown-toggle" data-toggle="dropdown">Insights</a>
                                     
                                 </li>
                                 <li class="use-yamm yamm-fw">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Careers</a>
+                                    <a href="/careers" class="dropdown-toggle" data-toggle="dropdown">Careers</a>
                                     
                                 </li>
 
                                 <li class="dropdown">
-                                    <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                    <a href="/about" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="about.php">About Us</a>
+                                        <li><a href="/about">About Us</a>
                                         </li>
-                                        <li><a href="contact.php">Contact</a>
+                                        <li><a href="/contact">Contact</a>
                                         </li>
-                                        <li><a href="faq.php">FAQ</a>
+                                        <li><a href="/faq">FAQ</a>
+                                        <li><a href="/policy">Privacy Policy</a>
                                         </li>
 
                                     </ul>
