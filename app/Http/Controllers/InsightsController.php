@@ -14,7 +14,7 @@ class InsightsController extends Controller
     public function index()
     {
         
-            return view('insights');
+            return view('pages.insights');
        
     }
 

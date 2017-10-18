@@ -1,67 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="robots" content="all,follow">
-<meta name="googlebot" content="index,follow,snippet,archive">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="robots" content="all,follow">
+    <meta name="googlebot" content="index,follow,snippet,archive">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Career Insights | Contact</title>
+    <title>Career Insights | Careers</title>
 
-<meta name="keywords" content="">
+    <meta name="keywords" content="">
 
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
-<!-- Bootstrap and Font Awesome css -->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Bootstrap and Font Awesome css -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-<!-- Css animations  -->
-<link href="css/animate.css" rel="stylesheet">
+    <!-- Css animations  -->
+    <link href="css/animate.css" rel="stylesheet">
 
-<!-- Theme stylesheet, if possible do not edit this stylesheet -->
-<link href="css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+    <!-- Theme stylesheet, if possible do not edit this stylesheet -->
+    <link href="css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
 
-<!-- Custom stylesheet - for your changes -->
-<link href="css/custom.css" rel="stylesheet">
+    <!-- Custom stylesheet - for your changes -->
+    <link href="css/custom.css" rel="stylesheet">
 
-<!-- Responsivity for older IE -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <!-- Responsivity for older IE -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<!-- Favicon and apple touch icons-->
-<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png" />
+    <!-- Favicon and apple touch icons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png" />
+    <!-- owl carousel css -->
+
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
 </head>
 
 <body>
 
 
     <div id="all">
-
+        
     @include('includes.header')
 
+      
 
         <div id="heading-breadcrumbs">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>Contact</h1>
+                        <h1>New account / Sign in</h1>
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
                             <li><a href="index.html">Home</a>
                             </li>
-                            <li>Contact</li>
+                            <li>New account / Sign in</li>
                         </ul>
 
                     </div>
@@ -70,162 +76,94 @@
         </div>
 
         <div id="content">
-            <div class="container" id="contact">
+            <div class="container">
 
-                <section>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="box">
+                            <h2 class="text-uppercase">New account</h2>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <section>
-                                <div class="heading">
-                                    <h2>We are here to help you</h2>
+                            <p class="lead">Not our registered customer yet?</p>
+                            
+                            <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>.</p>
+
+                            <hr>
+
+                            <form action="customer-orders.html" method="post" data-toggle="validator">
+                                <div class="form-group">
+                                    <label for="name-login">Name</label>
+                                    <input type="text" class="form-control" id="name-login" data-error="Please enter name field." required>
+                                    <div class="help-block with-errors"></div>
                                 </div>
-
-                                <p class="lead"> If you need any help at all we're here to help.</p>
-                                <p>Please feel free to contact us, our customer service center is working for you 24/7.</p>
-                            </section>
-                        </div>
-                    </div>
-
-                </section>
-
-                <section>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="box-simple">
-                                <div class="icon">
-                                    <i class="fa fa-map-marker"></i>
+                                <div class="form-group">
+                                    <label for="email-login">Email</label>
+                                    <input type="email" class="form-control" id="email-login" required>
+                                    <div class="help-block with-errors"></div>
                                 </div>
-                                <h3>Address</h3>
-                                <p> 205 Humber College Blvd
-                                    <br>ON M9W 5L7,Etobicoke
-                                    <br>Toronto, <Canada
-                                </p>
-                            </div>
-                            <!-- /.box-simple -->
-                        </div>
-
-
-                        <div class="col-md-4">
-
-                            <div class="box-simple">
-                                <div class="icon">
-                                    <i class="fa fa-phone"></i>
+                                <div class="form-group">
+                                    <label for="password-login">Password</label>
+                                    <input type="password" class="form-control" id="password-login" data-minlength="5" required>
+                                    <div class="help-block with-errors"></div>
                                 </div>
-                                <h3>Call center</h3>
-                                <p class="text-muted">This number is toll free if calling from Great Britain otherwise we advise you to use the electronic form of communication.</p>
-                                <p><strong>+33 555 444 333</strong>
-                                </p>
-                            </div>
-                            <!-- /.box-simple -->
-
-                        </div>
-
-                        <div class="col-md-4">
-
-                            <div class="box-simple">
-                                <div class="icon">
-                                    <i class="fa fa-envelope"></i>
+                                <div class="form-group">
+                                <label for="inputPasswordConfirm">Confirm Password</label>
+                                    <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#password-login" data-match-error="Whoops, these don't match" required>
+                                    <div class="help-block with-errors"></div>
                                 </div>
-                                <h3>Electronic support</h3>
-                                <p class="text-muted">Please feel free to write an email to us or to use our electronic ticketing system.</p>
-                                <ul class="list-style-none">
-                                    <li><strong><a href="mailto:">info@fakeemail.com</a></strong>
-                                    </li>
-                                    <li><strong><a href="#">Ticketio</a></strong> - our ticketing support platform</li>
-                                </ul>
-                            </div>
-                            <!-- /.box-simple -->
-                        </div>
-                    </div>
-
-                </section>
-
-                <section>
-
-                    <div class="row text-center">
-
-                        <div class="col-md-12">
-                            <div class="heading">
-                                <h2>Contact form</h2>
-                            </div>
-                        </div>
-
-                        <div class="col-md-8 col-md-offset-2">
-                            <form data-toggle="validator" role="form" method="post" action="#">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="firstname">Firstname</label>
-                                            <input type="text" data-error="Please enter first name field." class="form-control" id="firstname" required>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="lastname">Lastname</label>
-                                            <input type="text" data-error="Please enter last name field." class="form-control" id="lastname" required>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="email">Email</label>
-                                            <input type="email" class="form-control" id="email" required>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="subject">Subject</label>
-                                            <input type="text" data-error="Please enter subject field." class="form-control" id="subject" required>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <div class="form-group">
-                                            <label for="message">Message</label>
-                                            <textarea id="message" class="form-control" required></textarea>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12 text-center">
-                                        <button class="btn btn-template-main"><i class="fa fa-envelope-o"></i> Send message</button>
-
-                                    </div>
-
+                                <div class="form-group">  
+                                        <input type="checkbox" id="terms">
+                                        <label>  Allow email notification.</label>
                                 </div>
-                                <!-- /.row -->
+                                <div class="text-center">
+                                    <button  class="btn btn-template-main"><i class="fa fa-user-md"></i> Register</button>
+                                </div>
                             </form>
-
-
-
                         </div>
                     </div>
-                    <!-- /.row -->
 
-                </section>
+                    <div class="col-md-6">
+                        <div class="box">
+                            <h2 class="text-uppercase">Login</h2>
 
+                            <p class="lead">Already our customer?</p>
+                            <p class="text-muted">Please login to get more features</p>
+
+                            <hr>
+
+                            <form action="customer-orders.html" method="post" data-toggle="validator">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" data-minlength="5" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="text-center">
+                                    <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.row -->
 
             </div>
-            <!-- /#contact.container -->
+            <!-- /.container -->
         </div>
         <!-- /#content -->
 
-        <div id="map">
 
-        </div>
+        @include('includes.footer')
 
-        <!-- *** FOOTER ***
-_________________________________________________________ -->
-
-@include('includes.footer')
 
 
     </div>
     <!-- /#all -->
+
 
     <!-- #### JAVASCRIPT FILES ### -->
 
@@ -242,17 +180,6 @@ _________________________________________________________ -->
     <script src="js/front.js"></script>
 
     
-
-    <!-- gmaps -->
-
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-
-    <script src="js/gmaps.js"></script>
-    <script src="js/gmaps.init.js"></script>
-
-    <!-- gmaps end -->
-
-
 
 
 

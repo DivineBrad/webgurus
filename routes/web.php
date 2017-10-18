@@ -28,7 +28,7 @@ Route::get('/policy', function () {
 });
 
 Route::resource('/test','TestController');
-
+Route::resource('/register','RegisterController');
 Route::resource('/','HomeController');
 Route::resource('/insights','InsightsController');
 Route::resource('/careers','CareersController');
