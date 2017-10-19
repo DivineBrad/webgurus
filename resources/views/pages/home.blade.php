@@ -67,14 +67,14 @@
                             <div class="row">
                                 <div class="col-sm-5 right">
                                     <p>
-                                        <img src="img/logo.png" alt="">
+                                        
                                     </p>
-                                    <h1>Multipurpose responsive theme</h1>
-                                    <p>Business. Corporate. Agency.
-                                        <br />Portfolio. Blog. E-commerce.</p>
+                                    <h1>Career Path</h1>
+                                    <p>Provides a best way to choose
+                                        <br />A career pathh for you.</p>
                                 </div>
                                 <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/template-homepage.png" alt="">
+                                    <img class="img-responsive" src="img/career_insights1.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -82,16 +82,15 @@
                             <div class="row">
 
                                 <div class="col-sm-7 text-center">
-                                    <img class="img-responsive" src="img/template-mac.png" alt="">
+                                    <img class="img-responsive" src="img/career_insights2.png" alt="">
                                 </div>
 
                                 <div class="col-sm-5">
-                                    <h2>46 HTML pages full of features</h2>
+                                    <h2>Provide career guidance to users based on their</h2>
                                     <ul class="list-style-none">
-                                        <li>Sliders and carousels</li>
-                                        <li>4 Header variations</li>
-                                        <li>Google maps, Forms, Megamenu, CSS3 Animations and much more</li>
-                                        <li>+ 11 extra pages showing template features</li>
+                                        <li>Personality traits</li>
+                                        <li>Skills</li>
+                                        <li>Passions</li>
                                     </ul>
                                 </div>
 
@@ -100,33 +99,19 @@
                         <div class="item">
                             <div class="row">
                                 <div class="col-sm-5 right">
-                                    <h1>Design</h1>
+                                    <h1>Unbiased star rating</h1>
                                     <ul class="list-style-none">
-                                        <li>Clean and elegant design</li>
-                                        <li>Full width and boxed mode</li>
-                                        <li>Easily readable Roboto font and awesome icons</li>
-                                        <li>7 preprepared colour variations</li>
+                                        <li>Get reviews from the customers</li>
+                                        <li>Star rating easy to understand</li>
+                                        <li>Making Careerinsights.ca the most-visited Canadian career suggesting engine.</li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/template-easy-customize.png" alt="">
+                                    <img class="img-responsive" src="img/career_insights3.png" alt="">
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/template-easy-code.png" alt="">
-                                </div>
-                                <div class="col-sm-5">
-                                    <h1>Easy to customize</h1>
-                                    <ul class="list-style-none">
-                                        <li>7 preprepared colour variations.</li>
-                                        <li>Easily to change fonts</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                     <!-- /.project owl-slider -->
                 </div>
