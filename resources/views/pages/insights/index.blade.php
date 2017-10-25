@@ -55,9 +55,7 @@
         
     @include('includes.header')
 
-        <!-- *** LOGIN MODAL ***
-_________________________________________________________ -->
-
+       
         <div id="heading-breadcrumbs">
             <div class="container">
                 <div class="row">
@@ -80,72 +78,61 @@ _________________________________________________________ -->
             <div class="container">
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4 col-sm-push-4">
                         <div class="box">
-                            <h2 class="text-uppercase">New account</h2>
-
-                            <p class="lead">Not our registered customer yet?</p>
-                            
-                            <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>.</p>
-
-                            <hr>
-
-                            <form action="customer-orders.html" method="post" data-toggle="validator">
+                            <h5 class="text-uppercase">Type in Indicator</h5>
+                            <div>
+                            <h6 id="indicator-heading"> Personality Traits and Habits</h6> 
+                            <p id="indicator-info" > Select a minimum of one trait that best describes you. Try to select at least 5</p> 
+                            </div>
+                            <form action="#" >
                                 <div class="form-group">
-                                    <label for="name-login">Name</label>
+                                    <label for="name-login">Indicator</label>
                                     <input type="text" class="form-control" id="name-login" data-error="Please enter name field." required>
                                     <div class="help-block with-errors"></div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="email-login">Email</label>
-                                    <input type="email" class="form-control" id="email-login" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password-login">Password</label>
-                                    <input type="password" class="form-control" id="password-login" data-minlength="5" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                <label for="inputPasswordConfirm">Confirm Password</label>
-                                    <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#password-login" data-match-error="Whoops, these don't match" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">  
-                                        <input type="checkbox" id="terms">
-                                        <label>  Allow email notification.</label>
-                                </div>
+                                
+                                
                                 <div class="text-center">
-                                    <button  class="btn btn-template-main"><i class="fa fa-user-md"></i> Register</button>
+                                    <button  class="btn btn-template-main"><i class="fa fa-user-md"></i> Add</button>
                                 </div>
                             </form>
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4 col-sm-pull-4">
                         <div class="box">
-                            <h2 class="text-uppercase">Login</h2>
-
-                            <p class="lead">Already our customer?</p>
-                            <p class="text-muted">Please login to get more features</p>
-
-                            <hr>
-
-                            <form action="customer-orders.html" method="post" data-toggle="validator">
+                            <h5 class="text-uppercase">Selection</h5>
+                            <form action="#" >
                                 <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" required>
-                                    <div class="help-block with-errors"></div>
+                                <label for="skills">Skills</label>
+                                <textarea class="form-control" id="skills" rows="3"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password" data-minlength="5" required>
-                                    <div class="help-block with-errors"></div>
+                                <label for="skills">Traits</label>
+                                <textarea class="form-control" id="skills" rows="3"></textarea>
                                 </div>
-                                <div class="text-center">
-                                    <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
+                                <div class="form-group">
+                                <label for="skills">Passion</label>
+                                <textarea class="form-control" id="skills" rows="3"></textarea>
                                 </div>
+                                
                             </form>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <div class="box">
+                            <h5 class="text-uppercase">Indicator List</h5>
+                            <div id="indicator-list">
+                            <ul>
+                            @foreach($indicators as $key => $value)
+                            <li>{{$value->indicator}} {{$value->type->type}}</li>
+
+                            @endforeach
+                            </ul>
+                            </div>
+                           
                         </div>
                     </div>
 
@@ -173,12 +160,14 @@ _________________________________________________________ -->
         window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
     </script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="js/jquery.easy-autocomplete.min.js"> </script>
+    <script src="js/data.js"></script>
+    <script>
+    var indicators =testData();
+    //document.write(indicators);
+    //displayArrayList(indicators, "indicator-list");
+    </script>
 
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/jquery.parallax-1.1.3.js"></script>
-    <script src="js/front.js"></script>
 
     
 

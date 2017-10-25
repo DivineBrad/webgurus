@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Indicator;
+use App\IndicatorType;
 
-class CareersController extends Controller
+class InsightController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,13 @@ class CareersController extends Controller
      */
     public function index()
     {
-        return view('pages.careers');
+       /*  $indicators = Indicator::all();
+        return view('pages.insights.index')
+        ->with('indicators',$indicators); */
+   
+        $indicators = Indicator::all();
+        return view('pages.insights.index')
+        ->with('indicators',$indicators);
     }
 
     /**

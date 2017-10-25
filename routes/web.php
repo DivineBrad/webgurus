@@ -16,23 +16,26 @@
 }); */
 
 
-Route::get('/about',function () {
+Route::get('about',function () {
     return view('pages.about');
 });
 
-Route::get('/faq', function () {
+Route::get('faq', function () {
     return view('pages.faq');
 });
-Route::get('/policy', function () {
+Route::get('policy', function () {
     return view('pages.policy');
 });
 
+
+
 Route::resource('/test','TestController');
-Route::resource('/register','RegisterController');
+Route::resource('/register','Auth\RegisterController');
 Route::resource('/','HomeController');
-Route::resource('/insights','InsightsController');
-Route::resource('/careers','CareersController');
-Route::resource('/contact','ContactController');
-Route::resource('/admin','AdminController');
-Route::resource('/admin/login','AdminLoginController');
-Route::resource('/admin/authenticate','AdminAuthenticateController');
+Route::resource('insights','InsightController');
+Route::resource('indicators','IndicatorController');
+Route::resource('careers','CareerController');
+Route::resource('contact','ContactController');
+Route::resource('admin','AdminController');
+Route::resource('admin/login','AdminLoginController');
+Route::resource('admin/authenticate','AdminAuthenticateController');

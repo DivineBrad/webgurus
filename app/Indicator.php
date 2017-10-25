@@ -11,8 +11,8 @@ class Indicator extends Model
         'indicator', 'type_id', 
     ];
 
-    public function indicatorType(){
-        return $this->belongsTo('App\IndicatorType');
+    public function type(){
+        return $this->belongsTo('App\IndicatorType','type_id');
     }
     public function users(){
         return $this->belongsToMany('App\User','user_indicators','indicator_id','user_id');

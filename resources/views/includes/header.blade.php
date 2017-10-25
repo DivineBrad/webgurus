@@ -21,7 +21,7 @@ _________________________________________________________ -->
 
                             <div class="login">
                                 <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Sign in</span></a>
-                                <a href="register.php"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Sign up</span></a>
+                                <a href="/register"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Sign up</span></a>
                             </div>
 
                         </div>
@@ -56,21 +56,21 @@ _________________________________________________________ -->
                         <div class="navbar-collapse collapse" id="navigation">
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown active">
-                                    <a href="/" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                                <li class=" active">
+                                    <a href="/" >Home <b class="caret"></b></a>
                                     
                                 </li>
-                                <li class="dropdown use-yamm yamm-fw">
-                                    <a href="/insights" class="dropdown-toggle" data-toggle="dropdown">Insights</a>
+                                <li class=" use-yamm yamm-fw">
+                                    <a href="/insights"  >Insights</a>
                                     
                                 </li>
                                 <li class="use-yamm yamm-fw">
-                                    <a href="/careers" class="dropdown-toggle" data-toggle="dropdown">Careers</a>
+                                    <a href="/careers" >Careers</a>
                                     
                                 </li>
 
                                 <li class="dropdown">
-                                    <a href="/about" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="/about">About Us</a>
                                         </li>
@@ -146,7 +146,7 @@ _________________________________________________________ -->
                         </form>
 
                         <p class="text-center text-muted">Not registered yet?</p>
-                        <p class="text-center text-muted"><a href="register.php"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+                        <p class="text-center text-muted"><a href="/register"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
 
                     </div>
                 </div>
