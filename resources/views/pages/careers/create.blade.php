@@ -7,7 +7,7 @@
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Career Insights | Register</title>
+    <title>Career Insights | Add Indicators</title>
 
     <meta name="keywords" content="">
 
@@ -16,6 +16,9 @@
     <!-- Bootstrap and Font Awesome css -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    
+      
 
     <!-- Css animations  -->
     <link href="css/animate.css" rel="stylesheet">
@@ -53,21 +56,19 @@
 
     <div id="all">
         
-        <?php
-        include('header.php');
-        ?>
+    @include('includes.header')
 
         <div id="heading-breadcrumbs">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>New account / Sign in</h1>
+                        <h1>Indicator Form</h1>
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
                             <li><a href="index.html">Home</a>
                             </li>
-                            <li>New account / Sign in</li>
+                            <li>Indicator Form</li>
                         </ul>
 
                     </div>
@@ -76,90 +77,67 @@
         </div>
 
         <div id="content">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-md-6">
+            <div class="container container-table">
+                <div class="row vertical-center-row">
+                    <div class="text-center col-md-6 col-md-offset-3">
                         <div class="box">
-                            <h2 class="text-uppercase">New account</h2>
+                            <h2 class="text-uppercase">Indicator</h2>
 
-                            <p class="lead">Not our registered customer yet?</p>
-                            
-                            <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>.</p>
+                            <p class="lead">Indicator Here.</p>
+                            <p class="text-muted">Please indicator the website.</p>
 
                             <hr>
-
-                            <form action="register.php" method="post" data-toggle="validator">
+                        
+                         
+                            <form action="/careers/store" method="post" data-toggle="validator"  data-fv-framework="bootstrap"
+                            data-fv-icon-valid="glyphicon glyphicon-ok"
+                            data-fv-icon-invalid="glyphicon glyphicon-remove"
+                            data-fv-icon-validating="glyphicon glyphicon-refresh">
                                 <div class="form-group">
-                                    <label for="name-re">Name</label>
-                                    <input type="text" class="form-control" name="name-re" data-error="Please enter name field." required>
+                                    <label for="title">Title</label>
+                                    <div class="controls">
+                                    <input type="text" size="55" name="title" required>
+                                    </div>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email-re">Email</label>
-                                    <input type="email" class="form-control" name="email-re" required>
+                                    <label for="description">Description</label>
+                                    <div class="controls">
+                                    <input type="text" size="55" name="description" required>
+                                    </div>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password-re">Password</label>
-                                    <input type="password" class="form-control" name="password-re" data-minlength="5" required>
+                                    <label for="editors">Editors</label>
+                                    <div class="controls">
+                                    <select  name="editors" id="editors" required>
+                        
+                                        <option value="">Choose 2 - 3 editors</option>
+                                        <option value="atom">Atom</option>
+                                        <option value="eclipse">Eclipse</option>
+                                    
+                                    </select>
+                                    </div>
                                     <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                <label for="inputPasswordConfirm">Confirm Password</label>
-                                    <input type="password" class="form-control" name="inputPasswordConfirm" data-match="#password-login" data-match-error="Whoops, these don't match" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">  
-                                        <input type="checkbox" id="terms">
-                                        <label>  Allow email notification.</label>
-                                </div>
+                                    
+                                </div><br/>
+                        
                                 <div class="text-center">
-                                    <button  name="register" class="btn btn-template-main"><i class="fa fa-user-md"></i> Register</button>
+                                    <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Submit</button>
                                 </div>
                             </form>
                         </div>
                     </div>
-
-                    <div class="col-md-6">
-                        <div class="box">
-                            <h2 class="text-uppercase">Login</h2>
-
-                            <p class="lead">Already our customer?</p>
-                            <p class="text-muted">Please login to get more features</p>
-
-                            <hr>
-
-                            <form action="customer-orders.html" method="post" data-toggle="validator">
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password" data-minlength="5" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="text-center">
-                                    <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
+                    
                 </div>
-                <!-- /.row -->
 
             </div>
             <!-- /.container -->
         </div>
-        <!-- /#content -->
+        <!-- /#content -->   
 
-
-        <?php
-        include('footer.php');
-        ?>
+        @include('includes.footer')
+       
 
 
 
@@ -174,6 +152,8 @@
         window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
     </script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
 
     <script src="js/jquery.cookie.js"></script>
     <script src="js/waypoints.min.js"></script>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Career;
 
 class CareerController extends Controller
 {
@@ -13,7 +14,9 @@ class CareerController extends Controller
      */
     public function index()
     {
-        return view('pages.careers');
+        $careers = Career::all();
+        return view('pages.careers.index')
+        ->with('careers',$careers);
     }
 
     /**
@@ -23,7 +26,7 @@ class CareerController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.careers.create');
     }
 
     /**
@@ -34,7 +37,14 @@ class CareerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Career = new Career;
+        $Career->title = $request->input('title');
+        $Career->description = $request->input('description');
+        $Career->save();
+        
+        
+
+        // $career = app\Career::create(['title' => $request->title,'description' => $request->description]);
     }
 
     /**
@@ -45,7 +55,8 @@ class CareerController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('pages.careers.profile', ['careers' => Career::findOrFail($id)]);
+        
     }
 
     /**
@@ -56,7 +67,7 @@ class CareerController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -68,7 +79,11 @@ class CareerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Career = App\Career::find($id);
+        $Career->title = 'title';
+        $Career->description = 'description';
+        $Career->save();
+
     }
 
     /**
@@ -79,6 +94,6 @@ class CareerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        app\Career::destroy($id);
     }
 }

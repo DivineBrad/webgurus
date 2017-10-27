@@ -97,24 +97,29 @@
                             data-fv-icon-validating="glyphicon glyphicon-refresh">
                                 <div class="form-group">
                                     <label for="title">Title</label>
-                                    <input type="text" size="5" class="form-control" id="title" required>
+                                    <div class="controls">
+                                    <input type="text" size="55" id="title" required>
+                                    </div>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <input type="text" size="5" class="form-control" id="description" required>
+                                    <div class="controls">
+                                    <input type="text" size="55" id="description" required>
+                                    </div>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="editors">Editors</label>
-                                    
-                                    <select class="form-control" name="editors" id="editors" required>
+                                    <div class="controls">
+                                    <select  name="editors" id="editors" required>
                         
                                         <option value="">Choose 2 - 3 editors</option>
                                         <option value="atom">Atom</option>
                                         <option value="eclipse">Eclipse</option>
                                     
                                     </select>
+                                    </div>
                                     <div class="help-block with-errors"></div>
                                     
                                 </div><br/>

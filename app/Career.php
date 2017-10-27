@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Career extends Model
 {
 
+    protected $table = 'careers';
     
     protected $primaryKey='career_id'; 
     protected $fillable = [
