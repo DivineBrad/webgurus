@@ -79,14 +79,10 @@
         <div id="content">
             <div class="container">
 
-                <div class="row">
-                 
-
-                    <div class="col-md-12 ">
-                        <div class="box">
+                
                             <h5 class="text-uppercase">Career List</h5>
                             <div id="career-list">
-                            <table>
+                            <table class="table">
                             <tr><th>career_id</th><th>title</th><th>description</th><th>group_id</th></tr>
                             @foreach($careers as $key => $value)
                             <tr><td>{{$value->career_id}}</td><td>{{$value->title}}</td><td>{{$value->description}}</td><td>{{$value->group_id}}</td></tr>
@@ -95,11 +91,6 @@
                             </table>
                             </div>
                            
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /.row -->
 
             </div>
             <!-- /.container -->
