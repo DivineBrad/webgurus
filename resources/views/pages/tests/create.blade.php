@@ -89,42 +89,35 @@
                             <hr>
                         
                          
-                            <form action="/careers" method="POST" data-toggle="validator"  data-fv-framework="bootstrap"
-                            data-fv-icon-valid="glyphicon glyphicon-ok"
-                            data-fv-icon-invalid="glyphicon glyphicon-remove"
-                            data-fv-icon-validating="glyphicon glyphicon-refresh">
+                            <form id="checkboxForm" action="customer-orders.html" method="post">
                                 <div class="form-group">
-                                    <label for="title">Title</label>
-                                    <div class="controls">
-                                    <input type="text" size="55" name="title" required>
-                                    </div>
+                                    <label for="indicator">Indicator</label>
+                                    <input type="text" size="5" class="form-control" id="indicator" required>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="description">Description</label>
-                                    <div class="controls">
-                                    <input type="text" size="55" name="description" required>
+                                    <div class="checkbox">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="areas[]" value="skills" 
+                                            data-validation-minchecked-minchecked="1" data-validation-minchecked-message="Choose one"/> Skills 
+                                        </label>
+                                    
+                                    
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="areas[]" value="habits"/> habits
+                                        </label>
+                                    
+                                   
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="areas[]" value="passion"/> passion
+                                        </label>
+
+                                        <div class="help-block"></div>
                                     </div>
-                                    <div class="help-block with-errors"></div>
+                                
                                 </div>
-                                <div class="form-group">
-                                    <label for="editors">Editors</label>
-                                    <div class="controls">
-                                    <select  name="editors" id="editors" required>
-                        
-                                        <option value="">Choose 2 - 3 editors</option>
-                                        <option value="atom">Atom</option>
-                                        <option value="eclipse">Eclipse</option>
-                                    
-                                    </select>
-                                    </div>
-                                    <div class="help-block with-errors"></div>
-                                    
-                                </div><br/>
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        
-                                <div class="text-center">
-                                    <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Submit</button>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-sign-in"></i> Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -135,7 +128,7 @@
             </div>
             <!-- /.container -->
         </div>
-        <!-- /#content -->   
+        <!-- /#content -->    
 
         @include('includes.footer')
        

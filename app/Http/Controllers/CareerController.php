@@ -37,10 +37,11 @@ class CareerController extends Controller
      */
     public function store(Request $request)
     {
-        $Career = new Career;
-        $Career->title = $request->input('title');
-        $Career->description = $request->input('description');
-        $Career->save();
+        $career = new Career();
+        $career->title = $request->input('title');
+        $career->description = $request->input('description');
+        $career->group_id=1;
+        $career->save();
         
         
 

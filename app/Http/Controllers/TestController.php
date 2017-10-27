@@ -13,7 +13,7 @@ class TestController extends Controller
      */
     public function index()
     {
-        return view('test');
+        return view('pages.tests.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class TestController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.tests.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class TestController extends Controller
      */
     public function show($id)
     {
-        //
+        echo "testing";
     }
 
     /**

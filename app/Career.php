@@ -11,7 +11,7 @@ class Career extends Model
     
     protected $primaryKey='career_id'; 
     protected $fillable = [
-        'title', 'description', 
+        'title', 'description','group_id' 
     ];
     public function careerGroup(){
         return $this->belongsTo('App\Post','group_id');

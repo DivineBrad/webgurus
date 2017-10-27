@@ -7,7 +7,7 @@
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Career Insights | Add Indicators</title>
+    <title>Career Insights | Indicators</title>
 
     <meta name="keywords" content="">
 
@@ -16,9 +16,6 @@
     <!-- Bootstrap and Font Awesome css -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-    
-      
 
     <!-- Css animations  -->
     <link href="css/animate.css" rel="stylesheet">
@@ -58,17 +55,18 @@
         
     @include('includes.header')
 
+       
         <div id="heading-breadcrumbs">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>Indicator Form</h1>
+                        <h1>New account / Sign in</h1>
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
                             <li><a href="index.html">Home</a>
                             </li>
-                            <li>Indicator Form</li>
+                            <li>New account / Sign in</li>
                         </ul>
 
                     </div>
@@ -77,68 +75,36 @@
         </div>
 
         <div id="content">
-            <div class="container container-table">
-                <div class="row vertical-center-row">
-                    <div class="text-center col-md-6 col-md-offset-3">
+            <div class="container">
+
+                <div class="row">
+                 
+
+                    <div class="col-md-12 ">
                         <div class="box">
-                            <h2 class="text-uppercase">Indicator</h2>
+                            <h5 class="text-uppercase">Indicator List</h5>
+                            <div id="indicator-list">
+                            <ul>
+                            @foreach($indicators as $key => $value)
+                            <li>{{$value->indicator}}</li>
 
-                            <p class="lead">Indicator Here.</p>
-                            <p class="text-muted">Please indicator the website.</p>
-
-                            <hr>
-                        
-                         
-                            <form action="/careers" method="POST" data-toggle="validator"  data-fv-framework="bootstrap"
-                            data-fv-icon-valid="glyphicon glyphicon-ok"
-                            data-fv-icon-invalid="glyphicon glyphicon-remove"
-                            data-fv-icon-validating="glyphicon glyphicon-refresh">
-                                <div class="form-group">
-                                    <label for="title">Title</label>
-                                    <div class="controls">
-                                    <input type="text" size="55" name="title" required>
-                                    </div>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="description">Description</label>
-                                    <div class="controls">
-                                    <input type="text" size="55" name="description" required>
-                                    </div>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="editors">Editors</label>
-                                    <div class="controls">
-                                    <select  name="editors" id="editors" required>
-                        
-                                        <option value="">Choose 2 - 3 editors</option>
-                                        <option value="atom">Atom</option>
-                                        <option value="eclipse">Eclipse</option>
-                                    
-                                    </select>
-                                    </div>
-                                    <div class="help-block with-errors"></div>
-                                    
-                                </div><br/>
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        
-                                <div class="text-center">
-                                    <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Submit</button>
-                                </div>
-                            </form>
+                            @endforeach
+                            </ul>
+                            </div>
+                           
                         </div>
                     </div>
-                    
+
                 </div>
+                <!-- /.row -->
 
             </div>
             <!-- /.container -->
         </div>
-        <!-- /#content -->   
+        <!-- /#content -->
+
 
         @include('includes.footer')
-       
 
 
 
@@ -153,14 +119,14 @@
         window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
     </script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="js/jquery.easy-autocomplete.min.js"> </script>
+    <script src="js/data.js"></script>
+    <script>
+    var indicators =testData();
+    //document.write(indicators);
+    //displayArrayList(indicators, "indicator-list");
+    </script>
 
-
-
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/jquery.parallax-1.1.3.js"></script>
-    <script src="js/front.js"></script>
 
     
 

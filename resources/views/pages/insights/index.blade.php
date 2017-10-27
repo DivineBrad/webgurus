@@ -25,6 +25,9 @@
 
     <!-- Custom stylesheet - for your changes -->
     <link href="css/custom.css" rel="stylesheet">
+    <!-- Stylesheet for autocomplete -->
+    <link href="css/easy-autocomplete.min.css" rel="stylesheet">
+
 
     <!-- Responsivity for older IE -->
     <!--[if lt IE 9]>
@@ -85,17 +88,17 @@
                             <h6 id="indicator-heading"> Personality Traits and Habits</h6> 
                             <p id="indicator-info" > Select a minimum of one trait that best describes you. Try to select at least 5</p> 
                             </div>
+                            
                             <form action="#" >
                                 <div class="form-group">
-                                    <label for="name-login">Indicator</label>
-                                    <input type="text" class="form-control" id="name-login" data-error="Please enter name field." required>
-                                    <div class="help-block with-errors"></div>
+                                    <label for="indicator-input">Indicator</label>
+                                    <input type="text" class="form-control" id="indicator-input" >
+                                    
                                 </div>
-                                
-                                
-                                <div class="text-center">
-                                    <button  class="btn btn-template-main"><i class="fa fa-user-md"></i> Add</button>
+                                    <div class="text-center">
+                                    <button  id="add-indicator" class="btn btn-template-main" type="button"><i class="fa fa-user-md"></i> Add</button>
                                 </div>
+                                <div class="indicator-desc"></div>
                             </form>
                         </div>
                     </div>
@@ -105,16 +108,16 @@
                             <h5 class="text-uppercase">Selection</h5>
                             <form action="#" >
                                 <div class="form-group">
-                                <label for="skills">Skills</label>
-                                <textarea class="form-control" id="skills" rows="3"></textarea>
+                                <label for="skills-txt">Skills</label>
+                                <textarea class="form-control" id="skills-txt" rows="3"></textarea>
                                 </div>
                                 <div class="form-group">
-                                <label for="skills">Traits</label>
-                                <textarea class="form-control" id="skills" rows="3"></textarea>
+                                <label for="traits-txt">Traits</label>
+                                <textarea class="form-control" id="traits-txt" rows="3"></textarea>
                                 </div>
                                 <div class="form-group">
-                                <label for="skills">Passion</label>
-                                <textarea class="form-control" id="skills" rows="3"></textarea>
+                                <label for="passions-txt">Passion</label>
+                                <textarea class="form-control" id="passions-txt" rows="3"></textarea>
                                 </div>
                                 
                             </form>
@@ -124,12 +127,18 @@
                     <div class="col-md-4 ">
                         <div class="box">
                             <h5 class="text-uppercase">Indicator List</h5>
-                            <div id="indicator-list">
-                            <ul>
-                            @foreach($indicators as $key => $value)
+                            <div>
+
+
+                            <ul id="indicator-list">
+                           <!-- @foreach($indicators as $key => $value)
                             <li>{{$value->indicator}} {{$value->type->type}}</li>
 
                             @endforeach
+                            -->
+                            <script>
+                           
+                             </script>
                             </ul>
                             </div>
                            
@@ -163,9 +172,75 @@
     <script src="js/jquery.easy-autocomplete.min.js"> </script>
     <script src="js/data.js"></script>
     <script>
-    var indicators =testData();
-    //document.write(indicators);
-    //displayArrayList(indicators, "indicator-list");
+    $( document ).ready(function() {
+       var dataAccess = {
+            indicators:{},
+            dataReady : false,    
+            getIndicators:  function (callback){
+         $.getJSON("/api/indicators", function(data){
+          this.indicators= data.data;
+          callback(this.indicators);
+          dataReady=true;
+          }) },
+
+            showList : function (list,parentId){
+            var listParent = $("#"+parentId);
+            var items=[];
+            $.each(list, function(index, value){
+                $.each(value,function(key,val) {
+                if (key=="indicator"){
+                    items.push(val);
+                }
+                }) ;
+            });
+           
+            $.each(items, function (index,value){
+               // document.write(value);
+                $("<li>"+value+"</li>").appendTo(listParent);
+        });
+            $(listParent).on('click','li', function(){
+                alert("test");
+            });
+            $("#add-indicator").on('click', function(){
+                
+                if ($("#indicator-input").val().length>0){
+                    // Switch cases depending on where in the process the person is 
+                    // General example for now
+                    $("#skills-txt").text($("#skills-txt").text()+$("#indicator-input").val()+", ");
+                    $("#indicator-input").val("");
+
+
+                }
+            });
+
+       } 
+       
+       
+        }
+
+       
+       dataAccess.getIndicators(function(indicators){
+       dataAccess.showList(indicators,"indicator-list");
+       
+    });
+
+        var options= {
+        //data: ["blue", "green", "pink", "red", "yellow"]
+        url: "api/indicators",
+        listLocation:"data",
+        getValue:"indicator",
+        list: {
+		match: {
+			enabled: true
+		}
+        }
+        };
+        $("#indicator-input").easyAutocomplete(options);
+
+      
+    });
+    
+
     </script>
 
 

@@ -11,9 +11,9 @@
 |
 */
 
-/* Route::get('/', function () {
-    return view('welcome');
-}); */
+ Route::get('/', function () {
+    return view('pages.home');
+}); 
 
 
 Route::get('about',function () {
@@ -31,11 +31,11 @@ Route::get('policy', function () {
 
 Route::resource('/test','TestController');
 Route::resource('/register','Auth\RegisterController');
-Route::resource('/','HomeController');
+//Route::resource('/','HomeController');
 Route::resource('insights','InsightController');
 Route::resource('indicators','IndicatorController');
 Route::resource('careers','CareerController');
 Route::resource('contact','ContactController');
 Route::resource('admin','AdminController');
 Route::resource('admin/login','AdminLoginController');
-Route::resource('admin/authenticate','AdminAuthenticateController');
+//Route::resource('admin/authenticate','AdminAuthenticateController');

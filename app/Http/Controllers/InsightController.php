@@ -31,7 +31,7 @@ class InsightController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.indicators.create');
     }
 
     /**

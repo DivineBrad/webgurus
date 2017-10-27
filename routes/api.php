@@ -6,7 +6,7 @@ use App\Indicator;
 use App\Http\Resources\Indicator as IndicatorResource;
 
 use App\IndicatorType;
-use App\Http\Resources\Indicator as IndicatorTypeResource;
+use App\Http\Resources\IndicatorType as IndicatorTypeResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +19,15 @@ use App\Http\Resources\Indicator as IndicatorTypeResource;
 |
 */
 
+Route::get('/indicator', function () {
+    return IndicatorResource::Collection(Indicator::all());
+   
+}); 
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/indicator', function () {
-    return IndicatorResource::Collection(Indicator::all());
-});
+ Route::get("/test",function(){
+   
+ });
