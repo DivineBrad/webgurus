@@ -42,7 +42,7 @@ class CareerController extends Controller
         $career->description = $request->input('description');
         $career->group_id=1;
         $career->save();
-        
+        return redirect()->route('careers.index');
         
 
         // $career = app\Career::create(['title' => $request->title,'description' => $request->description]);
@@ -56,7 +56,7 @@ class CareerController extends Controller
      */
     public function show($id)
     {
-        return view('pages.careers.profile', ['careers' => Career::findOrFail($id)]);
+        return view('pages.careers.index', ['careers' => Career::findOrFail($id)]);
         
     }
 

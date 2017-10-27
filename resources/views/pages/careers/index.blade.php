@@ -86,12 +86,13 @@
                         <div class="box">
                             <h5 class="text-uppercase">Career List</h5>
                             <div id="career-list">
-                            <ul>
+                            <table>
+                            <tr><th>career_id</th><th>title</th><th>description</th><th>group_id</th></tr>
                             @foreach($careers as $key => $value)
-                            <li>{{$value->career}}</li>
+                            <tr><td>{{$value->career_id}}</td><td>{{$value->title}}</td><td>{{$value->description}}</td><td>{{$value->group_id}}</td></tr>
 
                             @endforeach
-                            </ul>
+                            </table>
                             </div>
                            
                         </div>
