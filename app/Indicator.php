@@ -8,7 +8,7 @@ class Indicator extends Model
 {
     protected $primaryKey='indicator_id'; 
     protected $fillable = [
-        'indicator', 'type_id', 
+        'indicator','type_id'
     ];
 
     public function type(){
