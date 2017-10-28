@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Indicator;
 
 class IndicatorController extends Controller
 {
@@ -13,7 +14,9 @@ class IndicatorController extends Controller
      */
     public function index()
     {
-        //
+        $indicators = Indicator::all();
+        return view('pages.indicators.index')
+        ->with('indicators',$indicators);
     }
 
     /**
@@ -34,7 +37,11 @@ class IndicatorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $indicator = new Indicator();
+        $indicator->indicator = $request->input('indicator');
+        $indicator->type_id=(int)($request->input('areas'));
+        $indicator->save();
+        return redirect()->route('indicators.index');
     }
 
     /**

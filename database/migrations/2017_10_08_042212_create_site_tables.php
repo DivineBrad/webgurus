@@ -46,6 +46,7 @@ class CreateSiteTables extends Migration
         Schema::create('Indicators', function (Blueprint $table) {
             $table->increments('indicator_id');
             $table->string('indicator');
+            $table->string('description');
             $table->integer('type_id')->unsigned();
             $table->timestamps();
         });

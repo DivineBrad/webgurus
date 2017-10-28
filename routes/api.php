@@ -19,10 +19,20 @@ use App\Http\Resources\IndicatorType as IndicatorTypeResource;
 |
 */
 
-Route::get('/indicator', function () {
+Route::get('/indicators', function () {
     return IndicatorResource::Collection(Indicator::all());
    
+   
 }); 
+Route::get('/indicator/{id}', function ($id) {
+    return new IndicatorResource(Indicator::findOrFail($id));
+   
+   }); 
+ Route::get('/indicators/{type}', function ($type) {
+    $type_id= IndicatorType::where('type','=',$type)->value('type_id'); 
+    return IndicatorResource::Collection(Indicator::where('type_id','=',$type_id)->get());
+   
+   }); 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

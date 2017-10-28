@@ -89,33 +89,36 @@
                             <hr>
                         
                          
-                            <form id="checkboxForm" action="customer-orders.html" method="post">
+                            <form id="checkboxForm" action="/indicators" method="POST">
                                 <div class="form-group">
                                     <label for="indicator">Indicator</label>
-                                    <input type="text" size="5" class="form-control" id="indicator" required>
+                                    <input type="text" size="5" class="form-control" name="indicator" required>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <div class="checkbox">
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" name="areas[]" value="skills" 
-                                            data-validation-minchecked-minchecked="1" data-validation-minchecked-message="Choose one"/> Skills 
+                                            <input type="checkbox" name="areas[]" value="1" 
+                                            data-validation-minchecked-minchecked="1" data-validation-minchecked-message="Choose one"/> skills 
                                         </label>
                                     
                                     
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" name="areas[]" value="habits"/> habits
+                                            <input type="checkbox" name="areas[]" value="2"/> habits
                                         </label>
                                     
                                    
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" name="areas[]" value="passion"/> passion
+                                            <input type="checkbox" name="areas[]" value="3"/> passion
                                         </label>
 
                                         <div class="help-block"></div>
                                     </div>
                                 
-                                </div>
+                                </div><br/>
+
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                                 <div class="form-actions">
                                     <button type="submit" class="btn btn-template-main"><i class="fa fa-sign-in"></i> Submit</button>
                                 </div>
