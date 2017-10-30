@@ -81,10 +81,10 @@
                 <div class="row vertical-center-row">
                     <div class="text-center col-md-6 col-md-offset-3">
                         <div class="box">
-                            <h2 class="text-uppercase">Indicator</h2>
+                            <h2 class="text-uppercase">Career</h2>
 
-                            <p class="lead">Indicator Here.</p>
-                            <p class="text-muted">Please indicator the website.</p>
+                            <p class="lead">Career Here.</p>
+                            <p class="text-muted">Please create Career.</p>
 
                             <hr>
                         
@@ -96,25 +96,26 @@
                                 <div class="form-group">
                                     <label for="title">Title</label>
                                     <div class="controls">
-                                    <input type="text" size="55" name="title" required>
+                                    <input type="text" size="55" name="title" value="{{ old('title') }}" required>
                                     </div>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description</label>
                                     <div class="controls">
-                                    <input type="text" size="55" name="description" required>
+                                    <input type="text" size="55" name="description" value="{{ old('description') }}" required>
                                     </div>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="editors">Editors</label>
+                                    <label for="careergroups">Groups</label>
                                     <div class="controls">
-                                    <select  name="editors" id="editors" required>
+                                    <select  name="careergroups" id="careergroups" value="{{ old('careergroups') }}" required>
                         
-                                        <option value="">Choose 2 - 3 editors</option>
-                                        <option value="atom">Atom</option>
-                                        <option value="eclipse">Eclipse</option>
+                                        <option value="">Choose 1 group</option>
+                                        @foreach($careergroups as $key => $value)
+                                        <option value="{{$value->group_id}}">{{$value->group_title}}</option>
+                                        @endforeach
                                     
                                     </select>
                                     </div>

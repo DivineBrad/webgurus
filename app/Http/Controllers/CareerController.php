@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 use App\Career;
 
@@ -14,19 +15,30 @@ class CareerController extends Controller
      */
     public function index()
     {
-        $careers = Career::all();
+
+        //IndicatorResource::Collection(Indicator::where('type_id','=',$type_id)->get());
+        
+        $careers = DB::table('careers')
+        ->join('career_groups', 'careers.group_id', '=', 'career_groups.group_id')
+        ->select('careers.*', 'career_groups.group_title')
+        ->get();
         return view('pages.careers.index')
         ->with('careers',$careers);
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     * 
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return view('pages.careers.create');
+        // query for career_groups
+        $careergroups = DB::table('career_groups')
+        ->get();
+        return view('pages.careers.create')
+        ->with('careergroups',$careergroups);
+
     }
 
     /**
@@ -40,7 +52,7 @@ class CareerController extends Controller
         $career = new Career();
         $career->title = $request->input('title');
         $career->description = $request->input('description');
-        $career->group_id=1;
+        $career->group_id=(int)($request->input('careergroups'));
         $career->save();
         return redirect()->route('careers.index');
         
@@ -56,7 +68,10 @@ class CareerController extends Controller
      */
     public function show($id)
     {
-        return view('pages.careers.index', ['careers' => Career::findOrFail($id)]);
+        $careergroups = DB::table('career_groups')
+        ->get();
+        return view('pages.careers.profile', ['career' => Career::findOrFail($id)])
+        ->with('careergroups',$careergroups);
         
     }
 
@@ -68,7 +83,13 @@ class CareerController extends Controller
      */
     public function edit($id)
     {
-        
+        $careergroups = DB::table('career_groups')
+        ->get();
+        $career = Career::findOrFail($id);
+        return view('pages.careers.edit')
+        ->with('careergroups',$careergroups)
+        ->with('career',$career);
+      
     }
 
     /**
@@ -80,11 +101,12 @@ class CareerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $Career = App\Career::find($id);
-        $Career->title = 'title';
-        $Career->description = 'description';
-        $Career->save();
-
+        $career = Career::find($id);
+        $career->title = $request->input('title');
+        $career->description = $request->input('description');
+        $career->group_id=(int)($request->input('careergroups'));
+        $career->save();
+        return redirect()->route('careers.index');
     }
 
     /**
@@ -95,6 +117,11 @@ class CareerController extends Controller
      */
     public function destroy($id)
     {
-        app\Career::destroy($id);
+        // delete
+        $careers = Career::find($id);
+        $careers->delete();
+
+        // redirect
+        return redirect()->route('careers.index');
     }
 }

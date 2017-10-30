@@ -83,19 +83,14 @@
                             <h5 class="text-uppercase">Career List</h5>
                             <div id="career-list">
                             <table class="table">
-                            <tr><th>ID</th><th>TITLE</th><th>DESCRIPTION</th><th>GROUP TITLE</th><th>SHOW</th><th>EDIT</th><th>DELETE</th></tr>
-                            @foreach($careers as $key => $value)
-                            <tr><td>{{$value->career_id}}</td><td>{{$value->title}}</td><td>{{$value->description}}</td><td>{{$value->group_title}}</td>
-                            <td><a href="{{ route('careers.show', $value->career_id) }}"><input type="submit" value="detail" ></a></td>
-                            <td><a href="{{ route('careers.edit', $value->career_id) }}"><input type="submit" value="edit" ></a></td>
-                            <td><form action="careers/{{$value->career_id}}" method="post">
-                            <input type="hidden" name="_method" value="DELETE" >
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <input type="submit" value="delete " >
-                            </form></td>
-                            </tr>
-
+                            <tr><th>ID</th><th>TITLE</th><th>DESCRIPTION</th><th>GROUP TITLE</th><th>GROUP ID</th></tr>
+                            <tr><td>{{$career->career_id}}</td><td>{{$career->title}}</td><td>{{$career->description}}</td>
+                            @foreach($careergroups as $key => $value)
+                            @if($career->group_id == $value->group_id)
+                            <td>{{$value->group_title}}</td>
+                            @endif
                             @endforeach
+                            <td>{{$career->group_id}}</td></tr>
                             </table>
                             </div>
 

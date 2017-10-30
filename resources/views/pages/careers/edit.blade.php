@@ -77,36 +77,75 @@
         </div>
 
         <div id="content">
-            <div class="container">
+            <div class="container container-table">
+                <div class="row vertical-center-row">
+                    <div class="text-center col-md-6 col-md-offset-3">
+                        <div class="box">
+                            <h2 class="text-uppercase">Career</h2>
 
-                
-                            <h5 class="text-uppercase">Career List</h5>
-                            <div id="career-list">
-                            <table class="table">
-                            <tr><th>ID</th><th>TITLE</th><th>DESCRIPTION</th><th>GROUP TITLE</th><th>SHOW</th><th>EDIT</th><th>DELETE</th></tr>
-                            @foreach($careers as $key => $value)
-                            <tr><td>{{$value->career_id}}</td><td>{{$value->title}}</td><td>{{$value->description}}</td><td>{{$value->group_title}}</td>
-                            <td><a href="{{ route('careers.show', $value->career_id) }}"><input type="submit" value="detail" ></a></td>
-                            <td><a href="{{ route('careers.edit', $value->career_id) }}"><input type="submit" value="edit" ></a></td>
-                            <td><form action="careers/{{$value->career_id}}" method="post">
-                            <input type="hidden" name="_method" value="DELETE" >
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <input type="submit" value="delete " >
-                            </form></td>
-                            </tr>
+                            <p class="lead">Career Here.</p>
+                            <p class="text-muted">Please create Career.</p>
 
-                            @endforeach
-                            </table>
-                            </div>
+                            <hr>
+                        
+                         
+                          <!--   @if(isset($career))
+    {{ Form::model($career, ['route' => ['careers.edit', $career->career_id], 'method' => 'patch']) }}
+@else
+    {{ Form::open(['route' => 'careers.edit']) }}
+@endif
 
-                            
-                            
-                           
+    {{ Form::text('title', Input::old('title')) }}
+    {{ Form::text('description', Input::old('description')) }}
+    {{ Form::select('careergroups', array('1' => 'IT', '2' => 'Education'),'1')}}
+    {{ Form::submit('Submit', ['name' => 'submit']) }}
+{{ Form::close() }} -->
+                            <form action="{{ route('careers.update', $career->career_id) }}" method="POST" data-toggle="validator">
+                            {{ csrf_field() }}
+                            {{ method_field('PATCH') }}
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <div class="controls">
+                                    <input type="text" size="55" name="title" value="{{ $career->title }}" required>
+                                    </div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <div class="controls">
+                                    <input type="text" size="55" name="description" value="{{ $career->description }}" required>
+                                    </div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="careergroups">Groups</label>
+                                    <div class="controls">
+                                    <select  name="careergroups" id="careergroups"  required>
+                        
+                                        <option value="">Choose 1 group</option>
+                                        @foreach($careergroups as $key => $value)
+                                        <option value="{{$value->group_id}}" @if($value->group_id == $career->group_id) selected @endif>{{$value->group_title}}</option>
+                                        @endforeach
+                                    
+                                    </select>
+                                    </div>
+                                    <div class="help-block with-errors"></div>
+                                    
+                                </div><br/>
+                        
+                                <div class="text-center">
+                                    <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                </div>
 
             </div>
             <!-- /.container -->
         </div>
-        <!-- /#content -->
+        <!-- /#content -->   
 
         @include('includes.footer')
        
