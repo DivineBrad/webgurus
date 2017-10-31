@@ -7,7 +7,7 @@
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Career Insights | Indicators</title>
+    <title>Career Insights | Add Indicators</title>
 
     <meta name="keywords" content="">
 
@@ -16,6 +16,9 @@
     <!-- Bootstrap and Font Awesome css -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    
+      
 
     <!-- Css animations  -->
     <link href="css/animate.css" rel="stylesheet">
@@ -55,18 +58,17 @@
         
     @include('includes.header')
 
-       
         <div id="heading-breadcrumbs">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>New account / Sign in</h1>
+                        <h1>Indicator Form</h1>
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
                             <li><a href="index.html">Home</a>
                             </li>
-                            <li>New account / Sign in</li>
+                            <li>Indicator Form</li>
                         </ul>
 
                     </div>
@@ -77,32 +79,32 @@
         <div id="content">
             <div class="container">
 
-            <h5 class="text-uppercase">Indicators List</h5>
-            <div id="career-list">
-            <table class="table">
-            <tr><th>ID</th><th>INDICATOR</th><th>DESCRIPTION</th><th>TYPE</th><th>SHOW</th><th>EDIT</th><th>DELETE</th></tr>
-            @foreach($indicators as $key => $value)
-            <tr><td>{{$value->indicator_id}}</td><td>{{$value->indicator}}</td><td>{{$value->description}}</td><td>{{$value->type}}</td>
-            <td><a href="{{ route('indicators.show', $value->indicator_id) }}"><input type="submit" value="detail" ></a></td>
-            <td><a href="{{ route('indicators.edit', $value->indicator_id) }}"><input type="submit" value="edit" ></a></td>
-            <td><form action="indicators/{{$value->indicator_id}}" method="post">
-            <input type="hidden" name="_method" value="DELETE" >
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="submit" value="delete " >
-            </form></td>
-            </tr>
+                
+                            <h5 class="text-uppercase">Career List</h5>
+                            <div id="indicator-list">
+                            <table class="table">
+                            <tr><th>ID</th><th>INDICATOR</th><th>DESCRIPTION</th><th>TYPE</th><th>TYPE ID</th></tr>
+                            <tr><td>{{$indicator->indicator_id}}</td><td>{{$indicator->indicator}}</td><td>{{$indicator->description}}</td>
+                            @foreach($indicatortypes as $key => $value)
+                            @if($indicator->type_id == $value->type_id)
+                            <td>{{$value->type}}</td>
+                            @endif
+                            @endforeach
+                            <td>{{$indicator->type_id}}</td></tr>
+                            </table>
+                            </div>
 
-            @endforeach
-            </table>
-            </div>
+                            
+                            
+                           
 
             </div>
             <!-- /.container -->
         </div>
         <!-- /#content -->
 
-
         @include('includes.footer')
+       
 
 
 
@@ -117,14 +119,14 @@
         window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
     </script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="js/jquery.easy-autocomplete.min.js"> </script>
-    <script src="js/data.js"></script>
-    <script>
-    var indicators =testData();
-    //document.write(indicators);
-    //displayArrayList(indicators, "indicator-list");
-    </script>
 
+
+
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.parallax-1.1.3.js"></script>
+    <script src="js/front.js"></script>
 
     
 

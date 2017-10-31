@@ -89,32 +89,34 @@
                             <hr>
                         
                          
-                            <form id="checkboxForm" action="/indicators" method="POST">
+                            <form id="checkboxForm" action="{{ route('indicators.update', $indicator->indicator_id) }}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('PATCH') }}
                                 <div class="form-group">
                                     <label for="indicator">Indicator</label>
-                                    <input type="text" size="5" class="form-control" name="indicator" required>
+                                    <input type="text" size="5" class="form-control" value="{{$indicator->indicator}}" name="indicator" required>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <input type="text" size="5" class="form-control" name="description" required>
+                                    <input type="text" size="5" class="form-control" value="{{$indicator->description}}" name="description" required>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <div class="checkbox">
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" name="areas[]" value="1" 
+                                            <input type="checkbox" name="areas[]" value="1" @if($indicator->type_id==1) checked @endif
                                             data-validation-minchecked-minchecked="1" data-validation-minchecked-message="Choose one"/> skills 
                                         </label>
                                     
                                     
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" name="areas[]" value="2"/> trait
+                                            <input type="checkbox" name="areas[]" value="2"@if($indicator->type_id==2) checked @endif /> trait
                                         </label>
                                     
                                    
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" name="areas[]" value="3"/> passion
+                                            <input type="checkbox" name="areas[]" value="3" @if($indicator->type_id==3) checked @endif /> passion
                                         </label>
 
                                         <div class="help-block"></div>
