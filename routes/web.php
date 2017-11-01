@@ -26,6 +26,12 @@ Route::get('faq', function () {
 Route::get('policy', function () {
     return view('pages.policy');
 });
+Route::get('career-insights', function () {
+    $careers= DB::table('careers')->get();
+    return view('pages.career-insights')
+    ->with('careers',$careers);
+});
+
 
 
 
