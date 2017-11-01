@@ -97,6 +97,8 @@
                                 </div>
                                     <div class="text-center">
                                     <button  id="add-indicator" class="btn btn-template-main" type="button"><i class="fa fa-user-md"></i> Add</button>
+                                    <button  id="get-insights" class="btn btn-template-main" type="button"><i class="fa fa-user-md"></i> Get Insights</button>
+                                
                                 </div>
                                 <div class="indicator-desc"></div>
                             </form>
@@ -170,10 +172,14 @@
     </script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="js/jquery.easy-autocomplete.min.js"> </script>
-    <script src="js/data.js"></script>
+    
     <script>
+
     $( document ).ready(function() {
-       var dataAccess = {
+
+      
+       var insightApp = {
+            procedure : 1,
             indicators:{},
             dataReady : false,    
             getIndicators:  function (callback){
@@ -183,7 +189,8 @@
           dataReady=true;
           }) },
 
-            showList : function (list,parentId){
+          showList : function (list,parentId){
+               
             var listParent = $("#"+parentId);
             var items=[];
             $.each(list, function(index, value){
@@ -199,33 +206,47 @@
                 $("<li>"+value+"</li>").appendTo(listParent);
         });
             $(listParent).on('click','li', function(){
-                alert("test");
+               // alert("test");
             });
-            $("#add-indicator").on('click', function(){
+         },  
+      
+         
+         addIndicator : function (){
+           var skillsList= {data:[]}; 
+           var  traitsList= {data:[]}; 
+           var passionList= {data:[]};
+        $("#add-indicator").on('click', function(){
                 
                 if ($("#indicator-input").val().length>0){
                     // Switch cases depending on where in the process the person is 
                     // General example for now
+                   
+                   
+                    skillsList.data.push($("#indicator-input").val());
                     $("#skills-txt").text($("#skills-txt").text()+$("#indicator-input").val()+", ");
                     $("#indicator-input").val("");
-
-
+                    skillsList.data.push()
                 }
             });
-
-       } 
-       
+       },
+       getInsights : function (){
+        $("#get-insights").on('click', function(){
+               
+                }
+            });
+       }
        
         }
 
-       
-       dataAccess.getIndicators(function(indicators){
-       dataAccess.showList(indicators,"indicator-list");
-       
-    });
+    
+    insightsApp.getIndicators(function(indicators){
+    insightsApp.showList(indicators,"indicator-list");
+        
+        });
+    insightsApp.addIndicator();
+
 
         var options= {
-        //data: ["blue", "green", "pink", "red", "yellow"]
         url: "api/indicators",
         listLocation:"data",
         getValue:"indicator",

@@ -33,11 +33,7 @@ Route::get('/indicator/{id}', function ($id) {
     return IndicatorResource::Collection(Indicator::where('type_id','=',$type_id)->get());
    
    }); 
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
- Route::get("/test",function(){
-   
- });
+  
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
