@@ -31,9 +31,35 @@ class IndicatorsTableSeeder extends Seeder
             );
         DB::table('indicators')->insert([
             'indicator' => 'public speaking',
-            'description' =>'The ability to speak to a group of people about a subject matter',
+            'description' =>'Training in speaking to a group of people about a subject matter',
             'type_id' => 1,
             ]
             );
+            DB::table('indicators')->insert([
+                'indicator' => 'extrovert',
+                'description' =>'Likes going out and meeting and speaking to people',
+                'type_id' => 2,
+                ]
+                );   
+            DB::table('indicators')->insert([
+                'indicator' => 'introvert',
+                'description' =>'Prefers doing activities alone, not very outgoing',
+                'type_id' => 2,
+                ]
+                );   
+            DB::table('indicators')->insert([
+                'indicator' => 'teaching',
+                'description' =>'Likes explaining concepts to other persons',
+                'type_id' => 2,
+                ]
+                );  
+            DB::table('indicators')->insert([
+                'indicator' => 'problem solving',
+                'description' =>'Likes understanding a problem and developing solutions',
+                'type_id' => 2,
+                ]
+                );     
+                  
     }
+
 }

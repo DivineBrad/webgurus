@@ -178,7 +178,7 @@
     $( document ).ready(function() {
 
       
-       var insightApp = {
+       var insightsApp = {
             procedure : 1,
             indicators:{},
             dataReady : false,    
@@ -206,7 +206,7 @@
                 $("<li>"+value+"</li>").appendTo(listParent);
         });
             $(listParent).on('click','li', function(){
-               // alert("test");
+               
             });
          },  
       
@@ -215,8 +215,9 @@
            var skillsList= {data:[]}; 
            var  traitsList= {data:[]}; 
            var passionList= {data:[]};
+           var counter = 0;
         $("#add-indicator").on('click', function(){
-                
+                counter++;
                 if ($("#indicator-input").val().length>0){
                     // Switch cases depending on where in the process the person is 
                     // General example for now
@@ -225,15 +226,43 @@
                     skillsList.data.push($("#indicator-input").val());
                     $("#skills-txt").text($("#skills-txt").text()+$("#indicator-input").val()+", ");
                     $("#indicator-input").val("");
-                    skillsList.data.push()
+                    passionList.data.push("Running");
+                    traitsList.data.push("Extrovert");
+                    if (counter>1){
+                        
+                        insightsApp.sendList(traitsList,skillsList,passionList);
+                    }
+                    
                 }
+
             });
+       },
+       sendList : function(traitsList,skillsList,passionList) {
+           var indicatorList = {
+               skills : skillsList,
+               traits : traitsList,
+               passion : passionList
+           }
+        $.ajax({
+            url: '/api/insights/results',
+            contentType: "application/json; charset=utf-8",
+           // data: JSON.stringify({"test" :"Testing route"}),
+           data: JSON.stringify(indicatorList),
+            type: 'POST',
+            success: function(response) {
+                console.log(response);
+                // response is Javascript Object ready to use 
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
        },
        getInsights : function (){
         $("#get-insights").on('click', function(){
-               
-                }
-            });
+            insightsApp.sendList();
+            //alert("working");
+                });
        }
        
         }
@@ -244,7 +273,7 @@
         
         });
     insightsApp.addIndicator();
-
+    insightsApp.getInsights();
 
         var options= {
         url: "api/indicators",

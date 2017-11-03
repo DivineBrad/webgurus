@@ -22,7 +22,7 @@ class CareersTableSeeder extends Seeder
         'group_id' => 2,
         'title' => 'Teacher',
         'description' => 'Explain and impart knowledge to students',
-    ]
-   );
-    }
+        ]
+         );
+        }
 }

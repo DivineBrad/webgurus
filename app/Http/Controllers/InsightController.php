@@ -42,7 +42,10 @@ class InsightController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       // $test = $request->input('test');
+       // echo $test;
+       return response()->json([
+        'name' => 'Bobby']);
     }
 
     /**
