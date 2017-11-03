@@ -83,7 +83,7 @@
                             <h5 class="text-uppercase">Career List</h5>
                             <div id="career-list">
                             <table class="table">
-                            <tr><th>ID</th><th>TITLE</th><th>DESCRIPTION</th><th>GROUP TITLE</th><th>SHOW</th><th>EDIT</th><th>DELETE</th></tr>
+                            <tr><th>ID</th><th>TITLE</th><th>DESCRIPTION</th><th>GROUP TITLE</th><th>SHOW</th><th>EDIT</th><th>DELETE</th><th>Link Indicators</th></tr>
                             @foreach($careers as $key => $value)
                             <tr><td>{{$value->career_id}}</td><td>{{$value->title}}</td><td>{{$value->description}}</td><td>{{$value->group_title}}</td>
                             <td><a href="{{ route('careers.show', $value->career_id) }}"><input type="submit" value="detail" ></a></td>
@@ -93,6 +93,7 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="submit" value="delete " >
                             </form></td>
+                            <td><a href="{{ route('careers.link_indicators', $value->career_id) }}"><input type="submit" value="Add Indicators" ></a></td>
                             </tr>
 
                             @endforeach
