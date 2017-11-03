@@ -92,7 +92,7 @@ class CareerController extends Controller
       
     }
 
-    public function link_indicators($id)
+    public function linkIndicators($id)
     {
         $careergroups = DB::table('career_groups')
         ->get();
