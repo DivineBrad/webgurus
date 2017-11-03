@@ -92,6 +92,17 @@ class CareerController extends Controller
       
     }
 
+    public function link_indicators($id)
+    {
+        $careergroups = DB::table('career_groups')
+        ->get();
+        $career = Career::findOrFail($id);
+        return view('pages.careers.link_indicators')
+        ->with('careergroups',$careergroups)
+        ->with('career',$career);
+      
+    }
+
     /**
      * Update the specified resource in storage.
      *
