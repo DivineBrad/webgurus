@@ -100,38 +100,26 @@
     {{ Form::select('careergroups', array('1' => 'IT', '2' => 'Education'),'1')}}
     {{ Form::submit('Submit', ['name' => 'submit']) }}
 {{ Form::close() }} -->
-                            <form action="{{ route('careers.update', $career->career_id) }}" method="POST" data-toggle="validator">
+                            <form action="{{ route('careers.updateLinkIndicators', $career->career_id) }}" method="POST" data-toggle="validator">
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}
                                 <div class="form-group">
-                                    <label for="title">Title</label>
+                                    <label for="career">Career</label>
                                     <div class="controls">
-                                    <input type="text" size="55" name="title" value="{{ $career->title }}" required>
+                                    <input type="text" size="55" name="career" value="{{ $career->id }}" required>
                                     </div>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="description">Description</label>
+                                    <label for="indicators">Indicators</label>
                                     <div class="controls">
-                                    <input type="text" size="55" name="description" value="{{ $career->description }}" required>
+                                    @foreach($indicators as $key => $value)
+                                    <input type="checkbox" size="55" name="indicators" value="{{ $indicators->indicator_id }}" required>{{ $indicators->indicator }}<br/>
+                                    @endforeach
                                     </div>
                                     <div class="help-block with-errors"></div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="careergroups">Groups</label>
-                                    <div class="controls">
-                                    <select  name="careergroups" id="careergroups"  required>
-                        
-                                        <option value="">Choose 1 group</option>
-                                        @foreach($careergroups as $key => $value)
-                                        <option value="{{$value->group_id}}" @if($value->group_id == $career->group_id) selected @endif>{{$value->group_title}}</option>
-                                        @endforeach
-                                    
-                                    </select>
-                                    </div>
-                                    <div class="help-block with-errors"></div>
-                                    
-                                </div><br/>
+                                <br/>
                         
                                 <div class="text-center">
                                     <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Submit</button>
