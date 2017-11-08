@@ -92,6 +92,17 @@ class CareerController extends Controller
       
     }
 
+    public function linkIndicators($id)
+    {
+        $indicators = DB::table('indicators')
+        ->get();
+        $career = Career::findOrFail($id);
+        return view('pages.careers.linkIndicators')
+        ->with('careergroups',$indicators)
+        ->with('career',$career);
+      
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -107,6 +118,15 @@ class CareerController extends Controller
         $career->group_id=(int)($request->input('careergroups'));
         $career->save();
         return redirect()->route('careers.index');
+    }
+
+    public function updateLinkIndicators(Request $request, $id)
+    {
+        $career = Career::find($id);
+        $career->carrer = $request->input('career');
+        $career->indicators = $request->input('indicators');
+        $career->save();
+        //return redirect()->route('careers.index');
     }
 
     /**
