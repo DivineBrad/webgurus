@@ -1,0 +1,19 @@
+
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Career Comparison</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <table class="table">
+            <thead>
+                <tr><th>{{career1.title}}</th><th>{{career2.title}}</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Description:{{career1.description}}</td><td>Description:{{career2.description}}</td></tr>
+            </tbody>
+            
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>

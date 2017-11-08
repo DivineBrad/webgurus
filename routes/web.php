@@ -32,6 +32,11 @@ Route::get('career-insights', function () {
     ->with('careers',$careers);
 });
 
+Route::get('careers-list', function () {
+    $careers= DB::table('careers')->get();
+    return response()->json($careers);
+});
+
 
 
 

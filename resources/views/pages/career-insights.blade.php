@@ -77,23 +77,38 @@
         </div>
 
         <div id="content">
-            <div class="container">
+            <div class="container" ng-app="myApp" ng-controller="career-insights-controller">
 
                 
                          <h5 class="text-uppercase">Career List</h5>
+                         <div class="row">
+                         <p>
+                         Search Career: <input type="text" ng-model="searchText.title">
+                         <input type="button" id="compare" class="btn btn-success" value="Compare Careers" disabled />
+                         </p>
+                         
+                         </div>
                             <div id="career-list">
                             <table class="table">
-                            <tr><th>ID</th><th>TITLE</th><th>DESCRIPTION</th><th>GROUP TITLE</th><th></th></tr>
-                            @foreach($careers as $key => $value)
-                            <tr><td>{{$value->career_id}}</td><td>{{$value->title}}</td><td>{{$value->description}}</td><td></td>
-                             
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                          
-                            </form></td>
+                            <tr><th>id</th><th>TITLE</th><th>DESCRIPTION</th><th></th></tr>
+                            
+                            <tr ng-repeat="career in careers | filter:searchText | startFrom:currentPage*pageSize | limitTo:pageSize">
+                            <td>@{{career.career_id}}</td>
+                            <td>@{{career.title}}</td>
+                            <td>@{{career.description}}</td>
+                            <td><input type="checkbox" ng-value="career" ng-model="career.selected" /></td>
                             </tr>
 
-                            @endforeach
+                            
                             </table>
+
+                            <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+                              Previous
+                            </button>
+                             @{{currentPage+1}}/@{{numberOfPages()}}
+                            <button ng-disabled="currentPage >= careers.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+                             Next
+                            </button>
                             </div>
 
                             
@@ -129,6 +144,10 @@
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/jquery.parallax-1.1.3.js"></script>
     <script src="js/front.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="js/angular/app.js"></script>
+    <script src="js/angular/career-insights-controller.js"></script>
 
     
 
