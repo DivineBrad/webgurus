@@ -1,8 +1,6 @@
 <?php
-
 use App\Http\Controllers\InsightController;
 use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,17 +33,13 @@ Route::get('career-insights', function () {
     ->with('careers',$careers);
 });
 
-Route::get('careers-list', function () {
-    $careers= DB::table('careers')->get();
-    return response()->json($careers);
-});
-
-
 Route::post('insights/results', function (Request $request) {
     $insightController = new InsightController();
     $insightController->results($request);
 
 });
+
+
 
 
 Route::resource('/test','TestController');

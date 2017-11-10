@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -133,11 +135,10 @@
 
 
                             <ul id="indicator-list">
-                           <!-- @foreach($indicators as $key => $value)
-                            <li>{{$value->indicator}} {{$value->type->type}}</li>
-
+                           
+                            @foreach ($results as $key => $item)
+                           {{$item['career']}}
                             @endforeach
-                            -->
                             <script>
                            
                              </script>
@@ -171,150 +172,7 @@
         window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
     </script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="js/jquery.easy-autocomplete.min.js"> </script>
     
-    <script>
-
-    $( document ).ready(function() {
-
-      
-       var insightsApp = {
-            procedure : 1,
-            indicators:{},
-            dataReady : false,    
-            getIndicators:  function (callback){
-         $.getJSON("/api/indicators", function(data){
-          this.indicators= data.data;
-          callback(this.indicators);
-          dataReady=true;
-          }) },
-
-          showList : function (list,parentId){
-               
-            var listParent = $("#"+parentId);
-            var items=[];
-            $.each(list, function(index, value){
-                $.each(value,function(key,val) {
-                if (key=="indicator"){
-                    items.push(val);
-                }
-                }) ;
-            });
-           
-            $.each(items, function (index,value){
-               // document.write(value);
-                $("<li>"+value+"</li>").appendTo(listParent);
-        });
-            $(listParent).on('click','li', function(){
-               
-            });
-         },  
-      
-         
-         addIndicator : function (){
-           var skillsList= {data:[]}; 
-           var  traitsList= {data:[]}; 
-           var passionList= {data:[]};
-           var counter = 0;
-        $("#add-indicator").on('click', function(){
-                counter++;
-                if ($("#indicator-input").val().length>0){
-                    // Switch cases depending on where in the process the person is 
-                    // General example for now
-                   
-                   
-                    skillsList.data.push($("#indicator-input").val());
-                    $("#skills-txt").text($("#skills-txt").text()+$("#indicator-input").val()+", ");
-                    $("#indicator-input").val("");
-                    passionList.data.push("teaching");
-                    traitsList.data.push("extrovert");
-                    if (counter>1){
-                        
-                        insightsApp.sendList(traitsList,skillsList,passionList);
-                    }
-                    
-                }
-
-            });
-       },
-       sendList : function(traitsList,skillsList,passionList) {
-           var indicatorList = {
-               skills : skillsList,
-               traits : traitsList,
-               passion : passionList
-           }
-        $.ajax({
-            url: '/api/insights/results',
-            contentType: "application/json; charset=utf-8",
-           // data: JSON.stringify({"test" :"Testing route"}),
-           data: JSON.stringify(indicatorList),
-            type: 'POST',
-            success: function(response) {
-                console.log(response);
-                insightsApp.getResults('insights/results',JSON.stringify(response));
-                //window.location.href = "/";
-                // response is Javascript Object ready to use 
-            },
-            error: function(error) {
-                console.log(error);
-            }
-        });
-       },
-       getInsights : function (){
-        $("#get-insights").on('click', function(){
-            insightsApp.sendList();
-            //alert("working");
-                });
-       },
-       getResults : function (url, data) {
-                
-                var form = document.createElement('form');
-                document.body.appendChild(form);
-                form.method = 'POST';
-                form.action = url;
-                
-                    var input = document.createElement('input');
-                    var input2 = document.createElement('input')
-                    input.type = 'hidden';
-                    input2.type = 'hidden';
-                    input.name = 'results';
-                    input2.name = '_token';
-                    input.value = data;
-                    input2.value = '{{ csrf_token() }}';
-                    form.appendChild(input);
-                    form.appendChild(input2);
-                form.submit();
-        }
-
-       
-        }
-
-    
-    insightsApp.getIndicators(function(indicators){
-    insightsApp.showList(indicators,"indicator-list");
-        
-        });
-    insightsApp.addIndicator();
-    insightsApp.getInsights();
-
-        var options= {
-        url: "api/indicators",
-        listLocation:"data",
-        getValue:"indicator",
-        list: {
-		match: {
-			enabled: true
-		}
-        }
-        };
-        $("#indicator-input").easyAutocomplete(options);
-
-      
-    });
-    
-
-    </script>
-
 
     
 

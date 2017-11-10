@@ -31,7 +31,7 @@ class InsightController extends Controller
      */
     public function create()
     {
-        return view('pages.indicators.create');
+       
     }
 
     /**
@@ -42,10 +42,18 @@ class InsightController extends Controller
      */
     public function store(Request $request)
     {
-       // $test = $request->input('test');
-       // echo $test;
-       return response()->json([
-        'name' => 'Bobby']);
+       
+    }
+    public function results(Request $request)
+    {
+       //echo "Test";
+       // get Json
+       $results = $request->input('results');
+       // convert json to array
+       $results = json_decode($results, true);
+        //  create a new collection instance from the array
+        collect($results);
+            echo view('pages.insights.results')->with('results',$results);
     }
 
     /**
