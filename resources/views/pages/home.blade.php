@@ -17,8 +17,14 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+
     <!-- Css animations  -->
     <link href="css/animate.css" rel="stylesheet">
+
+    <link href="css/bootstrap-touch-slider.css" rel="stylesheet" media="all">
 
     <!-- Theme stylesheet, if possible do not edit this stylesheet -->
     <link href="css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
@@ -59,62 +65,71 @@
 
             <div class="home-carousel">
 
-                <div class="dark-mask"></div>
+                <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="false" >
 
-                <div class="container">
-                    <div class="homepage owl-carousel">
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-sm-5 right">
-                                    <p>
-                                        
-                                    </p>
-                                    <h1>Career Path</h1>
-                                    <p>Provides a best way to choose
-                                        <br />A career pathh for you.</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/career_insights1.png" alt="">
-                                </div>
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper For Slides -->
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Third Slide -->
+                <div class="item active">
+
+                    <!-- Slide Background -->
+                    <img src="img/slide1.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+
+                    <div class="container">
+                        <div class="row">
+                            <!-- Slide Text Layer -->
+                            <div class="slide-text slide_style_left">
+                                <h1 data-animation="animated zoomInRight">Bootstrap Carousel</h1>
+                                <p data-animation="animated fadeInLeft">Bootstrap carousel now touch enable slide.</p>
+                                <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
+                                
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="row">
+                    </div>
+                </div>
+                <!-- End of Slide -->
 
-                                <div class="col-sm-7 text-center">
-                                    <img class="img-responsive" src="img/career_insights2.png" alt="">
-                                </div>
+                <!-- Second Slide -->
+                <div class="item">
 
-                                <div class="col-sm-5">
-                                    <h2>Provide career guidance to users based on their</h2>
-                                    <ul class="list-style-none">
-                                        <li>Personality traits</li>
-                                        <li>Skills</li>
-                                        <li>Passions</li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-sm-5 right">
-                                    <h1>Unbiased star rating</h1>
-                                    <ul class="list-style-none">
-                                        <li>Get reviews from the customers</li>
-                                        <li>Star rating easy to understand</li>
-                                        <li>Making Careerinsights.ca the most-visited Canadian career suggesting engine.</li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/career_insights3.png" alt="">
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Slide Background -->
+                    <img src="img/slide2.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+                    <!-- Slide Text Layer -->
+                    <div class="slide-text slide_style_center">
+                        <h1 data-animation="animated flipInX">Bootstrap touch slider</h1>
+                        <p data-animation="animated lightSpeedIn">Make Bootstrap Better together.</p>
+                        <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">select one</a>
                         
                     </div>
-                    <!-- /.project owl-slider -->
                 </div>
+                <!-- End of Slide -->
+
+                <!-- Third Slide -->
+                <div class="item">
+
+                    <!-- Slide Background -->
+                    <img src="img/slide3.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+                    <!-- Slide Text Layer -->
+                    <div class="slide-text slide_style_right">
+                        <h1 data-animation="animated zoomInLeft">Beautiful Animations</h1>
+                        <p data-animation="animated fadeInRight">Lots of css3 Animations to make slide beautiful .</p>
+                        <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
+                        
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
             </div>
 
             <!-- *** HOMEPAGE CAROUSEL END *** -->
@@ -414,9 +429,7 @@ _________________________________________________________ -->
     <!-- #### JAVASCRIPT FILES ### -->
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
-    </script>
+    
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
     <script src="js/jquery.cookie.js"></script>
@@ -430,7 +443,13 @@ _________________________________________________________ -->
     <!-- owl carousel -->
     <script src="js/owl.carousel.min.js"></script>
 
-
+    <!-- Bootstrap bootstrap-touch-slider Slider Main JS File -->
+    <script src="js/bootstrap-touch-slider.js"></script>
+        
+    <script type="text/javascript">
+        $('#bootstrap-touch-slider').bsTouchSlider();
+    </script>
+    
 
 </body>
 
