@@ -6,7 +6,8 @@ _________________________________________________________ -->
                 <div class="col-md-3 col-sm-6">
                     <h4>About us</h4>
 
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                    <p>Our passion is to helping people find their dream career paths 
+                    through understanding the skills, traits and passion</p>
 
                     <hr>
 
@@ -47,7 +48,7 @@ _________________________________________________________ -->
                         <strong>Canada</strong>
                     </p>
 
-                    <a href="contact.html" class="btn btn-small btn-template-main">Go to contact page</a>
+                    <a href="/contact" class="btn btn-small btn-template-main">Go to contact page</a>
 
                     <hr class="hidden-md hidden-lg hidden-sm">
 

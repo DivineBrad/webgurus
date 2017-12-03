@@ -6,7 +6,7 @@
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Career Insights | Home</title>
+    <title>Career Insights | About</title>
 
     <meta name="keywords" content="">
 
@@ -80,18 +80,17 @@
                         <div class="col-md-12">
 
                             <div class="heading">
-                                <h2>About <b><i>Careerinsights</i></b></h2>
+                                <h2>About <b><i>Career Insights</i></b></h2>
                             </div>
 
-                            <p class="lead"><p  style="font-size: 20px; text-align:justify">Welcome to <b><i>Careerinsights</i></b> on the market!  Our success is driven by the highest quality customer service.
-	<b><i>Careerinsights</i></b> is the world's largest career suggesting organization who helps a person to choose a correct career path for him/her.
-	Our Motto is to provide career guidance to users based on their personality traits, skills and their passions.
-	<b><i>Careerinsights</i></b> is a job search engine that specializes in choosing career paths for a new employee and also find a job directly from employer websites. 
-	Our site is managed by the Canada's Top 100 Employers project and indexes more direct-employer jobs than any other search 
-	engine in Canada.  Our site is used by over 6 million unique visitors from Canada each year, 
-	making <b><i>Careerinsights</i></b>.ca the most-visited Canadian career suggesting engine.<br>
-
-
+                            <p class="lead"><p  style="font-size: 20px; text-align:justify">Welcome to <b><i>Career Insights</i></b> on the market!  
+                            Our success is driven by the highest quality customer service.
+                            
+	                        <b><i>Career Insights</i></b> is the world's largest career research and guidance website which helps persons 
+                            to choose a correct career path based on their personality traits, skills and their passions.<br>
+                            Our research into personality,
+                             behaviours and professinal skills together with an understanding of multiple industries, allows us to give useful Insights to persons which gives the useful guidance in the career decisions. 
+                            </p>
                         </div>
                     </div>
 
@@ -119,9 +118,9 @@
                                                 <div class="col-md-8">
                                                    <b>Top three reasons why <b><i>Careerinsights</i></b> is different than other Career suggesting Boards:</b><br><br>
 	<ol style="font-size: 20px; text-align:justify">
-		<li>Provides best way to choose a career path for you.</li>
-		<li>Thousands of unadvertised positions.</li>
-		<li>Unbiased Star Ratings.</li>
+		<li>Provides deep insights into the best career options for you.</li>
+		<li>Allows comparison of careers across industries.</li>
+		<li>Provides insights into your own personality traits, skills and passion.</li>
 	</ol>
                                                 </div>
                                             </div>
@@ -147,11 +146,8 @@
                                                     <img src="img/template-easy-code.png" alt="" class="img-responsive">
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p style="font-size: 20px; text-align:justify">Use <b><i>Careerinsights</i></b> Advanced Search option to find new job announcements in other unique ways, including by occupation and industry. 
-	Then set up an email notification to receive an alert as soon as new jobs matching your search are posted. </p>
-	<p style="font-size: 20px; text-align:justify">We also built <b><i>Careerinsights</i></b> portal from the ground-up to respect your privacy. So all your personal details are highly secured.</p>
-	<p style="font-size: 20px; text-align:justify">All we focus on is delivering the highest quality career path search results, with more direct-employer postings in Canada than any other search engine. 
-	So your search is just few steps ahead, just need to pass through an easy registration process and way to go.</p>
+                                                    <p style="font-size: 20px; text-align:justify">Use <b><i>Careerinsights</i></b>  to gain 
+                                                    a deep understanding of which career options best suit your personality, skills and passions.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -160,52 +156,7 @@
                                 
                             
                 </section>
-                <section>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="heading">
-                                <h2>Our skills</h2>
-                            </div>
-
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                    SEO
-                                </div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" >
-                                    Search Engine Marketing
-                                </div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" >
-                                    Webdesign
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="heading">
-                                <h2>Our services</h2>
-                            </div>
-                            <ul class="ul-icons">
-                                <li><i class="fa fa-check"></i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                                <li><i class="fa fa-check"></i>Aliquam tincidunt mauris eu risus.</li>
-                                <li><i class="fa fa-check"></i>Vestibulum auctor dapibus neque.</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="heading">
-                                <h2>Our values</h2>
-                            </div>
-
-                            <ul class="ul-icons">
-                                <li><i class="fa fa-check"></i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                                <li><i class="fa fa-check"></i>Aliquam tincidunt mauris eu risus.</li>
-                                <li><i class="fa fa-check"></i>Vestibulum auctor dapibus neque.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+                
 
             </div>
             <!-- /#contact.container -->

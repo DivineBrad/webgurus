@@ -63,13 +63,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>New account / Sign in</h1>
+                        <h1>Career Insights</h1>
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
                             <li><a href="index.html">Home</a>
                             </li>
-                            <li>New account / Sign in</li>
+                            <li>Insights</li>
                         </ul>
 
                     </div>
