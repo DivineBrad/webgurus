@@ -7,7 +7,7 @@
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Career Insights | Home</title>
+    <title>Career Insights | FAQ</title>
 
     <meta name="keywords" content="">
 
@@ -83,7 +83,7 @@
                     <div class="col-md-9 clearfix">
                         <section>
 
-                            <p class="lead">Get your all doubts regarding <b><i>Careerinsights</i></b> cleared here.</p>
+                            <p class="lead">Get answers to frequently asked questions</p>
 
                             <div class="panel-group" id="accordion">
 
@@ -205,48 +205,7 @@
 
                     <!-- *** LEFT COLUMN END *** -->
 
-                    <!-- *** RIGHT COLUMN ***
-				_________________________________________________________ -->
-
-                    <div class="col-sm-3">
-                        <!-- *** PAGES MENU ***
- _________________________________________________________ -->
-                        <div class="panel panel-default sidebar-menu">
-
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Pages</h3>
-                            </div>
-
-                            <div class="panel-body">
-                                <ul class="nav nav-pills nav-stacked">
-                                    <li>
-                                        <a href="text.html">Text page</a>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html">Contact page</a>
-                                    </li>
-                                    <li>
-                                        <a href="faq.html">FAQ</a>
-                                    </li>
-
-                                </ul>
-
-                            </div>
-                        </div>
-
-                        <!-- *** PAGES MENU END *** -->
-
-
-                        <div class="banner">
-                            <a href="shop-category.html">
-                                <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
-                            </a>
-                        </div>
-                        <!-- /.banner -->
-                    </div>
-                    <!-- /.col-md-3 -->
-
-                    <!-- *** RIGHT COLUMN END *** -->
+                   
 
                 </div>
                 <!-- /.row -->

@@ -41,8 +41,8 @@ _________________________________________________________ -->
                         <div class="navbar-header">
 
                             <a class="navbar-brand home" href="index.html">
-                                <img src="img/logo.png" alt="Career Insights logo" class="hidden-xs hidden-sm">
-                                <img src="img/logo.png" alt="Career Insights logo" class="visible-xs visible-sm"><span class="sr-only">Career Insights - go to homepage</span>
+                                <img src="<?php public_path()?>/img/logo.png" alt="Career Insights logo" class="hidden-xs hidden-sm">
+                                <img src="<?php public_path()?>/img/logo.png" alt="Career Insights logo" class="visible-xs visible-sm"><span class="sr-only">Career Insights - go to homepage</span>
                             </a>
                             <div class="navbar-buttons">
                                 <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -56,7 +56,7 @@ _________________________________________________________ -->
                         <div class="navbar-collapse collapse" id="navigation">
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li class=" active">
+                                <li class="active">
                                     <a href="/" >Home <b class="caret"></b></a>
                                     
                                 </li>
@@ -146,7 +146,7 @@ _________________________________________________________ -->
                         </form>
 
                         <p class="text-center text-muted">Not registered yet?</p>
-                        <p class="text-center text-muted"><a href="/register"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+                        <p class="text-center text-muted"><a href="/register"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special special features!</p>
 
                     </div>
                 </div>

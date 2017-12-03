@@ -3557,8 +3557,3 @@ a.list-group-item.active > .badge,
 }
 
 
-/* Custom Styles */
-
-.progress .progressbar {
-  width:90%;
-}

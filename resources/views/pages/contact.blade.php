@@ -114,8 +114,8 @@
                                     <i class="fa fa-phone"></i>
                                 </div>
                                 <h3>Call center</h3>
-                                <p class="text-muted">This number is toll free if calling from Great Britain otherwise we advise you to use the electronic form of communication.</p>
-                                <p><strong>+33 555 444 333</strong>
+                                <p class="text-muted">Please feel free to call us for urgent mattters.</p>
+                                <p><strong>+1 416 887 7944</strong>
                                 </p>
                             </div>
                             <!-- /.box-simple -->
@@ -129,11 +129,11 @@
                                     <i class="fa fa-envelope"></i>
                                 </div>
                                 <h3>Electronic support</h3>
-                                <p class="text-muted">Please feel free to write an email to us or to use our electronic ticketing system.</p>
+                                <p class="text-muted">Please feel free to write an email to us.</p>
                                 <ul class="list-style-none">
-                                    <li><strong><a href="mailto:">info@fakeemail.com</a></strong>
+                                    <li><strong><a href="mailto:">info@careerinsights.com</a></strong>
                                     </li>
-                                    <li><strong><a href="#">Ticketio</a></strong> - our ticketing support platform</li>
+                                    
                                 </ul>
                             </div>
                             <!-- /.box-simple -->
@@ -186,7 +186,7 @@
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label for="message">Message</label>
-                                            <textarea id="message" class="form-control" required></textarea>
+                                            <textarea id="message" class="form-control" rows="6" required></textarea>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>

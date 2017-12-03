@@ -158,7 +158,7 @@
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
 
-                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3b">
+                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3c">
 
                                                     <p><strong>3. Limitation of Use or Disclosure of Personal Data</strong></p> 
 
@@ -184,7 +184,7 @@
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
 
-                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3b">
+                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3d">
 
                                                     <p><strong>4. Uses and Disclosures of Information</strong></p> 
 
@@ -224,7 +224,7 @@
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
 
-                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3b">
+                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3e">
 
                                                     <p><strong>5. Contact and Other Information</strong></p> 
 
@@ -253,7 +253,7 @@
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
 
-                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3b">
+                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3f">
 
                                                    <p><strong>6. Additional Uses and Disclosures of Non-Personal Information</strong></p> 
 
@@ -280,7 +280,7 @@
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
 
-                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3b">
+                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3g">
 
                                                    <p><strong>7. Security</strong></p> 
 
@@ -308,7 +308,7 @@
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
 
-                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3b">
+                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3h">
 
                                                    <p><strong>8. Cookies</strong></p> 
 
@@ -336,7 +336,7 @@
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
 
-                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3b">
+                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3i">
 
                                                    <p><strong>9. Links to Third-Party Sites</strong></p> 
 
@@ -364,7 +364,7 @@
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
 
-                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3b">
+                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3j">
 
                                                    <p><strong>10. Acquisitions and Other Reorganizations</strong></p> 
 
@@ -391,7 +391,7 @@
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
 
-                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3b">
+                                                <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3k">
 
                                                    <p><strong>11. Personal Data of&nbsp;People</strong></p> 
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\InsightController;
+use App\Http\Controllers\CareerController;
 use Illuminate\Http\Request;
 
 /*
@@ -46,11 +47,28 @@ Route::post('insights/results', function (Request $request) {
     $insightController->results($request);
 
 });
+Route::post('careers/add/indicators', function (Request $request) {
+    $careerController = new CareerController();
+    $careerController->addIndicators($request);
+
+});
+Route::get('careers/link/indicators/{id}', function ($id) {
+    $careerController = new CareerController();
+    $careerController->linkIndicators($id);
+
+});
 
 
 Route::resource('/test','TestController');
-Route::resource('/register','Auth\RegisterController');
-//Route::resource('/','HomeController');
+
+// to implement full authenticaion procedure
+//Route::resource('/register','Auth\RegisterController');
+//meanwhile implement registration view
+
+Route::get('register', function () {
+    return view('pages.register');
+});
+
 Route::resource('insights','InsightController');
 Route::resource('indicators','IndicatorController');
 Route::resource('careers','CareerController');

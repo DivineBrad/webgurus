@@ -83,7 +83,7 @@
                         <div class="box">
                             <h2 class="text-uppercase">New account</h2>
 
-                            <p class="lead">Not our registered customer yet?</p>
+                            <p class="lead">Still need to sign up?</p>
                             
                             <p class="text-muted">If you have any questions, please feel free to <a href="/contact">contact us</a>.</p>
 
@@ -125,7 +125,7 @@
                         <div class="box">
                             <h2 class="text-uppercase">Login</h2>
 
-                            <p class="lead">Already our customer?</p>
+                            <p class="lead">Already signed up?</p>
                             <p class="text-muted">Please login to get more features</p>
 
                             <hr>
