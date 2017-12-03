@@ -7,7 +7,7 @@
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Career Insights | Add Indicators</title>
+    <title>Career Insights | Career List</title>
 
     <meta name="keywords" content="">
 
@@ -62,13 +62,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>Indicator Form</h1>
+                        <h1>Careers List</h1>
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
                             <li><a href="index.html">Home</a>
                             </li>
-                            <li>Indicator Form</li>
+                            <li>Careers</li>
                         </ul>
 
                     </div>
@@ -128,11 +128,11 @@
 
 
 
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/jquery.parallax-1.1.3.js"></script>
-    <script src="js/front.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <script src="/js/waypoints.min.js"></script>
+    <script src="/js/jquery.counterup.min.js"></script>
+    <script src="/js/jquery.parallax-1.1.3.js"></script>
+    <script src="/js/front.js"></script>
 
     
 
