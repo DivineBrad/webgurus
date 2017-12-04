@@ -22,15 +22,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
 
     <!-- Css animations  -->
-    <link href="css/animate.css" rel="stylesheet">
+    <link href="<?php public_path()?>css/animate.css" rel="stylesheet">
 
-    <link href="css/bootstrap-touch-slider.css" rel="stylesheet" media="all">
+    <link href="<?php public_path()?>css/bootstrap-touch-slider.css" rel="stylesheet" media="all">
 
     <!-- Theme stylesheet, if possible do not edit this stylesheet -->
-    <link href="css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+    <link href="<?php public_path()?>css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
 
     <!-- Custom stylesheet - for your changes -->
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="<?php public_path()?>css/custom.css" rel="stylesheet">
 
     <!-- Responsivity for older IE -->
     <!--[if lt IE 9]>
@@ -39,19 +39,20 @@
 <![endif]-->
 
     <!-- Favicon and apple touch icons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png" />
-    <!-- owl carousel css -->
+    <link rel="shortcut icon" href="<?php public_path()?>/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="<?php public_path()?>/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php public_path()?>/img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php public_path()?>/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php public_path()?>/img/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php public_path()?>/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php public_path()?>/img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php public_path()?>/img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php public_path()?>/img/apple-touch-icon-152x152.png" />
+      <!-- owl carousel css -->
 
-    <link href="css/owl.carousel.css" rel="stylesheet">
-    <link href="css/owl.theme.css" rel="stylesheet">
+      <link href="<?php public_path()?>/css/owl.carousel.css" rel="stylesheet">
+    <link href="<?php public_path()?>/css/owl.theme.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -63,9 +64,9 @@
             <!-- *** HOMEPAGE CAROUSEL ***
  _________________________________________________________ -->
 
-            <div class="home-carousel">
+            <div class="home-carousel ">
 
-                <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="false" >
+                <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line " data-ride="carousel" data-pause="click" data-interval="4000" >
 
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -81,16 +82,16 @@
                 <div class="item active">
 
                     <!-- Slide Background -->
-                    <img src="img/slide1.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <img src="<?php public_path()?>/img/slide1.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
                     <div class="bs-slider-overlay"></div>
 
                     <div class="container">
                         <div class="row">
                             <!-- Slide Text Layer -->
                             <div class="slide-text slide_style_left">
-                                <h1 data-animation="animated zoomInRight">Bootstrap Carousel</h1>
-                                <p data-animation="animated fadeInLeft">Bootstrap carousel now touch enable slide.</p>
-                                <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
+                                <h1 data-animation="animated zoomInRight">Your dream Career awaits!</h1>
+                                <p data-animation="animated fadeInLeft">We guide on your career path.</p>
+                                <a href="/insights" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">Get Insights</a>
                                 
                             </div>
                         </div>
@@ -102,13 +103,13 @@
                 <div class="item">
 
                     <!-- Slide Background -->
-                    <img src="img/slide2.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <img src="<?php public_path()?>/img/slide2.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
                     <div class="bs-slider-overlay"></div>
                     <!-- Slide Text Layer -->
                     <div class="slide-text slide_style_center">
-                        <h1 data-animation="animated flipInX">Bootstrap touch slider</h1>
-                        <p data-animation="animated lightSpeedIn">Make Bootstrap Better together.</p>
-                        <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">select one</a>
+                        <h1 data-animation="animated flipInX">Find the best career for YOU!</h1>
+                        <p data-animation="animated lightSpeedIn">We anlyze your skills, traits and passions.</p>
+                        <a href="/insights" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">Get Insights</a>
                         
                     </div>
                 </div>
@@ -118,13 +119,13 @@
                 <div class="item">
 
                     <!-- Slide Background -->
-                    <img src="img/slide3.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <img src="<?php public_path()?>/img/slide3.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
                     <div class="bs-slider-overlay"></div>
                     <!-- Slide Text Layer -->
                     <div class="slide-text slide_style_right">
-                        <h1 data-animation="animated zoomInLeft">Beautiful Animations</h1>
-                        <p data-animation="animated fadeInRight">Lots of css3 Animations to make slide beautiful .</p>
-                        <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
+                        <h1 data-animation="animated zoomInLeft">We provide Insights</h1>
+                        <p data-animation="animated fadeInRight">Get ready for the light bulb moment! .</p>
+                        <a href="/insights" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">Get Insights</a>
                         
                     </div>
                 </div>
@@ -135,104 +136,7 @@
             <!-- *** HOMEPAGE CAROUSEL END *** -->
         </section>
 
-        <section class="bar background-white no-mb">
-            <div class="container">
-                <div class="col-md-12">
-                    <div class="heading text-center">
-                        <h2>Some happy users!</h2>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-3 col-sm-3">
-                            <div class="team-member" data-animate="fadeInUp">
-                                <div class="image">
-                                    <a href="team-member.html">
-                                        <img src="img/person-1.jpg" alt="" class="img-responsive img-circle">
-                                    </a>
-                                </div>
-                                <h3><a href="team-member.html">Han Solo</a></h3>
-                                <p class="role">Founder</p>
-                                <div class="social">
-                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                                </div>
-                                <div class="text">
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                </div>
-                            </div>
-                            <!-- /.team-member -->
-                        </div>
-                        <div class="col-md-3 col-sm-3" data-animate="fadeInUp">
-                            <div class="team-member">
-                                <div class="image">
-                                    <a href="team-member.html">
-                                        <img src="img/person-2.jpg" alt="" class="img-responsive img-circle">
-                                    </a>
-                                </div>
-                                <h3><a href="team-member.html">Luke Skywalker</a></h3>
-                                <p class="role">CTO</p>
-
-                                <div class="social">
-                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                                </div>
-                                <div class="text">
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                </div>
-                            </div>
-                            <!-- /.team-member -->
-                        </div>
-                        <div class="col-md-3 col-sm-3" data-animate="fadeInUp">
-                            <div class="team-member">
-                                <div class="image">
-                                    <a href="team-member.html">
-                                        <img src="img/person-3.png" alt="" class="img-responsive img-circle">
-                                    </a>
-                                </div>
-                                <h3><a href="team-member.html">Princess Leia</a></h3>
-                                <p class="role">Team Leader</p>
-                                <div class="social">
-                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                                </div>
-                                <div class="text">
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                </div>
-                            </div>
-                            <!-- /.team-member -->
-                        </div>
-                        <div class="col-md-3 col-sm-3" data-animate="fadeInUp">
-                            <div class="team-member">
-                                <div class="image">
-                                    <a href="team-member.html">
-                                        <img src="img/person-4.jpg" alt="" class="img-responsive img-circle">
-                                    </a>
-                                </div>
-                                <h3><a href="team-member.html">Jabba Hut</a></h3>
-                                <p class="role">Lead Developer</p>
-                                <div class="social">
-                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                                </div>
-                                <div class="text">
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                </div>
-                            </div>
-                            <!-- /.team-member -->
-                        </div>
-                    </div>
-                    <!-- /.row -->
-                </div>
-            </div>
-        </section>
+       
 
         <section class="bar background-image-fixed-2 no-mb color-white text-center">
             <div class="dark-mask"></div>
@@ -244,7 +148,7 @@
                         <h3 class="text-uppercase">Do you want to know more about Insights?</h3>
                         <p class="lead">We have prepared for you the career path finder</p>
                         <p class="text-center">
-                            <a href="about.php" class="btn btn-template-transparent-black btn-lg">Check our About Us</a>
+                            <a href="/about" class="btn btn-template-transparent-black btn-lg">Check our About Us</a>
                         </p>
                     </div>
 
@@ -252,36 +156,7 @@
             </div>
         </section>
 
-        <section class="bar background-gray no-mb">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul class="owl-carousel customers no-mb">
-                            <li class="item">
-                                <img src="img/customer-1.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-2.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-3.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-4.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-5.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-6.png" alt="" class="img-responsive">
-                            </li>
-                        </ul>
-                        <!-- /.owl-carousel -->
-                    </div>
-
-                </div>
-            </div>
-        </section>
+        
 
         <section class="bar background-pentagon no-mb">
             <div class="container">
@@ -309,8 +184,8 @@
                                         </div>
                                         <div class="name-picture">
                                             <img class="" alt="" src="img/person-1.jpg">
-                                            <h5>John McIntyre</h5>
-                                            <p>CEO, TransTech</p>
+                                            <h5>Jerry Sally</h5>
+                                            <p>Account, RollyGroup</p>
                                         </div>
                                     </div>
                                 </div>
@@ -325,8 +200,8 @@
                                         </div>
                                         <div class="name-picture">
                                             <img class="" alt="" src="img/person-2.jpg">
-                                            <h5>John McIntyre</h5>
-                                            <p>CEO, TransTech</p>
+                                            <h5>Manly Johnson</h5>
+                                            <p>Programmer, LemonGross</p>
                                         </div>
                                     </div>
                                 </div>
@@ -341,8 +216,8 @@
                                         </div>
                                         <div class="name-picture">
                                             <img class="" alt="" src="img/person-3.png">
-                                            <h5>John McIntyre</h5>
-                                            <p>CEO, TransTech</p>
+                                            <h5>Larry Bob</h5>
+                                            <p>Tutor, Mahantin Run</p>
                                         </div>
                                     </div>
                                 </div>
@@ -358,31 +233,13 @@
                                         </div>
                                         <div class="name-picture">
                                             <img class="" alt="" src="img/person-4.jpg">
-                                            <h5>John McIntyre</h5>
-                                            <p>CEO, TransTech</p>
+                                            <h5>Bob McIntyre</h5>
+                                            <p>Tutor, Spelling Challenge</p>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li class="item">
-                                <div class="testimonial same-height-always">
-                                    <div class="text">
-                                        <p>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull
-                                            weather. Drops of rain could be heard hitting the pane, which made him feel quite sad. Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made
-                                            him feel quite sad.</p>
-                                    </div>
-
-                                    <div class="bottom">
-                                        <div class="icon"><i class="fa fa-quote-left"></i>
-                                        </div>
-                                        <div class="name-picture">
-                                            <img class="" alt="" src="img/person-4.jpg">
-                                            <h5>John McIntyre</h5>
-                                            <p>CEO, TransTech</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                            
                         </ul>
                         <!-- /.owl-carousel -->
 
