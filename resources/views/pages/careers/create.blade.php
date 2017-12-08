@@ -87,39 +87,43 @@
                             <p class="text-muted">Please create Career.</p>
 
                             <hr>
+                            <!-- Error information for validation-->
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                            <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                            </ul>
+                            </div>
+                            @endif
                         
                          
-                            <form action="/careers" method="POST" data-toggle="validator"  data-fv-framework="bootstrap"
-                            data-fv-icon-valid="glyphicon glyphicon-ok"
-                            data-fv-icon-invalid="glyphicon glyphicon-remove"
-                            data-fv-icon-validating="glyphicon glyphicon-refresh">
+                            <form action="/careers" method="POST">
                                 <div class="form-group">
                                     <label for="title">Title</label>
                                     <div class="controls">
-                                    <input type="text" size="55" name="title" value="{{ old('title') }}" required>
+                                    <input type="text" size="55" name="title" value="{{old('title')}}">
                                     </div>
-                                    <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description</label>
                                     <div class="controls">
-                                    <input type="text" size="55" name="description" value="{{ old('description') }}" required>
+                                    <input type="text" size="55" name="description" value="{{old('description')}}">
                                     </div>
-                                    <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="careergroups">Groups</label>
                                     <div class="controls">
-                                    <select  name="careergroups" id="careergroups" value="{{ old('careergroups') }}" required>
+                                    <select  name="careergroups" id="careergroups">
                         
                                         <option value="">Choose 1 group</option>
                                         @foreach($careergroups as $key => $value)
-                                        <option value="{{$value->group_id}}">{{$value->group_title}}</option>
+                                        <option value="{{$value->group_id}}" {{ (Input::old("careergroups") == $value->group_id ? "selected":"") }}>{{$value->group_title}}</option>
                                         @endforeach
                                     
                                     </select>
                                     </div>
-                                    <div class="help-block with-errors"></div>
                                     
                                 </div><br/>
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">

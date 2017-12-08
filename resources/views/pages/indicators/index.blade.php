@@ -80,8 +80,8 @@
             <tr><th>ID</th><th>INDICATOR</th><th>DESCRIPTION</th><th>TYPE</th><th>SHOW</th><th>EDIT</th><th>DELETE</th></tr>
             @foreach($indicators as $key => $value)
             <tr><td>{{$value->indicator_id}}</td><td>{{$value->indicator}}</td><td>{{$value->description}}</td><td>{{$value->type}}</td>
-            <td><a href="{{ route('indicators.show', $value->indicator_id) }}"><input type="submit" value="detail" ></a></td>
-            <td><a href="{{ route('indicators.edit', $value->indicator_id) }}"><input type="submit" value="edit" ></a></td>
+            <td><form action="{{ route('indicators.show', $value->indicator_id) }}" method="get"><input type="submit" value="detail" ></form></td>
+            <td><form action="{{ route('indicators.edit', $value->indicator_id) }}" method="get"><input type="submit" value="edit" ></form></td>
             <td><form action="indicators/{{$value->indicator_id}}" method="post">
             <input type="hidden" name="_method" value="DELETE" >
             <input type="hidden" name="_token" value="{{ csrf_token() }}">

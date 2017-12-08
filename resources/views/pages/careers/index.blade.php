@@ -83,12 +83,12 @@
                             <h5 class="text-uppercase">Career List</h5>
                             <div id="career-list">
                             <table class="table">
-                            <tr><th>ID</th><th>TITLE</th><th>DESCRIPTION</th><th>GROUP TITLE</th><th>SHOW</th><th>EDIT</th><th>DELETE</th><th>Link Indicators</th></tr>
+                            <tr><th>ID</th><th>TITLE</th><th>DESCRIPTION</th><th>GROUP TITLE</th><th>SHOW</th><th>EDIT</th><th>Link Indicators</th><th>DELETE</th></tr>
                             @foreach($careers as $key => $value)
                             <tr><td>{{$value->career_id}}</td><td>{{$value->title}}</td><td>{{$value->description}}</td><td>{{$value->group_title}}</td>
-                            <td><a href="{{ route('careers.show', $value->career_id) }}"><input type="submit" value="detail" ></a></td>
-                            <td><a href="{{ route('careers.edit', $value->career_id) }}"><input type="submit" value="edit" ></a></td>
-                            <td><a href="{{ route('careers.show', $value->career_id) }}"><input type="submit" value="Add Indicators" ></a></td>
+                            <td><form action="{{ route('careers.show', $value->career_id) }}" method="get"><input type="submit" value="detail" ></form></td>
+                            <td><form action="{{ route('careers.edit', $value->career_id) }}" method="get"><input type="submit" value="edit" ></form></td>
+                            <td><form action="{{ route('careers.show', $value->career_id) }}" method="get"><input type="submit" value="Add Indicators" ></form></td>
                             <td><form action="careers/{{$value->career_id}}" method="post">
                             <input type="hidden" name="_method" value="DELETE" >
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">

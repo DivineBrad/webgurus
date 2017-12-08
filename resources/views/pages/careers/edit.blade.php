@@ -87,40 +87,38 @@
                             <p class="text-muted">Please create Career.</p>
 
                             <hr>
+                            <!-- Error information for validation-->
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                            <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                            </ul>
+                            </div>
+                            @endif
                         
                          
-                          <!--   @if(isset($career))
-    {{ Form::model($career, ['route' => ['careers.edit', $career->career_id], 'method' => 'patch']) }}
-@else
-    {{ Form::open(['route' => 'careers.edit']) }}
-@endif
-
-    {{ Form::text('title', Input::old('title')) }}
-    {{ Form::text('description', Input::old('description')) }}
-    {{ Form::select('careergroups', array('1' => 'IT', '2' => 'Education'),'1')}}
-    {{ Form::submit('Submit', ['name' => 'submit']) }}
-{{ Form::close() }} -->
-                            <form action="{{ route('careers.update', $career->career_id) }}" method="POST" data-toggle="validator">
+                          
+                            <form action="{{ route('careers.update', $career->career_id) }}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}
                                 <div class="form-group">
                                     <label for="title">Title</label>
                                     <div class="controls">
-                                    <input type="text" size="55" name="title" value="{{ $career->title }}" required>
+                                    <input type="text" size="55" name="title" value="{{ $career->title }}">
                                     </div>
-                                    <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description</label>
                                     <div class="controls">
-                                    <input type="text" size="55" name="description" value="{{ $career->description }}" required>
+                                    <input type="text" size="55" name="description" value="{{ $career->description }}">
                                     </div>
-                                    <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="careergroups">Groups</label>
                                     <div class="controls">
-                                    <select  name="careergroups" id="careergroups"  required>
+                                    <select  name="careergroups" id="careergroups">
                         
                                         <option value="">Choose 1 group</option>
                                         @foreach($careergroups as $key => $value)
@@ -129,7 +127,6 @@
                                     
                                     </select>
                                     </div>
-                                    <div class="help-block with-errors"></div>
                                     
                                 </div><br/>
                         

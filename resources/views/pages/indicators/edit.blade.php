@@ -87,6 +87,16 @@
                             <p class="text-muted">Please indicator the website.</p>
 
                             <hr>
+                            <!-- Error information for validation-->
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                            <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                            </ul>
+                            </div>
+                            @endif
                         
                          
                             <form id="checkboxForm" action="{{ route('indicators.update', $indicator->indicator_id) }}" method="POST">
@@ -94,13 +104,11 @@
                             {{ method_field('PATCH') }}
                                 <div class="form-group">
                                     <label for="indicator">Indicator</label>
-                                    <input type="text" size="5" class="form-control" value="{{$indicator->indicator}}" name="indicator" required>
-                                    <div class="help-block with-errors"></div>
+                                    <input type="text" size="5" class="form-control" value="{{$indicator->indicator}}" name="indicator">
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <input type="text" size="5" class="form-control" value="{{$indicator->description}}" name="description" required>
-                                    <div class="help-block with-errors"></div>
+                                    <input type="text" size="5" class="form-control" value="{{$indicator->description}}" name="description">
                                 </div>
                                 <div class="form-group">
                                     <div class="checkbox">

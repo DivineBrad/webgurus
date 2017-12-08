@@ -87,37 +87,46 @@
                             <p class="text-muted">Please indicator the website.</p>
 
                             <hr>
+
+                            <!-- Error information for validation-->
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                            <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                            </ul>
+                            </div>
+                            @endif
                         
                          
                             <form id="checkboxForm" action="/indicators" method="POST">
                                 <div class="form-group">
                                     <label for="indicator">Indicator</label>
-                                    <input type="text" size="5" class="form-control" name="indicator" required>
-                                    <div class="help-block with-errors"></div>
+                                    <input type="text" size="5" class="form-control" name="indicator" value="{{old('indicator')}}">
+                                    
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <input type="text" size="5" class="form-control" name="description" required>
-                                    <div class="help-block with-errors"></div>
+                                    <input type="text" size="5" class="form-control" name="description" value="{{old('description')}}">
+                                
                                 </div>
                                 <div class="form-group">
                                     <div class="checkbox">
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" name="areas[]" value="1" 
-                                            data-validation-minchecked-minchecked="1" data-validation-minchecked-message="Choose one"/> skills 
+                                            <input type="checkbox" name="areas[]" value="1" @if(is_array(old('areas')) && in_array(1, old('areas'))) checked @endif/> skills 
                                         </label>
                                     
                                     
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" name="areas[]" value="2"/> trait
+                                            <input type="checkbox" name="areas[]" value="2" @if(is_array(old('areas')) && in_array(2, old('areas'))) checked @endif/> trait
                                         </label>
                                     
                                    
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" name="areas[]" value="3"/> passion
+                                            <input type="checkbox" name="areas[]" value="3" @if(is_array(old('areas')) && in_array(3, old('areas'))) checked @endif/> passion
                                         </label>
 
-                                        <div class="help-block"></div>
                                     </div>
                                 
                                 </div><br/>
