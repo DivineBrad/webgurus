@@ -88,7 +88,7 @@
                             <tr><td>{{$value->career_id}}</td><td>{{$value->title}}</td><td>{{$value->description}}</td><td>{{$value->group_title}}</td>
                             <td><form action="{{ route('careers.show', $value->career_id) }}" method="get"><input type="submit" value="detail" ></form></td>
                             <td><form action="{{ route('careers.edit', $value->career_id) }}" method="get"><input type="submit" value="edit" ></form></td>
-                            <td><form action="{{ route('careers.show', $value->career_id) }}" method="get"><input type="submit" value="Add Indicators" ></form></td>
+                            <td><form action="careers/link/indicators/{{$value->career_id}}" method="get"><input type="submit" value="Add Indicators" ></form></td>
                             <td><form action="careers/{{$value->career_id}}" method="post">
                             <input type="hidden" name="_method" value="DELETE" >
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">

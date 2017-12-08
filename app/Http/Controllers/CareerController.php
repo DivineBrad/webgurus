@@ -123,13 +123,15 @@ class CareerController extends Controller
         return redirect()->route('careers.index');
     }
 
-    public function addIndicators(Request $request, $id)
+    public function addIndicators(Request $request)
     {
-        $career = Career::find($id);
-        $career->carrer = $request->input('career');
-        $career->indicators = $request->input('indicators');
-        $career->save();
-        //return redirect()->route('careers.index');
+        $careerindicators = new CareerIndicators();
+        $careerindicators->career_id = $request->input('career_id');
+        $careerindicators->indicator_id = $request->input('indicator_id');
+        $careerindicators->created_at = '';
+        $careerindicators->updated_at = '';
+        $careerindicators->save();
+        return redirect()->route('careers.index');
     }
 
     /**

@@ -106,7 +106,7 @@
                                 <div class="form-group">
                                     <label for="career">Career</label>
                                     <div class="controls">
-                                    <input type="text" size="55" name="career" value="{{ $career->career }}" required>
+                                    <input type="text" size="55" name="career" value="{{ $career->title }}" required>
                                     </div>
                                     <div class="help-block with-errors"></div>
                                 </div>
