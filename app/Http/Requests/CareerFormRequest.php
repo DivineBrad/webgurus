@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class IndicatorBlogPost extends FormRequest
+class CareerFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,9 @@ class IndicatorBlogPost extends FormRequest
     public function rules()
     {
         return [
-            'indicator' => 'required',
+            'title' => 'required',
             'description' => 'required',
-            'areas' => 'required',
+            'careergroups' => 'required',
         ];
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use DB;
 use Illuminate\Http\Request;
-use App\Http\Requests\CareerBlogPost;
+use App\Http\Requests\CareerFormRequest;
 use App\Career;
 
 class CareerController extends Controller
@@ -47,7 +47,7 @@ class CareerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CareerBlogPost $request)
+    public function store(CareerFormRequest $request)
     {
         $career = new Career();
         $career->title = $request->input('title');
@@ -113,7 +113,7 @@ class CareerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CareerBlogPost $request, $id)
+    public function update(CareerFormRequest $request, $id)
     {
         $career = Career::find($id);
         $career->title = $request->input('title');

@@ -7,7 +7,7 @@
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Career Insights | Add Indicators</title>
+    <title>Career Insights | Linkin Careers</title>
 
     <meta name="keywords" content="">
 
