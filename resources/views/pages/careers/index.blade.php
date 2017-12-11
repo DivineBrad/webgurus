@@ -21,34 +21,34 @@
       
 
     <!-- Css animations  -->
-    <link href="css/animate.css" rel="stylesheet">
-
-    <!-- Theme stylesheet, if possible do not edit this stylesheet -->
-    <link href="css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
-
-    <!-- Custom stylesheet - for your changes -->
-    <link href="css/custom.css" rel="stylesheet">
-
-    <!-- Responsivity for older IE -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-    <!-- Favicon and apple touch icons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png" />
-    <!-- owl carousel css -->
-
-    <link href="css/owl.carousel.css" rel="stylesheet">
-    <link href="css/owl.theme.css" rel="stylesheet">
+    <link href="<?php public_path() ?>/css/animate.css" rel="stylesheet">
+    
+        <!-- Theme stylesheet, if possible do not edit this stylesheet -->
+        <link href="<?php public_path() ?>/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+    
+        <!-- Custom stylesheet - for your changes -->
+        <link href="<?php public_path() ?>/css/custom.css" rel="stylesheet">
+    
+        <!-- Responsivity for older IE -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+        <!-- Favicon and apple touch icons-->
+        <link rel="shortcut icon" href="<?php public_path() ?>/img/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="<?php public_path() ?>/img/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="<?php public_path() ?>/img/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="<?php public_path() ?>/img/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="<?php public_path() ?>/img/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="<?php public_path() ?>/img/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="<?php public_path() ?>/img/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="<?php public_path() ?>/img/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="<?php public_path() ?>/img/apple-touch-icon-152x152.png" />
+        <!-- owl carousel css -->
+    
+        <link href="<?php public_path() ?>/css/owl.carousel.css" rel="stylesheet">
+        <link href="<?php public_path() ?>/css/owl.theme.css" rel="stylesheet">
 </head>
 
 <body>
@@ -83,12 +83,12 @@
                             <h5 class="text-uppercase">Career List</h5>
                             <div id="career-list">
                             <table class="table">
-                            <tr><th>ID</th><th>TITLE</th><th>DESCRIPTION</th><th>GROUP TITLE</th><th>SHOW</th><th>EDIT</th><th>DELETE</th><th>Link Indicators</th></tr>
+                            <tr><th>ID</th><th>TITLE</th><th>DESCRIPTION</th><th>GROUP TITLE</th><th>SHOW</th><th>EDIT</th><th>Link Indicators</th><th>DELETE</th></tr>
                             @foreach($careers as $key => $value)
                             <tr><td>{{$value->career_id}}</td><td>{{$value->title}}</td><td>{{$value->description}}</td><td>{{$value->group_title}}</td>
-                            <td><a href="{{ route('careers.show', $value->career_id) }}"><input type="submit" value="detail" ></a></td>
-                            <td><a href="{{ route('careers.edit', $value->career_id) }}"><input type="submit" value="edit" ></a></td>
-                            <td><a href="{{ route('careers.show', $value->career_id) }}"><input type="submit" value="Add Indicators" ></a></td>
+                            <td><form action="{{ route('careers.show', $value->career_id) }}" method="get"><input type="submit" value="detail" ></form></td>
+                            <td><form action="{{ route('careers.edit', $value->career_id) }}" method="get"><input type="submit" value="edit" ></form></td>
+                            <td><form action="careers/link/indicators/{{$value->career_id}}" method="get"><input type="submit" value="Add Indicators" ></form></td>
                             <td><form action="careers/{{$value->career_id}}" method="post">
                             <input type="hidden" name="_method" value="DELETE" >
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -128,11 +128,12 @@
 
 
 
-    <script src="/js/jquery.cookie.js"></script>
-    <script src="/js/waypoints.min.js"></script>
-    <script src="/js/jquery.counterup.min.js"></script>
-    <script src="/js/jquery.parallax-1.1.3.js"></script>
-    <script src="/js/front.js"></script>
+
+    <script src="<?php resource_path()?>/js/jquery.cookie.js"></script>
+    <script src="<?php resource_path()?>/js/waypoints.min.js"></script>
+    <script src="<?php resource_path()?>/js/jquery.counterup.min.js"></script>
+    <script src="<?php resource_path()?>/js/jquery.parallax-1.1.3.js"></script>
+    <script src="<?php resource_path()?>/js/front.js"></script>
 
     
 

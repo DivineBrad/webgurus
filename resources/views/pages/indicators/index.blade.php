@@ -18,13 +18,13 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
     <!-- Css animations  -->
-    <link href="<?php public_path() ?>css/animate.css" rel="stylesheet">
+    <link href="<?php public_path() ?>/css/animate.css" rel="stylesheet">
 
     <!-- Theme stylesheet, if possible do not edit this stylesheet -->
-    <link href="<?php public_path() ?>css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+    <link href="<?php public_path() ?>/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
 
     <!-- Custom stylesheet - for your changes -->
-    <link href="<?php public_path() ?>css/custom.css" rel="stylesheet">
+    <link href="<?php public_path() ?>/css/custom.css" rel="stylesheet">
 
     <!-- Responsivity for older IE -->
     <!--[if lt IE 9]>
@@ -33,15 +33,15 @@
 <![endif]-->
 
     <!-- Favicon and apple touch icons-->
-    <link rel="shortcut icon" href="<?php public_path() ?>img/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="<?php public_path() ?>img/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="<?php public_path() ?>img/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="<?php public_path() ?>img/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="<?php public_path() ?>img/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="<?php public_path() ?>img/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="<?php public_path() ?>img/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="<?php public_path() ?>img/apple-touch-icon-152x152.png" />
+    <link rel="shortcut icon" href="<?php public_path() ?>/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="<?php public_path() ?>/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php public_path() ?>/img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php public_path() ?>/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php public_path() ?>/img/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php public_path() ?>/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php public_path() ?>/img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php public_path() ?>/img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php public_path() ?>/img/apple-touch-icon-152x152.png" />
     
 </head>
 
@@ -80,8 +80,8 @@
             <tr><th>ID</th><th>INDICATOR</th><th>DESCRIPTION</th><th>TYPE</th><th>SHOW</th><th>EDIT</th><th>DELETE</th></tr>
             @foreach($indicators as $key => $value)
             <tr><td>{{$value->indicator_id}}</td><td>{{$value->indicator}}</td><td>{{$value->description}}</td><td>{{$value->type}}</td>
-            <td><a href="{{ route('indicators.show', $value->indicator_id) }}"><input type="submit" value="detail" ></a></td>
-            <td><a href="{{ route('indicators.edit', $value->indicator_id) }}"><input type="submit" value="edit" ></a></td>
+            <td><form action="{{ route('indicators.show', $value->indicator_id) }}" method="get"><input type="submit" value="detail" ></form></td>
+            <td><form action="{{ route('indicators.edit', $value->indicator_id) }}" method="get"><input type="submit" value="edit" ></form></td>
             <td><form action="indicators/{{$value->indicator_id}}" method="post">
             <input type="hidden" name="_method" value="DELETE" >
             <input type="hidden" name="_token" value="{{ csrf_token() }}">

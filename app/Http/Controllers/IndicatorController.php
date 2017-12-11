@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Indicator;
+use App\Http\Requests\IndicatorFormRequest;
 use DB;
 
 class IndicatorController extends Controller
@@ -39,7 +40,7 @@ class IndicatorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(IndicatorFormRequest $request)
     {
         $indicator = new Indicator();
         $indicator->indicator = $request->input('indicator');
@@ -83,7 +84,7 @@ class IndicatorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(IndicatorFormRequest $request, $id)
     {
         $indicator = Indicator::find($id);
         $indicator->indicator = $request->input('indicator');

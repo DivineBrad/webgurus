@@ -7,7 +7,7 @@
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Career Insights | Add Indicators</title>
+    <title>Career Insights | Update Career</title>
 
     <meta name="keywords" content="">
 
@@ -20,35 +20,35 @@
     
       
 
-    <!-- Css animations  -->
-    <link href="css/animate.css" rel="stylesheet">
-
-    <!-- Theme stylesheet, if possible do not edit this stylesheet -->
-    <link href="css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
-
-    <!-- Custom stylesheet - for your changes -->
-    <link href="css/custom.css" rel="stylesheet">
-
-    <!-- Responsivity for older IE -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-    <!-- Favicon and apple touch icons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png" />
-    <!-- owl carousel css -->
-
-    <link href="css/owl.carousel.css" rel="stylesheet">
-    <link href="css/owl.theme.css" rel="stylesheet">
+        <!-- Css animations  -->
+        <link href="<?php public_path() ?>/css/animate.css" rel="stylesheet">
+        
+            <!-- Theme stylesheet, if possible do not edit this stylesheet -->
+            <link href="<?php public_path() ?>/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+        
+            <!-- Custom stylesheet - for your changes -->
+            <link href="<?php public_path() ?>/css/custom.css" rel="stylesheet">
+        
+            <!-- Responsivity for older IE -->
+            <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        
+            <!-- Favicon and apple touch icons-->
+            <link rel="shortcut icon" href="<?php public_path() ?>/img/favicon.ico" type="image/x-icon" />
+            <link rel="apple-touch-icon" href="<?php public_path() ?>/img/apple-touch-icon.png" />
+            <link rel="apple-touch-icon" sizes="57x57" href="<?php public_path() ?>/img/apple-touch-icon-57x57.png" />
+            <link rel="apple-touch-icon" sizes="72x72" href="<?php public_path() ?>/img/apple-touch-icon-72x72.png" />
+            <link rel="apple-touch-icon" sizes="76x76" href="<?php public_path() ?>/img/apple-touch-icon-76x76.png" />
+            <link rel="apple-touch-icon" sizes="114x114" href="<?php public_path() ?>/img/apple-touch-icon-114x114.png" />
+            <link rel="apple-touch-icon" sizes="120x120" href="<?php public_path() ?>/img/apple-touch-icon-120x120.png" />
+            <link rel="apple-touch-icon" sizes="144x144" href="<?php public_path() ?>/img/apple-touch-icon-144x144.png" />
+            <link rel="apple-touch-icon" sizes="152x152" href="<?php public_path() ?>/img/apple-touch-icon-152x152.png" />
+            <!-- owl carousel css -->
+        
+            <link href="<?php public_path() ?>/css/owl.carousel.css" rel="stylesheet">
+            <link href="<?php public_path() ?>/css/owl.theme.css" rel="stylesheet">
 </head>
 
 <body>
@@ -84,43 +84,41 @@
                             <h2 class="text-uppercase">Career</h2>
 
                             <p class="lead">Career Here.</p>
-                            <p class="text-muted">Please create Career.</p>
+                            <p class="text-muted">Please Edit Career.</p>
 
                             <hr>
+                            <!-- Error information for validation-->
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                            <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                            </ul>
+                            </div>
+                            @endif
                         
                          
-                          <!--   @if(isset($career))
-    {{ Form::model($career, ['route' => ['careers.edit', $career->career_id], 'method' => 'patch']) }}
-@else
-    {{ Form::open(['route' => 'careers.edit']) }}
-@endif
-
-    {{ Form::text('title', Input::old('title')) }}
-    {{ Form::text('description', Input::old('description')) }}
-    {{ Form::select('careergroups', array('1' => 'IT', '2' => 'Education'),'1')}}
-    {{ Form::submit('Submit', ['name' => 'submit']) }}
-{{ Form::close() }} -->
-                            <form action="{{ route('careers.update', $career->career_id) }}" method="POST" data-toggle="validator">
+                          
+                            <form action="{{ route('careers.update', $career->career_id) }}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}
                                 <div class="form-group">
                                     <label for="title">Title</label>
                                     <div class="controls">
-                                    <input type="text" size="55" name="title" value="{{ $career->title }}" required>
+                                    <input type="text" size="55" name="title" value="{{ $career->title }}">
                                     </div>
-                                    <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description</label>
                                     <div class="controls">
-                                    <input type="text" size="55" name="description" value="{{ $career->description }}" required>
+                                    <input type="text" size="55" name="description" value="{{ $career->description }}">
                                     </div>
-                                    <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="careergroups">Groups</label>
                                     <div class="controls">
-                                    <select  name="careergroups" id="careergroups"  required>
+                                    <select  name="careergroups" id="careergroups">
                         
                                         <option value="">Choose 1 group</option>
                                         @foreach($careergroups as $key => $value)
@@ -129,7 +127,6 @@
                                     
                                     </select>
                                     </div>
-                                    <div class="help-block with-errors"></div>
                                     
                                 </div><br/>
                         
@@ -166,11 +163,11 @@
 
 
 
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/jquery.parallax-1.1.3.js"></script>
-    <script src="js/front.js"></script>
+    <script src="<?php resource_path()?>/js/jquery.cookie.js"></script>
+    <script src="<?php resource_path()?>/js/waypoints.min.js"></script>
+    <script src="<?php resource_path()?>/js/jquery.counterup.min.js"></script>
+    <script src="<?php resource_path()?>/js/jquery.parallax-1.1.3.js"></script>
+    <script src="<?php resource_path()?>/js/front.js"></script>
 
     
 

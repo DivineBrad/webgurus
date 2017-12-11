@@ -108,7 +108,7 @@
                     <!-- Slide Text Layer -->
                     <div class="slide-text slide_style_center">
                         <h1 data-animation="animated flipInX">Find the best career for YOU!</h1>
-                        <p data-animation="animated lightSpeedIn">We anlyze your skills, traits and passions.</p>
+                        <p data-animation="animated lightSpeedIn">We analyze your skills, traits and passions.</p>
                         <a href="/insights" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">Get Insights</a>
                         
                     </div>
