@@ -12,9 +12,9 @@ var insightsApp = {
          traitsList:  {data:[]}, 
          passionList : {data:[]},
             
-         getIndicators:  function (callback){
-            
-            $.getJSON("/api/indicators/trait", function(data){
+         getIndicators:  function (callback,indicatorsApi){
+            //"/api/indicators"
+            $.getJSON(indicatorsApi, function(data){
             
             insightsApp.indicators= data.data;
             callback(insightsApp.indicators);
@@ -55,17 +55,30 @@ var insightsApp = {
                 insightsApp.displayInstructions();
              if ($("#indicator-input").val().length>0){
                  // Switch cases depending on where in the process the person is 
-                 // General example for now
-                
-                
-                 insightsApp.skillsList.data.push($("#indicator-input").val());
-                 $("#skills-txt").text($("#skills-txt").text()+$("#indicator-input").val()+", ");
-                 $("#indicator-input").val("");
-                 insightsApp.passionList.data.push("teaching");
-                 insightsApp.traitsList.data.push("extrovert");
-                 if (insightsApp.status>1){
-                     
-                     insightsApp.sendList(insightsApp.traitsList,
+                 switch(insightsApp.status){
+                    case 1: // Case for skills
+                    
+                        insightsApp.skillsList.data.push($("#indicator-input").val());
+                        $("#skills-txt").text($("#skills-txt").text()+$("#indicator-input").val()+", ");
+                        $("#indicator-input").val("");
+                    break;
+                    case 2: // Case for traits
+                        insightsApp.traitsList.data.push($("#indicator-input").val());
+                        $("#traits-txt").text($("#traits-txt").text()+$("#indicator-input").val()+", ");
+                        $("#indicator-input").val("");
+                    break;
+                    case 3: // Case for passion
+                        insightsApp.passionList.data.push($("#indicator-input").val());
+                        $("#passions-txt").text($("#passions-txt").text()+$("#indicator-input").val()+", ");
+                        $("#indicator-input").val("");
+                    break;
+
+                 }
+                //Testing
+                // insightsApp.passionList.data.push("teaching");
+                // insightsApp.traitsList.data.push("extrovert");
+                 if (insightsApp.status==4){
+                    insightsApp.sendList(insightsApp.traitsList,
                     insightsApp.skillsList,insightsApp.passionList);
                  }
                  
@@ -75,55 +88,83 @@ var insightsApp = {
     },
     skipStep : function () {
     $("btn-additional").on('click', function(){
-        insightsApp.status++;
+        insightsApp.updateStatus++;
     });
 
     },
-    updateStatus : function() {
-        if (insightsApp.status>0){
-            insightsApp.status++;
-        }
-        else if (insightsApp.status==0){
-            insightsApp.status=1;
-          
-        }
+    updateStatus : function(newStatus) {
+        // check if if a new status is passed
+        
+        if (newStatus== null){
+            // Check status and conditions to change status 
+            switch (insightsApp.status){
+                case 0:
+                insightsApp.status=1;
+                break;
+                case 1:
+                if (insightsApp.skillsList.data.length==5){
+                 insightsApp.status=2;
+                }                            
+                break;
+                case 2:
+                if (insightsApp.traitsList.data.length==5){
+                    insightsApp.status=3;
+                   }
+                break;
+                case 3:
+                if (insightsApp.passionList.data.length==2){
+                    insightsApp.status=4;
+                   }
+                break;
+           } 
+       }
+
+            else {
+                insightApp.status=newStatus;
+            } 
+
+       
         
     },
     
     displayInstructions : function (){
-        // Make Secondary button and input field hidden iniially
-        $("#indicator-input").hide();
-        $("#btn-additional").hide();
-
-
+        
         switch (insightsApp.status){
             case 0:
+            // Make Secondary button and input field hidden iniially
+            $("#indicator-input").hide();
+            $("#btn-additional").hide();
+
             var  instructions ="In order to get insights we need know about you. Press start to begin";
             $("#instructions").html(instructions);
             $("#btn-indicator").html("Start");
             break;
             case 1:
              var  instructions ="Choose top 5 skills you may have";
-            $("#instructions").html(instructions);
-            
-            $("#btn-indicator").html("Add Skills");
-            $("#indicator-label").html("Indicator");
-            
-            if (insightsApp.skillsList.data.length<1){
+                      
+            if (insightsApp.skillsList.data.length==0){
+                $("#instructions").html(instructions);
+                
+                $("#btn-indicator").html("Add Skills");
+                $("#indicator-label").html("Indicator");
                 $("#indicator-input").fadeIn(1000, function(){});
             }
           
             
             break;
             case 2:
+            if (insightsApp.traitsList.data.length==0){
             var  instructions ="Choose top 5 traits which best describe you";
             $("#instructions").html(instructions);
             $("#btn-indicator").html("Add");
+            }
             break;
             case 3:
+            if (insightsApp.skillsList.data.length==0){
             var  instructions ="Choose one or two things which you are most passionate about";
             $("#instructions").html(instructions);
             $("#btn-indicator").html("Add");
+            }
             break;
             case 4:
             var  instructions ="If you are satisfied with your choices";
@@ -163,9 +204,10 @@ var insightsApp = {
          }
      });
     },
+    
     getInsights : function (){
      $("#get-insights").on('click', function(){
-         this.sendList();
+         insightsApp.sendList();
          //alert("working");
              });
     },
@@ -177,11 +219,13 @@ var insightsApp = {
               form.submit();
     
      }
- }
+ } // End of Insights App Object
+ 
+ // Calling methods from Insights App object 
+ 
  insightsApp.getIndicators(function(indicators){
  insightsApp.showList(indicators,"indicator-list");
-     
-     });
+     },"/api/indicators");
      insightsApp.displayInstructions();
      insightsApp.actionIndicator();
     insightsApp.getInsights();
@@ -197,6 +241,7 @@ var insightsApp = {
      }
      }
      };
+     //call easy Autocomplete
      $("#indicator-input").easyAutocomplete(options);
 
    

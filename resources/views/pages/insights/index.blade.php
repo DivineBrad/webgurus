@@ -119,7 +119,7 @@
                             <form action="#" >
                                 <div class="form-group">
                                 <label for="skills-txt">Skills</label>
-                                <textarea class="form-control" id="skills-txt" rows="3"></textarea>
+                                <textarea class="form-control" id="skills-txt" rows="3" ></textarea>
                                 </div>
                                 <div class="form-group">
                                 <label for="traits-txt">Traits</label>
