@@ -18,6 +18,10 @@ class CreateSiteTables extends Migration
             $table->increments('career_id');
             $table->string('title');
             $table->string('description');
+            $table->decimal('avg_sal_jnr');
+            $table->decimal('avg_sal_snr');            
+            $table->integer('unemployment_rate');
+            $table->string('job_satisfaction');            
             $table->integer('group_id')->unsigned();
             $table->timestamps();
         });

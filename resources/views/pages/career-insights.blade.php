@@ -79,21 +79,19 @@
         <div id="content">
             <div class="container" ng-app="myApp" ng-controller="career-insights-controller">
 
-                
+                    <div class="row">
                          <h5 class="text-uppercase">Career List</h5>
-                         <div class="row">
-                         <p>
-                         Search Career: <input type="text" ng-model="searchText.title">
-                         <input type="button" id="compare" class="btn btn-success" value="Compare Careers" disabled />
-                         </p>
                          
-                         </div>
-                            <div id="career-list">
+                         Search Career: <input type="text" ng-model="searchText.title">
+                         <input type="button" id="compare" class="btn btn-success pull-right" value="Compare Careers" disabled  />
+                         
+                    </div>
+                            <div id="career-list" class="ng-cloak">
                             <table class="table">
-                            <tr><th>id</th><th>TITLE</th><th>DESCRIPTION</th><th></th></tr>
+                            <tr><th>TITLE</th><th>DESCRIPTION</th><th></th></tr>
                             
                             <tr ng-repeat="career in careers | filter:searchText | startFrom:currentPage*pageSize | limitTo:pageSize">
-                            <td>@{{career.career_id}}</td>
+                            <!-- <td>@{{career.career_id}}</td> -->
                             <td>@{{career.title}}</td>
                             <td>@{{career.description}}</td>
                             <td><input type="checkbox" ng-value="career" ng-model="career.selected" /></td>
@@ -106,7 +104,7 @@
                               Previous
                             </button>
                              @{{currentPage+1}}/@{{numberOfPages()}}
-                            <button ng-disabled="currentPage >= careers.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+                            <button ng-disabled="currentPage >= filteredItems.length/pageSize - 1" ng-click="currentPage=currentPage+1">
                              Next
                             </button>
                             </div>

@@ -3,17 +3,25 @@
         <h3 class="modal-title" id="modal-title">Career Comparison</h3>
     </div>
     <div class="modal-body" id="modal-body">
-        <table class="table">
+        <table class="table" ng-cloak="">
             <thead>
                 <tr><th>{{career1.title}}</th><th>{{career2.title}}</th></tr>
             </thead>
             <tbody>
-                <tr><td>Description:{{career1.description}}</td><td>Description:{{career2.description}}</td></tr>
+                <td colspan="2">Description</td>
+                <tr><td>{{career1.description}}</td><td>{{career2.description}}</td></tr>
+                <td colspan="2">Average Salary</td>                
+                <tr><td> Junior:{{career1.avg_sal_jnr | currency}}</td><td>Junior:{{career2.avg_sal_jnr | currency}}</td></tr>
+                <tr><td>Senior:{{career1.avg_sal_snr | currency}}</td><td>Senior:{{career2.avg_sal_snr | currency}}</td></tr>
+                <td colspan="2">Unemployment Rate</td>                
+                <tr><td>{{career1.unemployment_rate}}%</td><td>{{career2.unemployment_rate}}%</td></tr>                
+                <td colspan="2">Job Satisfaction</td>                
+                <tr><td>{{career1.job_satisfaction}}</td><td>{{career2.job_satisfaction}}</td></tr>
+                
             </tbody>
             
         </table>
     </div>
     <div class="modal-footer">
         <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
     </div>

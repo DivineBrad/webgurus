@@ -11,12 +11,15 @@ app.controller('career-insights-controller', ['$scope','$http', '$uibModal', fun
         console.log("Error: "+response.statusText);
     });
 
+    $scope.$watch(function () {
+      $scope.filteredItems = $scope.$eval("careers | filter:searchText");
+    });
     //adding Pagination
     $scope.currentPage = 0;
     $scope.pageSize = 10;
     
     $scope.numberOfPages=function(){
-        return Math.ceil($scope.careers.length/$scope.pageSize);                
+        return Math.ceil($scope.filteredItems.length/$scope.pageSize);                
     }
    
     //pagination code ended
@@ -37,7 +40,9 @@ app.controller('career-insights-controller', ['$scope','$http', '$uibModal', fun
             $('#compare').prop('disabled', true);  
           }
         console.log($scope.selectedItems);
-      }, true);  
+      }, true); 
+      
+      
       
     $scope.openCompareModal=function(c1,c2){
           var modalInstance=$uibModal.open({
