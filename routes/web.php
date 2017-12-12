@@ -76,3 +76,7 @@ Route::resource('contact','ContactController');
 Route::resource('admin','AdminController');
 Route::resource('admin/login','AdminLoginController');
 //Route::resource('admin/authenticate','AdminAuthenticateController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
