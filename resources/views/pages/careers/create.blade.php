@@ -100,6 +100,7 @@
                         
                          
                             <form action="/careers" method="POST">
+                            {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="title">Title</label>
                                     <div class="controls">
@@ -113,6 +114,35 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                <div class="row">
+                                    <label for="juniorSalary" class="col-md-3 col-md-offset-2">Junior Salary</label><label for="seniorSalary" class="col-md-3 col-md-offset-1">Senior Salary</label>
+                                    <div class="col-md-2 col-md-offset-2">
+                                    <input type="text" name="juniorSalary" value="{{ old('juniorSalary') }}">
+                                    </div>
+                                    <div class="col-md-2 col-md-offset-2">
+                                    <input type="text" name="seniorSalary" value="{{ old('seniorSalary') }}">
+                                    </div>  
+                                </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="unrate">Unemployment Rate</label>
+                                    <div class="controls">
+                                    <input type="text" size="55" name="unrate" value="{{ old('unrate') }}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="satisfaction">Job Satisfaction</label>
+                                    <div class="controls">
+                                    <select name="satisfaction" id="satisfaction">
+                                        <option value="">Choose Job Satisfaction</option>
+                                        <option value="Low" {{ (Input::old("satisfaction") == "Low" ? "selected":"") }}>Low</option>
+                                        <option value="Average" {{ (Input::old("satisfaction") == "Average" ? "selected":"") }}>Average</option>
+                                        <option value="High" {{ (Input::old("satisfaction") == "High" ? "selected":"") }}>High</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="careergroups">Groups</label>
                                     <div class="controls">
                                     <select  name="careergroups" id="careergroups">
@@ -123,11 +153,8 @@
                                         @endforeach
                                     
                                     </select>
-                                    </div>
-                                    
-                                </div><br/>
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        
+                                    </div>  
+                                </div>
                                 <div class="text-center">
                                     <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Submit</button>
                                 </div>

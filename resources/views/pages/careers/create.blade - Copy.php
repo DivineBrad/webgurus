@@ -7,7 +7,7 @@
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Career Insights | Update Career</title>
+    <title>Career Insights | Add Career</title>
 
     <meta name="keywords" content="">
 
@@ -20,35 +20,35 @@
     
       
 
-        <!-- Css animations  -->
-        <link href="<?php public_path() ?>/css/animate.css" rel="stylesheet">
-        
-            <!-- Theme stylesheet, if possible do not edit this stylesheet -->
-            <link href="<?php public_path() ?>/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
-        
-            <!-- Custom stylesheet - for your changes -->
-            <link href="<?php public_path() ?>/css/custom.css" rel="stylesheet">
-        
-            <!-- Responsivity for older IE -->
-            <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-        
-            <!-- Favicon and apple touch icons-->
-            <link rel="shortcut icon" href="<?php public_path() ?>/img/favicon.ico" type="image/x-icon" />
-            <link rel="apple-touch-icon" href="<?php public_path() ?>/img/apple-touch-icon.png" />
-            <link rel="apple-touch-icon" sizes="57x57" href="<?php public_path() ?>/img/apple-touch-icon-57x57.png" />
-            <link rel="apple-touch-icon" sizes="72x72" href="<?php public_path() ?>/img/apple-touch-icon-72x72.png" />
-            <link rel="apple-touch-icon" sizes="76x76" href="<?php public_path() ?>/img/apple-touch-icon-76x76.png" />
-            <link rel="apple-touch-icon" sizes="114x114" href="<?php public_path() ?>/img/apple-touch-icon-114x114.png" />
-            <link rel="apple-touch-icon" sizes="120x120" href="<?php public_path() ?>/img/apple-touch-icon-120x120.png" />
-            <link rel="apple-touch-icon" sizes="144x144" href="<?php public_path() ?>/img/apple-touch-icon-144x144.png" />
-            <link rel="apple-touch-icon" sizes="152x152" href="<?php public_path() ?>/img/apple-touch-icon-152x152.png" />
-            <!-- owl carousel css -->
-        
-            <link href="<?php public_path() ?>/css/owl.carousel.css" rel="stylesheet">
-            <link href="<?php public_path() ?>/css/owl.theme.css" rel="stylesheet">
+    <!-- Css animations  -->
+    <link href="<?php public_path() ?>/css/animate.css" rel="stylesheet">
+
+    <!-- Theme stylesheet, if possible do not edit this stylesheet -->
+    <link href="<?php public_path() ?>/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+    <!-- Custom stylesheet - for your changes -->
+    <link href="<?php public_path() ?>/css/custom.css" rel="stylesheet">
+
+    <!-- Responsivity for older IE -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+    <!-- Favicon and apple touch icons-->
+    <link rel="shortcut icon" href="<?php public_path() ?>/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="<?php public_path() ?>/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php public_path() ?>/img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php public_path() ?>/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php public_path() ?>/img/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php public_path() ?>/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php public_path() ?>/img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php public_path() ?>/img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php public_path() ?>/img/apple-touch-icon-152x152.png" />
+    <!-- owl carousel css -->
+
+    <link href="<?php public_path() ?>/css/owl.carousel.css" rel="stylesheet">
+    <link href="<?php public_path() ?>/css/owl.theme.css" rel="stylesheet">
 </head>
 
 <body>
@@ -62,13 +62,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>Edit Career</h1>
+                        <h1>Create Career</h1>
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
-                            <li><a href="index.html">Home</a>
+                            <li><a href="/">Home</a>
                             </li>
-                            <li>Edit Career</li>
+                            <li>Create Career</li>
                         </ul>
 
                     </div>
@@ -84,7 +84,7 @@
                             <h2 class="text-uppercase">Career</h2>
 
                             <p class="lead">Career Here.</p>
-                            <p class="text-muted">Please Edit Career.</p>
+                            <p class="text-muted">Please create Career.</p>
 
                             <hr>
                             <!-- Error information for validation-->
@@ -99,30 +99,26 @@
                             @endif
                         
                          
-                          
-                            <form action="{{ route('careers.update', $career->career_id) }}" method="POST">
-                            {{ csrf_field() }}
-                            {{ method_field('PATCH') }}
+                            <form action="/careers" method="POST">
                                 <div class="form-group">
                                     <label for="title">Title</label>
                                     <div class="controls">
-                                    <input type="text" size="55" name="title" value="{{ $career->title }}">
+                                    <input type="text" size="55" name="title" value="{{old('title')}}">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description</label>
                                     <div class="controls">
-                                    <input type="text" size="55" name="description" value="{{ $career->description }}">
+                                    <input type="text" size="55" name="description" value="{{old('description')}}">
                                     </div>
                                 </div>
-                                <div class="form-group">
                                 <div class="row">
                                     <label for="juniorSalary" class="col-md-3 col-md-offset-2">Junior Salary</label><label for="seniorSalary" class="col-md-3 col-md-offset-1">Senior Salary</label>
                                     <div class="col-md-2 col-md-offset-2">
-                                    <input type="text" name="juniorSalary" value="{{ $career->avg_sal_jnr }}">
+                                    <input type="text" name="juniorSalary" value="{{ old('juniorSalary') }}">
                                     </div>
                                     <div class="col-md-2 col-md-offset-2">
-                                    <input type="text" name="seniorSalary" value="{{ $career->avg_sal_snr }}">
+                                    <input type="text" name="seniorSalary" value="{{ old('seniorSalary') }}">
                                     </div>  
                                 </div>
                                 </div>
@@ -130,7 +126,7 @@
                                 <div class="form-group">
                                     <label for="unrate">Unemployment Rate</label>
                                     <div class="controls">
-                                    <input type="text" size="55" name="unrate" value="{{ $career->unemployment_rate }}">
+                                    <input type="text" size="10" name="unrate" value="{{ old('unrate') }}">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -138,9 +134,9 @@
                                     <div class="controls">
                                     <select name="satisfaction">
                                         <option value="">Choose Job Satisfaction</option>
-                                        <option value="Low" @if("Low" == $career->job_satisfaction) selected @endif>Low</option>
-                                        <option value="Average" @if("Average" == $career->job_satisfaction) selected @endif>Average</option>
-                                        <option value="High" @if("High" == $career->job_satisfaction) selected @endif>High</option>
+                                        <option value="Low" {{ (Input::old("satisfaction") == "Low" ? "selected":"") }}>Low</option>
+                                        <option value="Average" {{ (Input::old("satisfaction") == "Average" ? "selected":"") }}>Average</option>
+                                        <option value="High" {{ (Input::old("satisfaction") == "High" ? "selected":"") }}>High</option>
                                     </select>
                                     </div>
                                 </div>
@@ -151,13 +147,14 @@
                         
                                         <option value="">Choose 1 group</option>
                                         @foreach($careergroups as $key => $value)
-                                        <option value="{{$value->group_id}}" @if($value->group_id == $career->group_id) selected @endif>{{$value->group_title}}</option>
+                                        <option value="{{$value->group_id}}" {{ (Input::old("careergroups") == $value->group_id ? "selected":"") }}>{{$value->group_title}}</option>
                                         @endforeach
                                     
                                     </select>
                                     </div>
                                     
                                 </div><br/>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         
                                 <div class="text-center">
                                     <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Submit</button>
@@ -173,6 +170,10 @@
         </div>
         <!-- /#content -->   
 
+
+
+        <!-- *** FOOTER ***
+_________________________________________________________ -->
         @include('includes.footer')
        
 
@@ -199,7 +200,7 @@
     <script src="<?php resource_path()?>/js/front.js"></script>
 
     
-
+   
 
 
 </body>

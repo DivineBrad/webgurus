@@ -52,6 +52,10 @@ class CareerController extends Controller
         $career = new Career();
         $career->title = $request->input('title');
         $career->description = $request->input('description');
+        $career->avg_sal_jnr=(double)($request->input('juniorSalary'));
+        $career->avg_sal_snr=(double)($request->input('seniorSalary'));
+        $career->unemployment_rate=(double)($request->input('unrate'));
+        $career->job_satisfaction = $request->input('satisfaction');
         $career->group_id=(int)($request->input('careergroups'));
         $career->save();
         return redirect()->route('careers.index');
@@ -118,7 +122,12 @@ class CareerController extends Controller
         $career = Career::find($id);
         $career->title = $request->input('title');
         $career->description = $request->input('description');
+        $career->avg_sal_jnr=(double)($request->input('juniorSalary'));
+        $career->avg_sal_snr=(double)($request->input('seniorSalary'));
+        $career->unemployment_rate=(double)($request->input('unrate'));
+        $career->job_satisfaction = $request->input('satisfaction');
         $career->group_id=(int)($request->input('careergroups'));
+        
         $career->save();
         return redirect()->route('careers.index');
     }

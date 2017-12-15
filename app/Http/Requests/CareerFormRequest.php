@@ -26,6 +26,10 @@ class CareerFormRequest extends FormRequest
         return [
             'title' => 'required',
             'description' => 'required',
+            'juniorSalary' => 'required|numeric|min:0',
+            'seniorSalary' => 'required|numeric|min:0',
+            'unrate' => 'required|numeric|min:0|max:100',
+            'satisfaction'=>'required',
             'careergroups' => 'required',
         ];
     }

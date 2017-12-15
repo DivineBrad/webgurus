@@ -83,14 +83,18 @@
                             <h5 class="text-uppercase">Career Detail List</h5>
                             <div id="career-list">
                             <table class="table">
-                            <tr><th>ID</th><th>TITLE</th><th>DESCRIPTION</th><th>GROUP TITLE</th><th>GROUP ID</th></tr>
-                            <tr><td>{{$career->career_id}}</td><td>{{$career->title}}</td><td>{{$career->description}}</td>
+                            <tr><th>ID</th><th>TITLE</th><th>JUNIOR AVERAGE SALARY</th><th>SENIOR AVERAGE SALARY</th><th>UNEMPLOYMENT RATE</th><th>JOB SATISFACTION</th><th>GROUP ID</th><th>GROUP DESCRIPTION</th><th>GROUP TITLE</th></tr>
+                            <tr><td>{{$career->career_id}}</td><td>{{$career->title}}</td><td>{{$career->avg_sal_jnr}}</td><td>{{$career->avg_sal_snr}}</td><td>{{$career->unemployment_rate}}%</td>
+                            <td>{{$career->job_satisfaction}}</td>
+                            <td>{{$career->group_id}}</td>
+                            <td>{{$career->description}}</td>
                             @foreach($careergroups as $key => $value)
                             @if($career->group_id == $value->group_id)
                             <td>{{$value->group_title}}</td>
+                            <td></td>
                             @endif
                             @endforeach
-                            <td>{{$career->group_id}}</td></tr>
+                            </tr>
                             </table>
                             </div>
 
