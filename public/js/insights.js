@@ -7,48 +7,73 @@ var insightsApp = {
          instructions: "",
          description : "",
          status : 0,
-         catChoices: 0,
+         autoApi : "",
          skillsList : {data:[]}, 
          traitsList:  {data:[]}, 
          passionList : {data:[]},
             
-         getIndicators:  function (callback,indicatorsApi){
+         getIndicators:  function (callback1,callback2,indicatorsApi){
             //"/api/indicators"
             $.getJSON(indicatorsApi, function(data){
-            
+            //console.log(data.data);
             insightsApp.indicators= data.data;
-            callback(insightsApp.indicators);
-            
+            callback1(insightsApp.indicators);
+            callback2(insightsApp.indicators);
             }) },
         
 
        showList : function (list,parentId){
             
          var listParent = $("#"+parentId);
+        // listParent.empty();
          var items=[];
-         $.each(list, function(index, value){
-             $.each(value,function(key,val) {
-             if (key=="indicator"){
-                 items.push(val);
-             }
-             }) ;
-         });
         
-         $.each(items, function (index,value){
-            // document.write(value);
-             $("<li>"+value+"</li>").appendTo(listParent);
-     });
+        for (var i=0; i<list.length;i++){
+            if(list[i].indicator!=null){
+                items.push(list[i].indicator);
+            }           
+        }
+        for (var i=0; i<items.length;i++){
+            
+            $("<li>"+items[i]+"</li>").appendTo(listParent);
+                       
+        }
+
+        
+     // add an onclick event to each list item...to complete
          $(listParent).on('click','li', function(){
             
          });
-      },  
-   
+      }, 
+      searchList : function (list,name){
+         // console.log(name)
+          var indicator=null;
+          for (var i=0;i<list.length;i++){
+            if(list[i].indicator==name){
+               indicator=list[i];
+            }
+          }
+                  
+        return indicator;
+      },
+      getDescription : function (list){
+        
+        $("#indicator-input").on('click', function (){
+            if ($("#indicator-input").val().length>0){
+                var name=$("#indicator-input").val();
+                var indicator =insightsApp.searchList(list,name);
+                if (indicator!=null){
+                    console.log(indicator.description);
+                }
+                
+            }
+          
+        });
+      },
+      
       
       actionIndicator : function (){
         
-        // var skillsList= {data:[]}; 
-        // var  traitsList= {data:[]}; 
-        // var passionList= {data:[]};
         
      $("#btn-indicator").on('click', function(){
                 insightsApp.updateStatus();
@@ -140,6 +165,7 @@ var insightsApp = {
             $("#btn-indicator").html("Start");
             break;
             case 1:
+            insightsApp.autoApi="/api/indicators/skill";
              var  instructions ="Choose top 5 skills you may have";
                       
             if (insightsApp.skillsList.data.length==0){
@@ -147,29 +173,60 @@ var insightsApp = {
                 
                 $("#btn-indicator").html("Add Skills");
                 $("#indicator-label").html("Indicator");
-                $("#indicator-input").fadeIn(1000, function(){});
+                $("#indicator-input").fadeIn(1000);
+                var showList = function(indicators){
+                    insightsApp.showList(indicators,"indicator-list");
+                        }
+                var searchList = function(indicators){
+                    insightsApp.getDescription(indicators);
+                        }
+                 insightsApp.getIndicators(showList,searchList,insightsApp.autoApi);
+                                            
             }
-          
+            
+            insightsApp.runAutoComplete();
             
             break;
             case 2:
+            insightsApp.autoApi="/api/indicators/trait";
             if (insightsApp.traitsList.data.length==0){
             var  instructions ="Choose top 5 traits which best describe you";
             $("#instructions").html(instructions);
-            $("#btn-indicator").html("Add");
+            $("#btn-indicator").html("Add Traits");
+            var showList = function(indicators){
+                insightsApp.showList(indicators,"indicator-list");
+                    }
+            var searchList = function(indicators){
+                insightsApp.getDescription(indicators);
+                    }
+             insightsApp.getIndicators(showList,searchList,insightsApp.autoApi);
             }
+            
+            
+            insightsApp.runAutoComplete();
             break;
             case 3:
-            if (insightsApp.skillsList.data.length==0){
+            insightsApp.autoApi="/api/indicators/passion";
+            if (insightsApp.passionList.data.length==0){
             var  instructions ="Choose one or two things which you are most passionate about";
             $("#instructions").html(instructions);
-            $("#btn-indicator").html("Add");
+            $("#btn-indicator").html("Add Passion");
+
+            var showList = function(indicators){
+                insightsApp.showList(indicators,"indicator-list");
+                    }
+            var searchList = function(indicators){
+                insightsApp.getDescription(indicators);
+                    }
+             insightsApp.getIndicators(showList,searchList,insightsApp.autoApi);
             }
+            insightsApp.runAutoComplete();
             break;
             case 4:
             var  instructions ="If you are satisfied with your choices";
             $("#instructions").html(instructions);
             $("#btn-indicator").html("Get Insights");
+            
             break;
             case 5:
             var  instructions ="If you are satisfied with your choices";
@@ -218,31 +275,35 @@ var insightsApp = {
                 $("#results_input").val(data);
               form.submit();
     
+     },
+     runAutoComplete : function (){
+        var options= {
+            url: insightsApp.autoApi,
+            listLocation:"data",
+            getValue:"indicator",
+            list: {
+            match: {
+                enabled: true
+            }
+            }
+            };
+            //call easy Autocomplete
+            $("#indicator-input").easyAutocomplete(options);
+
      }
  } // End of Insights App Object
  
  // Calling methods from Insights App object 
- 
- insightsApp.getIndicators(function(indicators){
- insightsApp.showList(indicators,"indicator-list");
-     },"/api/indicators");
+
      insightsApp.displayInstructions();
      insightsApp.actionIndicator();
     insightsApp.getInsights();
+    
 
 // Options for jQuery autocomplete
-     var options= {
-     url: "api/indicators",
-     listLocation:"data",
-     getValue:"indicator",
-     list: {
-     match: {
-         enabled: true
-     }
-     }
-     };
-     //call easy Autocomplete
-     $("#indicator-input").easyAutocomplete(options);
+
+
+     
 
    
  });
