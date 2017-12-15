@@ -18,3 +18,7 @@ padding-bottom: 20px;
 [ng\:cloak], [ng-cloak], .ng-cloak {
     display: none !important;
   }
+
+  .hidden {
+    display:none;
+  }

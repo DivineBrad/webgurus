@@ -18,6 +18,7 @@ class Indicator extends Resource
         return [
             'indicator_id' => $this->indicator_id,
             'indicator' => $this->indicator,
+            'description' => $this->description,
             'type_id' => $this->type_id,
             'type' => $this->type->type,
             'created_at' => $this->created_at,
