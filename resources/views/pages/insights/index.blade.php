@@ -103,7 +103,7 @@
                                     
                                     
                                 </div>
-                                <div class="indicator-desc"></div>
+                                <div id="indicator-desc"></div>
                             </form>
                             <form method="POST" id="results_form" action='/insights/results'>
                              <!-- Adding hidden fields -->
@@ -116,21 +116,21 @@
                     <div class="col-md-4 col-sm-pull-4">
                         <div class="box">
                             <h5 class="text-uppercase">Selection</h5>
-                            <form action="#" >
-                                <div class="form-group">
-                                <label for="skills-txt">Skills</label>
-                                <textarea class="form-control" id="skills-txt" rows="3" ></textarea>
+                            <div class="panel-group">
+                                <div class="panel panel-primary indicator-group">
+                                <div class="panel-heading">Skills</div>
+                                <div class="panel-body indicator-tags" id="skills-txt"></div>
                                 </div>
-                                <div class="form-group">
-                                <label for="traits-txt">Traits</label>
-                                <textarea class="form-control" id="traits-txt" rows="3"></textarea>
+                                <div class="panel panel-primary indicator-group">
+                                <div class="panel-heading">Traits</div>
+                                <div class="panel-body indicator-tags" id="traits-txt"></div>
                                 </div>
-                                <div class="form-group">
-                                <label for="passions-txt">Passion</label>
-                                <textarea class="form-control" id="passions-txt" rows="3"></textarea>
+                                <div class="panel panel-primary indicator-group">
+                                <div class="panel-heading">Passion</div>
+                                <div class="panel-body indicator-tags" id="passions-txt" ></div>
                                 </div>
-                                
-                            </form>
+                            </div>
+                             
                         </div>
                     </div>
 
@@ -141,14 +141,8 @@
 
 
                             <ul id="indicator-list">
-                           <!-- @foreach($indicators as $key => $value)
-                            <li>{{$value->indicator}} {{$value->type->type}}</li>
-
-                            @endforeach
-                            -->
-                            <script>
                            
-                             </script>
+                            
                             </ul>
                             </div>
                            

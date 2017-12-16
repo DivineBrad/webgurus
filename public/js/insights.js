@@ -20,12 +20,21 @@ var insightsApp = {
             callback1(insightsApp.indicators);
             callback2(insightsApp.indicators);
             }) },
+        getCurrentList : function () {
+            var list =[] ;
+            var count=  $("#indicator-list").children().length;
+            for (var i=0;i<count;i++){
+                list.push({indicator:$("#indicator-list").children().eq(i).text()});
+            }
+            return list; 
+            console.log("List items in getCurrentList");
+            console.log(list);
+        },
         
-
-       showList : function (list,parentId){
+        showList : function (list,parentId){
             
          var listParent = $("#"+parentId);
-        // listParent.empty();
+         listParent.empty();
          var items=[];
         
         for (var i=0; i<list.length;i++){
@@ -51,76 +60,146 @@ var insightsApp = {
           for (var i=0;i<list.length;i++){
             if(list[i].indicator==name){
                indicator=list[i];
+               break;
             }
           }
-                  
+          console.log(list) ; 
+          console.log("Indicator inside search list");
+          console.log(indicator) ;     
         return indicator;
       },
-      getDescription : function (list){
+      showDescription : function (list){
         
-        $("#indicator-input").on('click', function (){
+        $("#indicator-input").on('mouseenter', function (){
+          
             if ($("#indicator-input").val().length>0){
                 var name=$("#indicator-input").val();
                 var indicator =insightsApp.searchList(list,name);
+                console.log("Show indicator from showDescription()");
+                console.log(indicator) ; 
                 if (indicator!=null){
-                    console.log(indicator.description);
+                   $("#indicator-desc").text(indicator.description);
                 }
                 
             }
-          
+         
         });
+        $("#indicator-input").on('mouseleave', function (){
+            
+                     $("#indicator-desc").text("");
+                          
+          });
+
+
       },
       
       
       actionIndicator : function (){
-        
-        
+               
      $("#btn-indicator").on('click', function(){
                 insightsApp.updateStatus();
                 insightsApp.displayInstructions();
              if ($("#indicator-input").val().length>0){
+                var listItem=null;
+                 var userInput = $("#indicator-input").val();
+                 console.log("User Input");
+                 console.log(userInput);
+                    // First check if it is part of the list 
+                   var currentList= insightsApp.getCurrentList();
+                   console.log("Current List");
+                   console.log(currentList);
+                   listItem= insightsApp.searchList(currentList,userInput);
+                   console.log("List item in action indicator");
+                   console.log(listItem);
+                    if (listItem===null){ // If no match then user typed something different from list
+                        $("#instructions").text("You must choose an indicator from the list");
+
+                    }
+                    else { // if there is a match algorithm continues 
+                        $("#instructions").text(insightsApp.instructions);
                  // Switch cases depending on where in the process the person is 
                  switch(insightsApp.status){
                     case 1: // Case for skills
                     
                         insightsApp.skillsList.data.push($("#indicator-input").val());
-                        $("#skills-txt").text($("#skills-txt").text()+$("#indicator-input").val()+", ");
+                        $("#skills-txt").html($("#skills-txt").html()+"<span class='tag'>"
+                        +$("#indicator-input").val()+"</span><span class='tag-delete'>x</span> ");
                         $("#indicator-input").val("");
+                        insightsApp.deleteTagEvent(insightsApp.skillsList.data);
+                        
+                        
                     break;
                     case 2: // Case for traits
                         insightsApp.traitsList.data.push($("#indicator-input").val());
-                        $("#traits-txt").text($("#traits-txt").text()+$("#indicator-input").val()+", ");
+                        $("#traits-txt").html($("#traits-txt").html()+"<span class='tag'>"
+                        +$("#indicator-input").val()+"</span><span class='tag-delete'>x</span> ");
                         $("#indicator-input").val("");
+                         insightsApp.deleteTagEvent(insightsApp.traitsList.data);
+                        
                     break;
                     case 3: // Case for passion
                         insightsApp.passionList.data.push($("#indicator-input").val());
-                        $("#passions-txt").text($("#passions-txt").text()+$("#indicator-input").val()+", ");
+                        $("#passions-txt").html($("#passions-txt").html()+"<span class='tag'>"
+                        +$("#indicator-input").val()+"</span><span class='tag-delete'>x</span> ");
                         $("#indicator-input").val("");
+                        insightsApp.deleteTagEvent(insightsApp.passionList.data);
                     break;
 
                  }
-                //Testing
-                // insightsApp.passionList.data.push("teaching");
-                // insightsApp.traitsList.data.push("extrovert");
+                
                  if (insightsApp.status==4){
                     insightsApp.sendList(insightsApp.traitsList,
                     insightsApp.skillsList,insightsApp.passionList);
                  }
                  
              }
-
+            } // End of Else block 
          });
+        
     },
-    skipStep : function () {
+    deleteTagEvent : function (list) {
+    $(".tag-delete").on('click', function(event){
+        var xTag = $(event.target);
+        var tag = $(xTag).prev();
+        console.log($(xTag).prev().text());
+        //store tag / indicator text
+        var tagVal = $(tag).text();
+        // Remove x and tag from list 
+        xTag.remove();
+        tag.remove();
+        // Now delete from array 
+        insightsApp.deleteFromList(list,tagVal);
+                
+    });
+    },
+    deleteFromList : function(list,indicator) {
+        console.log("List before ");
+        console.log(list);
+        for (var i=0;i<list.length;i++){
+            if(list[i]===indicator){
+               list.splice(i,1);
+            }
+        }
+        console.log("New list ");
+        console.log(list);
+    
+    },
+    skipStep : function (newStatus) {
     $("btn-additional").on('click', function(){
-        insightsApp.updateStatus++;
+        if (typeof newStatus=='undefined'){
+            insightsApp.status++;
+        }
+        else {
+            insightsApp.updateStatus(newStatus);
+        }
+        
     });
 
     },
     updateStatus : function(newStatus) {
         // check if if a new status is passed
         
-        if (newStatus== null){
+        if (typeof newStatus=='undefined'){
             // Check status and conditions to change status 
             switch (insightsApp.status){
                 case 0:
@@ -166,10 +245,10 @@ var insightsApp = {
             break;
             case 1:
             insightsApp.autoApi="/api/indicators/skill";
-             var  instructions ="Choose top 5 skills you may have";
+             insightsApp.instructions ="Choose top 5 skills you may have";
                       
             if (insightsApp.skillsList.data.length==0){
-                $("#instructions").html(instructions);
+                $("#instructions").html(insightsApp.instructions);
                 
                 $("#btn-indicator").html("Add Skills");
                 $("#indicator-label").html("Indicator");
@@ -178,7 +257,7 @@ var insightsApp = {
                     insightsApp.showList(indicators,"indicator-list");
                         }
                 var searchList = function(indicators){
-                    insightsApp.getDescription(indicators);
+                    insightsApp.showDescription(indicators);
                         }
                  insightsApp.getIndicators(showList,searchList,insightsApp.autoApi);
                                             
@@ -190,14 +269,14 @@ var insightsApp = {
             case 2:
             insightsApp.autoApi="/api/indicators/trait";
             if (insightsApp.traitsList.data.length==0){
-            var  instructions ="Choose top 5 traits which best describe you";
-            $("#instructions").html(instructions);
+             insightsApp.instructions ="Choose top 5 traits which best describe you";
+            $("#instructions").html(insightsApp.instructions);
             $("#btn-indicator").html("Add Traits");
             var showList = function(indicators){
                 insightsApp.showList(indicators,"indicator-list");
                     }
             var searchList = function(indicators){
-                insightsApp.getDescription(indicators);
+                insightsApp.showDescription(indicators);
                     }
              insightsApp.getIndicators(showList,searchList,insightsApp.autoApi);
             }
@@ -208,29 +287,29 @@ var insightsApp = {
             case 3:
             insightsApp.autoApi="/api/indicators/passion";
             if (insightsApp.passionList.data.length==0){
-            var  instructions ="Choose one or two things which you are most passionate about";
-            $("#instructions").html(instructions);
+            insightsApp.instructions ="Choose one or two things which you are most passionate about";
+            $("#instructions").html(insightsApp.instructions);
             $("#btn-indicator").html("Add Passion");
 
             var showList = function(indicators){
                 insightsApp.showList(indicators,"indicator-list");
                     }
             var searchList = function(indicators){
-                insightsApp.getDescription(indicators);
+                insightsApp.showDescription(indicators);
                     }
              insightsApp.getIndicators(showList,searchList,insightsApp.autoApi);
             }
             insightsApp.runAutoComplete();
             break;
             case 4:
-            var  instructions ="If you are satisfied with your choices";
-            $("#instructions").html(instructions);
+            insightsApp.instructions ="If you are satisfied with your choices";
+            $("#instructions").html(insightsApp.instructions);
             $("#btn-indicator").html("Get Insights");
             
             break;
             case 5:
-            var  instructions ="If you are satisfied with your choices";
-            $("#instructions").html(instructions);
+            insightsApp.instructions ="If you are satisfied with your choices";
+            $("#instructions").html(insightsApp.instructions);
             break;
         }
     },
@@ -299,8 +378,6 @@ var insightsApp = {
      insightsApp.actionIndicator();
     insightsApp.getInsights();
     
-
-// Options for jQuery autocomplete
 
 
      

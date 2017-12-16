@@ -22,3 +22,21 @@ padding-bottom: 0px;
   .hidden {
     display:none;
   }
+  .indicator-tags {
+    width:100%;
+  }
+  #indicator-desc {
+    padding: 10px;
+  }
+  .tag-delete{
+    font-weight: bold;
+    font-size:1.5em;
+    padding: 0 5px;
+    margin-right: 2px;
+    color:rgb(17, 96, 216);
+    background-color: grey;
+  }
+  .tag-delete:hover{
+    cursor: pointer;
+    color:red;
+  }
