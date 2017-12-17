@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
            IndicatorsTableSeeder::Class,
            CareersGroupTableSeeder::Class,
            CareersTableSeeder::Class,
-           CareerIndicatorsTableSeeder::Class
+           CareerIndicatorsTableSeeder::Class,
+           TestimonialsTableSeeder::Class
        ]
        );
     

@@ -125,6 +125,8 @@ var insightsApp = {
                         $("#skills-txt").html($("#skills-txt").html()+"<span class='tag'>"
                         +$("#indicator-input").val()+"</span><span class='tag-delete'>x</span> ");
                         $("#indicator-input").val("");
+                        insightsApp.updateStatus();
+                        insightsApp.displayInstructions();
                         insightsApp.deleteTagEvent(insightsApp.skillsList.data);
                         
                         
@@ -134,7 +136,9 @@ var insightsApp = {
                         $("#traits-txt").html($("#traits-txt").html()+"<span class='tag'>"
                         +$("#indicator-input").val()+"</span><span class='tag-delete'>x</span> ");
                         $("#indicator-input").val("");
-                         insightsApp.deleteTagEvent(insightsApp.traitsList.data);
+                        insightsApp.updateStatus();
+                        insightsApp.displayInstructions();
+                        insightsApp.deleteTagEvent(insightsApp.traitsList.data);
                         
                     break;
                     case 3: // Case for passion
@@ -142,16 +146,16 @@ var insightsApp = {
                         $("#passions-txt").html($("#passions-txt").html()+"<span class='tag'>"
                         +$("#indicator-input").val()+"</span><span class='tag-delete'>x</span> ");
                         $("#indicator-input").val("");
+                        insightsApp.updateStatus();
+                        insightsApp.displayInstructions();
                         insightsApp.deleteTagEvent(insightsApp.passionList.data);
                     break;
-
-                 }
-                
-                 if (insightsApp.status==4){
+                    case 4 :
                     insightsApp.sendList(insightsApp.traitsList,
                     insightsApp.skillsList,insightsApp.passionList);
+                    break;
                  }
-                 
+                                               
              }
             } // End of Else block 
          });
@@ -188,9 +192,11 @@ var insightsApp = {
     $("btn-additional").on('click', function(){
         if (typeof newStatus=='undefined'){
             insightsApp.status++;
+            insightsApp.displayInstructions();
         }
         else {
             insightsApp.updateStatus(newStatus);
+            insightsApp.displayInstructions();
         }
         
     });
@@ -236,8 +242,8 @@ var insightsApp = {
         switch (insightsApp.status){
             case 0:
             // Make Secondary button and input field hidden iniially
-            $("#indicator-input").hide();
-            $("#btn-additional").hide();
+            $("#indicator-input").hide().removeClass('hide');
+            $("#btn-additional").hide().removeClass('hide');
 
             var  instructions ="In order to get insights we need know about you. Press start to begin";
             $("#instructions").html(instructions);
@@ -260,11 +266,16 @@ var insightsApp = {
                     insightsApp.showDescription(indicators);
                         }
                  insightsApp.getIndicators(showList,searchList,insightsApp.autoApi);
+                
                                             
             }
             
-            insightsApp.runAutoComplete();
-            
+            else if (insightsApp.skillsList.data.length>2 &&
+                insightsApp.skillsList.data.length<5 ) {
+                $("#btn-additional").html("Skip to Traits");
+                $("#btn-additional").fadeIn(1000);
+                }
+                insightsApp.runAutoComplete();
             break;
             case 2:
             insightsApp.autoApi="/api/indicators/trait";
@@ -280,7 +291,11 @@ var insightsApp = {
                     }
              insightsApp.getIndicators(showList,searchList,insightsApp.autoApi);
             }
-            
+            else if (insightsApp.traitsList.data.length>2 &&
+                insightsApp.traitsList.data.length<5 ) {
+                $("#btn-additional").html("Skip to Passion");
+                $("#btn-additional").fadeIn(1000);
+            }
             
             insightsApp.runAutoComplete();
             break;
@@ -298,6 +313,10 @@ var insightsApp = {
                 insightsApp.showDescription(indicators);
                     }
              insightsApp.getIndicators(showList,searchList,insightsApp.autoApi);
+            }
+            else if (insightsApp.passionList.data.length == 1 ) {
+                $("#btn-additional").html("Skip to Insights");
+                $("#btn-additional").fadeIn(1000);
             }
             insightsApp.runAutoComplete();
             break;

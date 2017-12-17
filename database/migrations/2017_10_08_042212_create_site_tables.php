@@ -31,6 +31,14 @@ class CreateSiteTables extends Migration
             $table->string('description');
             $table->timestamps();
         });
+        Schema::create('Testimonials', function (Blueprint $table) {
+            $table->increments('testimonial_id');
+            $table->string('name');
+            $table->string('position');
+            $table->string('company');
+            $table->text('testimony');
+            $table->timestamps();
+        });
         Schema::create('Admin_Users', function (Blueprint $table) {
             $table->increments('admin_id');
             $table->string('name');

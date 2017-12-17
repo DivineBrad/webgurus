@@ -92,13 +92,13 @@
                             <form action="#" >
                                 <div class="form-group" id="input-indicator-group">
                                     <label for="indicator-input" id="indicator-label"></label>
-                                    <input  type="text" class="form-control" id="indicator-input" >
+                                    <input  type="text" class="form-control hide" id="indicator-input" >
                                    
                                     
                                 </div>
                                     <div class="text-center">
                                     <button  id="btn-indicator" class="btn btn-template-main " type="button"><i class="fa fa-user-md"></i> </button>
-                                    <button  id="btn-additional" class="btn btn-template-main hidden" type="button"><i class="fa fa-user-md"></i> Skip</button>
+                                    <button  id="btn-additional" class="btn btn-template-main hide" type="button"><i class="fa fa-user-md"></i> Skip</button>
                                     
                                     
                                     
