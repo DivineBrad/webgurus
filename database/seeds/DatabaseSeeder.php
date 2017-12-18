@@ -14,12 +14,14 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
    $this->call(
        [
+        UsersTableSeeder::Class,
            TypesTableSeeder::Class,
            IndicatorsTableSeeder::Class,
            CareersGroupTableSeeder::Class,
            CareersTableSeeder::Class,
            CareerIndicatorsTableSeeder::Class,
            TestimonialsTableSeeder::Class
+      
        ]
        );
     

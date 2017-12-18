@@ -32,5 +32,17 @@ class CareersTableSeeder extends Seeder
         'job_satisfaction' =>'Low'
         ]
          );
-        }
+      
+
+        DB::table('careers')->insert([
+            'group_id' => 4,
+            'title' => 'Trial Lawyer',
+            'description' => 'Investigate law and present reasonable facts to win a law case',
+            'avg_sal_jnr' =>'52397',
+            'avg_sal_snr' =>'70024',
+            'unemployment_rate' => '4',
+            'job_satisfaction' =>'Average'
+            ]
+             );
+            }
 }

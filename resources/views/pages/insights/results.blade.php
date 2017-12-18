@@ -83,61 +83,21 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-md-4 col-sm-push-4">
+                    
+
+                    <div class="col-12 ">
                         <div class="box">
-                            <h5 class="text-uppercase">Type in Indicator</h5>
+                            <h5 class="text-uppercase">Insights Results</h5>
                             <div>
-                            <h6 id="indicator-heading"> Personality Traits and Habits</h6> 
-                            <p id="indicator-info" > Select a minimum of one trait that best describes you. Try to select at least 5</p> 
-                            </div>
-                            
-                            <form action="#" >
-                                <div class="form-group">
-                                    <label for="indicator-input">Indicator</label>
-                                    <input type="text" class="form-control" id="indicator-input" >
-                                    
-                                </div>
-                                    <div class="text-center">
-                                    <button  id="add-indicator" class="btn btn-template-main" type="button"><i class="fa fa-user-md"></i> Add</button>
-                                    <button  id="get-insights" class="btn btn-template-main" type="button"><i class="fa fa-user-md"></i> Get Insights</button>
-                                
-                                </div>
-                                <div class="indicator-desc"></div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-pull-4">
-                        <div class="box">
-                            <h5 class="text-uppercase">Selection</h5>
-                            <form action="#" >
-                                <div class="form-group">
-                                <label for="skills-txt">Skills</label>
-                                <textarea class="form-control" id="skills-txt" rows="3"></textarea>
-                                </div>
-                                <div class="form-group">
-                                <label for="traits-txt">Traits</label>
-                                <textarea class="form-control" id="traits-txt" rows="3"></textarea>
-                                </div>
-                                <div class="form-group">
-                                <label for="passions-txt">Passion</label>
-                                <textarea class="form-control" id="passions-txt" rows="3"></textarea>
-                                </div>
-                                
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 ">
-                        <div class="box">
-                            <h5 class="text-uppercase">Indicator List</h5>
-                            <div>
-
-
-                            <ul id="indicator-list">
+                            <p>Based on your skills, personality traits and passion, 
+                             there careers below present strong options to explore! </p>
+                            <p> You can compare careers by going  <a href="/career-insights">here</a></p>
+                            <ul id="results-list">
                            
                             @foreach ($results as $key => $item)
+                            <li>
                            {{$item['career']}}
+                           </li>
                             @endforeach
                             <script>
                            

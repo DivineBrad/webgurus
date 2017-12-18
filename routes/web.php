@@ -15,10 +15,15 @@ use Illuminate\Http\Request;
 |
 */
 
- Route::get('/', function () {
-    return view('pages.home');
-}); 
+Auth::routes();
 
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'HomeController@index');
+
+Route::get('/home',function () {
+    return view('home')->name('home');
+});
 
 Route::get('about',function () {
     return view('pages.about');
@@ -77,6 +82,4 @@ Route::resource('admin','AdminController');
 Route::resource('admin/login','AdminLoginController');
 //Route::resource('admin/authenticate','AdminAuthenticateController');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

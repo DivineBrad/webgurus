@@ -173,24 +173,25 @@
  _________________________________________________________ -->
 
                         <ul class="owl-carousel testimonials same-height-row">
+                        @foreach($testimonials as $testimonial)
                             <li class="item">
                                 <div class="testimonial same-height-always">
                                     <div class="text">
-                                        <p> I was confused as to what career path I should choose. After using this website I got and understanding on 
-                                        what jobs wold best suit me.</p>
+                                        <p> {{$testimonial->testimony}}</p>
                                     </div>
                                     <div class="bottom">
                                         <div class="icon"><i class="fa fa-quote-left"></i>
                                         </div>
                                         <div class="name-picture">
-                                            <img class="" alt="" src="img/person-1.jpg">
-                                            <h5>Jerry Sally</h5>
-                                            <p>Account, RollyGroup</p>
+                                            <img class="" alt="" src={{$testimonial->photo}}>
+                                            <h5>{{$testimonial->name}}y</h5>
+                                            <p>{{$testimonial->position}}, {{$testimonial->company}}</p>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li class="item">
+                            @endforeach
+                            <!--<li class="item">
                                 <div class="testimonial same-height-always">
                                     <div class="text">
                                         <p>A friend of mine suggested this website and I tried the insights helper which guided me to my dream job.</p>
@@ -238,7 +239,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </li>
+                            </li> -->
                             
                         </ul>
                         <!-- /.owl-carousel -->

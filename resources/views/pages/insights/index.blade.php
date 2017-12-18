@@ -83,9 +83,9 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-push-4">
                         <div class="box">
-                            <h5 class="text-uppercase">Type in Indicator</h5>
+                            <h5 class="text-uppercase">Indicators</h5>
                             <div>
-                            <h6 id="indicator-heading"> Personality Traits and Habits</h6> 
+                            <h6 id="indicator-heading"> Instructions</h6> 
                             <p id="instructions" > </p> 
                             </div>
                             
