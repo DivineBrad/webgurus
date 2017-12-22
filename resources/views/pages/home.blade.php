@@ -191,55 +191,6 @@
                                 </div>
                             </li>
                             @endforeach
-                            <!--<li class="item">
-                                <div class="testimonial same-height-always">
-                                    <div class="text">
-                                        <p>A friend of mine suggested this website and I tried the insights helper which guided me to my dream job.</p>
-                                    </div>
-                                    <div class="bottom">
-                                        <div class="icon"><i class="fa fa-quote-left"></i>
-                                        </div>
-                                        <div class="name-picture">
-                                            <img class="" alt="" src="img/person-2.jpg">
-                                            <h5>Manly Johnson</h5>
-                                            <p>Programmer, LemonGross</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <div class="testimonial same-height-always">
-                                    <div class="text">
-                                        <p>I have never seen a website which gave me so much useful career information.</p>
-                                    </div>
-                                    <div class="bottom">
-                                        <div class="icon"><i class="fa fa-quote-left"></i>
-                                        </div>
-                                        <div class="name-picture">
-                                            <img class="" alt="" src="img/person-3.png">
-                                            <h5>Larry Bob</h5>
-                                            <p>Tutor, Mahantin Run</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <div class="testimonial same-height-always">
-                                    <div class="text">
-                                        <p>Using the insights was the best decision that I ever made.</p>
-                                    </div>
-
-                                    <div class="bottom">
-                                        <div class="icon"><i class="fa fa-quote-left"></i>
-                                        </div>
-                                        <div class="name-picture">
-                                            <img class="" alt="" src="img/person-4.jpg">
-                                            <h5>Bob McIntyre</h5>
-                                            <p>Tutor, Spelling Challenge</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li> -->
                             
                         </ul>
                         <!-- /.owl-carousel -->
