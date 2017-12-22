@@ -70,9 +70,9 @@ Route::resource('/test','TestController');
 //Route::resource('/register','Auth\RegisterController');
 //meanwhile implement registration view
 
-Route::get('register', function () {
-    return view('pages.register');
-});
+// Route::get('register', function () {
+//     return view('pages.register');
+// });
 
 Route::resource('insights','InsightController');
 Route::resource('indicators','IndicatorController');
