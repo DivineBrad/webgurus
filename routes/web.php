@@ -63,6 +63,8 @@ Route::get('careers/link/indicators/{id}', function ($id) {
 
 });
 
+Route::post('/send','ContactController@sendEmail');
+
 
 Route::resource('/test','TestController');
 

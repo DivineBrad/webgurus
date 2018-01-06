@@ -153,40 +153,41 @@
                         </div>
 
                         <div class="col-md-8 col-md-offset-2">
-                            <form data-toggle="validator" role="form" method="post" action="#">
+                            <form data-toggle="validator" role="form" method="post" action="/send">
+                            {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="firstname">Firstname</label>
-                                            <input type="text" data-error="Please enter first name field." class="form-control" id="firstname" required>
+                                            <input type="text" data-error="Please enter first name field." class="form-control" name="firstname" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="lastname">Lastname</label>
-                                            <input type="text" data-error="Please enter last name field." class="form-control" id="lastname" required>
+                                            <input type="text" data-error="Please enter last name field." class="form-control" name="lastname" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="email">Email</label>
-                                            <input type="email" class="form-control" id="email" required>
+                                            <input type="email" class="form-control" name="email" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="subject">Subject</label>
-                                            <input type="text" data-error="Please enter subject field." class="form-control" id="subject" required>
+                                            <input type="text" data-error="Please enter subject field." class="form-control" name="subject" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label for="message">Message</label>
-                                            <textarea id="message" class="form-control" rows="6" required></textarea>
+                                            <textarea name="message" class="form-control" rows="6" required></textarea>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
