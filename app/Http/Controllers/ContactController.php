@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Mail;
 use App\Mail\ContactUs;
+use App\Mail\ContactUserInfo;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -19,6 +20,8 @@ class ContactController extends Controller
         $email = $request->input('email');
 
         Mail::to($email)->send(new ContactUs());
+
+        Mail::to("johneylin1314@gmail.com")->send(new ContactUserInfo($request));
 
         return redirect()->to('/');
     }

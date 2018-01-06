@@ -7,10 +7,10 @@ Thanks for reaching out! Our support reps will check your message and forward to
 
 If your issue can't wait, you can also reach us via live chat on www.webgurus.com/ or call +1 416 887 7944.
 
-@component('mail::button', ['url' => ''])
+@component('mail::button', ['url' =>''])
 Go Webgurus
 @endcomponent
 
 Thanks,<br>
-{{ config('app.name') }}
+Webgurus
 @endcomponent
