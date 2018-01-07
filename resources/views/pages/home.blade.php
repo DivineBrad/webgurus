@@ -60,82 +60,8 @@
     <div id="all">
     @include('includes.header')
 
-        <section>
-            <!-- *** HOMEPAGE CAROUSEL ***
- _________________________________________________________ -->
-
-            <div class="home-carousel ">
-
-                <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line " data-ride="carousel" data-pause="click" data-interval="4000" >
-
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
-                <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
-                <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
-            </ol>
-
-            <!-- Wrapper For Slides -->
-            <div class="carousel-inner" role="listbox">
-
-                <!-- Third Slide -->
-                <div class="item active">
-
-                    <!-- Slide Background -->
-                    <img src="<?php public_path()?>/img/slide1.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-                    <div class="bs-slider-overlay"></div>
-
-                    <div class="container">
-                        <div class="row">
-                            <!-- Slide Text Layer -->
-                            <div class="slide-text slide_style_left">
-                                <h1 data-animation="animated zoomInRight">Your dream Career awaits!</h1>
-                                <p data-animation="animated fadeInLeft">We guide on your career path.</p>
-                                <a href="/insights" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">Get Insights</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Slide -->
-
-                <!-- Second Slide -->
-                <div class="item">
-
-                    <!-- Slide Background -->
-                    <img src="<?php public_path()?>/img/slide2.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-                    <div class="bs-slider-overlay"></div>
-                    <!-- Slide Text Layer -->
-                    <div class="slide-text slide_style_center">
-                        <h1 data-animation="animated flipInX">Find the best career for YOU!</h1>
-                        <p data-animation="animated lightSpeedIn">We analyze your skills, traits and passions.</p>
-                        <a href="/insights" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">Get Insights</a>
-                        
-                    </div>
-                </div>
-                <!-- End of Slide -->
-
-                <!-- Third Slide -->
-                <div class="item">
-
-                    <!-- Slide Background -->
-                    <img src="<?php public_path()?>/img/slide3.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-                    <div class="bs-slider-overlay"></div>
-                    <!-- Slide Text Layer -->
-                    <div class="slide-text slide_style_right">
-                        <h1 data-animation="animated zoomInLeft">We provide Insights</h1>
-                        <p data-animation="animated fadeInRight">Get ready for the light bulb moment! .</p>
-                        <a href="/insights" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">Get Insights</a>
-                        
-                    </div>
-                </div>
-                <!-- End of Slide -->
-
-            </div>
-
-            <!-- *** HOMEPAGE CAROUSEL END *** -->
-        </section>
-
+        
+    @include('includes.Slider')
        
 
         <section class="bar background-image-fixed-2 no-mb color-white text-center">

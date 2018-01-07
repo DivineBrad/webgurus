@@ -53,6 +53,7 @@ class SliderController extends Controller
         $slider = new Slider();
         $slider->slider_name = $request->input('slider_name');
         $slider->slider_img = $request->input('slider_img');
+        $slider->slider_header = $request->input('slider_header');
         $slider->description = $request->input('description');
         $slider->save();
         return redirect()->route('sliders.index');
@@ -96,6 +97,7 @@ class SliderController extends Controller
         $slider = Slider::find($id);
         $slider->slider_name = $request->input('slider_name');
         $slider->slider_img = $request->input('slider_img');
+        $slider->slider_header = $request->input('slider_header');
         $slider->description=$request->input('description');
         $slider->save();
         return redirect()->route('sliders.index');

@@ -111,6 +111,10 @@
                                     <input type="text" size="5" class="form-control" value="{{$slider->slider_img}}" name="slider_img">
                                 </div>
                                 <div class="form-group">
+                                    <label for="slider_header">Slider Header</label>
+                                    <input type="text" size="5" class="form-control" value="{{$slider->slider_header}}" name="slider_header">
+                                </div>
+                                <div class="form-group">
                                     <label for="description">Description</label>
                                     <input type="text" size="5" class="form-control" value="{{$slider->description}}" name="description">
                                 </div>

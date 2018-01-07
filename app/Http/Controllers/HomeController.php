@@ -26,7 +26,10 @@ class HomeController extends Controller
     {
         // call from db
         $testimonials = DB::table('testimonials')->get();
-        
-        return view('pages.home')->with(['testimonials' => $testimonials]);
+        $sliders = DB::table('sliders')->get();
+
+        return view('pages.home')
+        ->with('testimonials', $testimonials)
+        ->with('sliders', $sliders);
     }
 }

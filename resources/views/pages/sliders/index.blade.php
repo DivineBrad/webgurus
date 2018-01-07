@@ -77,9 +77,9 @@
             <h5 class="text-uppercase">Sliders List</h5>
             <div id="career-list">
             <table class="table">
-            <tr><th>ID</th><th>Slider Name</th><th>Slider Image</th><th>DESCRIPTION</th><th>SHOW</th><th>EDIT</th><th>DELETE</th></tr>
+            <tr><th>ID</th><th>Slider Name</th><th>Slider Image</th><th>Slider Header</th><th>DESCRIPTION</th><th>SHOW</th><th>EDIT</th><th>DELETE</th></tr>
             @foreach($sliders as $key => $value)
-            <tr><td>{{$value->slider_id}}</td><td>{{$value->slider_name}}</td><td>{{$value->slider_img}}</td><td>{{$value->description}}</td>
+            <tr><td>{{$value->slider_id}}</td><td>{{$value->slider_name}}</td><td>{{$value->slider_img}}</td><td>{{$value->slider_header}}</td><td>{{$value->description}}</td>
             <td><form action="{{ route('sliders.show', $value->slider_id) }}" method="get"><input type="submit" value="detail" ></form></td>
             <td><form action="{{ route('sliders.edit', $value->slider_id) }}" method="get"><input type="submit" value="edit" ></form></td>
             <td><form action="sliders/{{$value->slider_id}}" method="post">

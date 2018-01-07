@@ -108,6 +108,11 @@
                                     
                                 </div>
                                 <div class="form-group">
+                                    <label for="slider_header">Slider Header</label>
+                                    <input type="text" size="5" class="form-control" name="slider_header" value="{{old('indicator')}}">
+                                    
+                                </div>
+                                <div class="form-group">
                                     <label for="description">Description</label>
                                     <input type="text" size="5" class="form-control" name="description" value="{{old('description')}}">
                                 
