@@ -105,8 +105,8 @@ class SliderController extends Controller
     public function update(SliderFormRequest $request, $id)
     {
     
-        $file = $request->file('slider_img');
-        $filename = $request->file('slider_img')->getClientOriginalName();
+        //$file = $request->file('slider_img');
+        //$filename = $request->file('slider_img')->getClientOriginalName();
 
         $slider = Slider::find($id);
         $slider->slider_name = $request->input('slider_name');
