@@ -82,8 +82,8 @@
 
                     <div class="col-md-9 clearfix">
                         <section>
-
-                            <p class="lead">Get answers to frequently asked questions</p>
+                        @foreach($faq as $faq)
+                            <p class="lead">{{$faq->text1}}</p>
 
                             <div class="panel-group" id="accordion">
 
@@ -93,7 +93,7 @@
 
 						<a data-toggle="collapse" data-parent="#accordion" href="#faq1">
 
-						    1. What is <b><i>Careerinsights</i></b> ?
+                        {{$faq->q1}}
 							
 
 						</a>
@@ -102,7 +102,7 @@
                                     </div>
                                     <div id="faq1" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <p><b><i>Careerinsights</i></b> is the world's largest career suggesting organization who helps a person to choose a correct career path for him/her.</p>
+                                            <p>{{$faq->ans1}}</p>
                                            
                                         </div>
                                     </div>
@@ -115,7 +115,7 @@
 
 						<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
 
-						    2. How is <b><i>Careerinsights</i></b> different from other career related website ?
+                        {{$faq->q2}}
 
 						</a>
 
@@ -123,7 +123,7 @@
                                     </div>
                                     <div id="collapseTwo" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <p><b><i>Careerinsights</i></b> is a job search engine that specializes in choosing career paths for a new employee and also find a job directly from employer websites. We are the first one who came up with such concept.</p>
+                                            <p>{{$faq->ans2}}{{$faq->ans2_1}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -136,7 +136,7 @@
 
 						<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
 
-						    3. How do I choose my career path from the suggestion provided ?
+                        {{$faq->q3}}
 
 						</a>
 
@@ -144,8 +144,7 @@
                                     </div>
                                     <div id="collapseThree" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                           <p><b><i>Careerinsights</i></b>  provides career guidance to users based on their personality traits, skills and their passions. So you should choose a career path which suits your passion well. 
-										   If your passion will be your career then work won't be work anymore it would be like playing a game.</p>
+                                           <p>{{$faq->ans3}}{{$faq->ans3_1}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -157,7 +156,7 @@
 
 						<a data-toggle="collapse" data-parent="#accordion" href="#faq4">
 
-						    4. How much would <b><i>Careerinsights</i></b> cost me ?
+                        {{$faq->q4}}
 
 						</a>
 
@@ -165,7 +164,7 @@
                                     </div>
                                     <div id="faq4" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <p>Get best suggestion from  <p><b><i>Careerinsights</i></b> as you'd like for free, without worrying about subscriptions or up-front fees. Our Motto is to help a person choose a right career path for them and we are happy to help.</p>
+                                            <p>{{$faq->ans4}}{{$faq->ans4_1}}</p>
                                             
                                         </div>
                                     </div>
@@ -178,7 +177,7 @@
 
 						<a data-toggle="collapse" data-parent="#accordion" href="#faq5">
 
-						    5. What are job alerts ?
+                        {{$faq->q5}}
 
 						</a>
 
@@ -186,8 +185,7 @@
                                     </div>
                                     <div id="faq5" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <p>With jobs alerts, you can find a suitable for job for you after you choose your career path and recieve an email when 
-											new results meet your search criteria.</p>
+                                            <p>{{$faq->ans5}}</p>
                                             
                                         </div>
                                     </div>
@@ -197,7 +195,8 @@
                             </div>
                             <!-- /.panel-group -->
 
-                            <p class="text-muted">In case you haven't found the answer for your question please feel free to <a href="/contact">contact us</a>, our customer support will be happy to help you.</p>
+                            <p class="text-muted">{{$faq->text2}} <a href="/contact">{{$faq->text3}}</a>{{$faq->text4}}</p>
+                            @endforeach   
                         </section>
 
                     </div>

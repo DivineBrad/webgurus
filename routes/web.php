@@ -15,9 +15,9 @@ use Illuminate\Http\Request;
 |
 */
 
- Route::get('/', function () {
-    return view('pages.home');
-}); 
+//  Route::get('/', function () {
+//     return view('pages.home');
+// }); 
 
 
 Route::get('about',function () {
@@ -75,8 +75,12 @@ Route::resource('careers','CareerController');
 Route::resource('contact','ContactController');
 Route::resource('admin','AdminController');
 Route::resource('admin/login','AdminLoginController');
+Route::resource('about','AboutController');
+Route::resource('faq','FaqController');
+Route::resource('policy','PolicyController');
 //Route::resource('admin/authenticate','AdminAuthenticateController');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
+//Route::get('/home', 'HomeController@index')->name('home');

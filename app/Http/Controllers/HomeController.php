@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+       // $this->middleware('auth');
     }
 
     /**
@@ -23,6 +23,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // call from db
+        $testimonials = DB::table('testimonials')->get();
+        return view('pages.home')->with(['testimonials' => $testimonials]);
+
+        $about = DB::table('about')->get();
+        $faq = DB::table('faq')->get();
+        $policy = DB::table('policy')->get();
+        return view('pages.home')
+        ->with('testimonials', $testimonials)       
+        ->with('about', $about)
+        ->with('policy', $policy);
     }
 }

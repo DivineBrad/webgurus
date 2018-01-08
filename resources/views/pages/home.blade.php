@@ -60,6 +60,8 @@
     <div id="all">
     @include('includes.header')
 
+    
+
         <section>
             <!-- *** HOMEPAGE CAROUSEL ***
  _________________________________________________________ -->
@@ -172,77 +174,41 @@
                         <!-- *** TESTIMONIALS CAROUSEL ***
  _________________________________________________________ -->
 
+           
+                        @foreach($testimonials as $testimonial)
                         <ul class="owl-carousel testimonials same-height-row">
+                       
                             <li class="item">
                                 <div class="testimonial same-height-always">
                                     <div class="text">
-                                        <p> I was confused as to what career path I should choose. After using this website I got and understanding on 
-                                        what jobs wold best suit me.</p>
-                                    </div>
-                                    <div class="bottom">
-                                        <div class="icon"><i class="fa fa-quote-left"></i>
-                                        </div>
-                                        <div class="name-picture">
-                                            <img class="" alt="" src="img/person-1.jpg">
-                                            <h5>Jerry Sally</h5>
-                                            <p>Account, RollyGroup</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <div class="testimonial same-height-always">
-                                    <div class="text">
-                                        <p>A friend of mine suggested this website and I tried the insights helper which guided me to my dream job.</p>
-                                    </div>
-                                    <div class="bottom">
-                                        <div class="icon"><i class="fa fa-quote-left"></i>
-                                        </div>
-                                        <div class="name-picture">
-                                            <img class="" alt="" src="img/person-2.jpg">
-                                            <h5>Manly Johnson</h5>
-                                            <p>Programmer, LemonGross</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <div class="testimonial same-height-always">
-                                    <div class="text">
-                                        <p>I have never seen a website which gave me so much useful career information.</p>
-                                    </div>
-                                    <div class="bottom">
-                                        <div class="icon"><i class="fa fa-quote-left"></i>
-                                        </div>
-                                        <div class="name-picture">
-                                            <img class="" alt="" src="img/person-3.png">
-                                            <h5>Larry Bob</h5>
-                                            <p>Tutor, Mahantin Run</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <div class="testimonial same-height-always">
-                                    <div class="text">
-                                        <p>Using the insights was the best decision that I ever made.</p>
+                                    <p>
+                                        <p> {{$testimonial->testimony}}</p>
+                                        
+                                    
+                                        </p>
                                     </div>
 
                                     <div class="bottom">
                                         <div class="icon"><i class="fa fa-quote-left"></i>
                                         </div>
                                         <div class="name-picture">
-                                            <img class="" alt="" src="img/person-4.jpg">
-                                            <h5>Bob McIntyre</h5>
-                                            <p>Tutor, Spelling Challenge</p>
+                                            
+                                       
+                                            <h5>
+                                            <p> {{$testimonial->name}}</p>
+                                            </h5>
+                                        <p>
+                                            <p> {{$testimonial->company}}</p>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </li>
                             
                         </ul>
+                      @endforeach
                         <!-- /.owl-carousel -->
-
+                       
                         <!-- *** TESTIMONIALS CAROUSEL END *** -->
                     </div>
 
