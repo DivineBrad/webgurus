@@ -96,7 +96,7 @@
                             @endif
                         
                          
-                            <form id="checkboxForm" action="/sliders" method="POST">
+                            <form id="checkboxForm" action="/sliders" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="slider_name">Slider Name</label>
                                     <input type="text" size="5" class="form-control" name="slider_name" value="{{old('indicator')}}">
@@ -104,8 +104,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="slider_img">Slider Image</label>
-                                    <input type="text" size="5" class="form-control" name="slider_img" value="{{old('indicator')}}">
                                     
+                                    <input type="file" name="slider_img"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="slider_header">Slider Header</label>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Slider;
 use App\Http\Requests\SliderFormRequest;
 use DB;
+use Illuminate\Support\Facades\Storage;
 
 class SliderController extends Controller
 {
@@ -50,12 +51,21 @@ class SliderController extends Controller
      */
     public function store(SliderFormRequest $request)
     {
+
+        $file = $request->file('slider_img');
+        $filename = $file->getClientOriginalName();
+
         $slider = new Slider();
         $slider->slider_name = $request->input('slider_name');
-        $slider->slider_img = $request->input('slider_img');
+        $slider->slider_img = $filename;
         $slider->slider_header = $request->input('slider_header');
         $slider->description = $request->input('description');
         $slider->save();
+
+
+         //$file->move_uploaded_file($file,"img/");
+         //Storage::put('upload/images/'.$filename, file_get_contents($request->file('slider_img')->getRealPath()));
+         Storage::disk('uploads')->put($filename, file_get_contents($request->file('slider_img')->getRealPath()));
         return redirect()->route('sliders.index');
     }
 
@@ -94,12 +104,19 @@ class SliderController extends Controller
      */
     public function update(SliderFormRequest $request, $id)
     {
+    
+        $file = $request->file('slider_img');
+        $filename = $request->file('slider_img')->getClientOriginalName();
+
         $slider = Slider::find($id);
         $slider->slider_name = $request->input('slider_name');
-        $slider->slider_img = $request->input('slider_img');
+        $slider->slider_img = $filename;
         $slider->slider_header = $request->input('slider_header');
         $slider->description=$request->input('description');
         $slider->save();
+
+       // Storage::disk('uploads')->put($filename, file_get_contents($request->file('slider_img')->getRealPath()));
+
         return redirect()->route('sliders.index');
     }
 

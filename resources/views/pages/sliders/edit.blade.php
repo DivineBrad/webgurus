@@ -108,7 +108,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="slider_img">Slider Image</label>
-                                    <input type="text" size="5" class="form-control" value="{{$slider->slider_img}}" name="slider_img">
+                        
+                                    <input type="file" name="slider_img"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="slider_header">Slider Header</label>
