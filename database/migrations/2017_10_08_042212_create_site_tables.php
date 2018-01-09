@@ -54,6 +54,16 @@ class CreateSiteTables extends Migration
             $table->integer('type_id')->unsigned();
             $table->timestamps();
         });
+        Schema::create('Sliders', function (Blueprint $table) {
+            $table->increments('slider_id');
+            $table->string('slider_name');
+            $table->string('slider_img');
+            $table->string('slider_header');
+            $table->string('description');
+            $table->string('updated_at');
+            $table->string('created_at');
+            $table->timestamps();
+        });
         Schema::create('Indicator_Types', function (Blueprint $table) {
             $table->increments('type_id');
             $table->string('type');
