@@ -70,6 +70,8 @@ Route::get('careers/link/indicators/{id}', function ($id) {
 });
 
 Route::post('/send','ContactController@sendEmail');
+Route::post('/subscribe','HomeController@joinNewsletter');
+
 
 
 Route::resource('/test','TestController');

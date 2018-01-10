@@ -43,3 +43,10 @@ padding-bottom: 0px;
   #admin-menu{
     padding: 10px;
   }
+
+  .flash{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    
+  }

@@ -31,6 +31,7 @@ class AddForeignKeys extends Migration
             $table->foreign('user_id')->references('user_id')->on('Users')->onDelete('cascade');
             $table->foreign('indicator_id')->references('indicator_id')->on('Indicators')->onDelete('cascade');
         });
+         
     }
 
     /**

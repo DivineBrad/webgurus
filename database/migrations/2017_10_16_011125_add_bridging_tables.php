@@ -32,6 +32,7 @@ class AddBridgingTables extends Migration
           
             $table->timestamps();
         });
+        
     }
 
     /**
