@@ -24,7 +24,7 @@ _________________________________________________________ -->
                             
                             <!-- Authentication Links -->
                         @guest
-                        <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Sign in</span></a>
+                        <a href="/login"  ><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Sign in</span></a>
                         <a href="/register"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Sign up</span></a>
                         @else
                             <li class="dropdown">
@@ -66,7 +66,7 @@ _________________________________________________________ -->
                     <div class="container">
                         <div class="navbar-header">
 
-                            <a class="navbar-brand home" href="index.html">
+                            <a class="navbar-brand home" href="/">
                                 <img src="<?php public_path()?>/img/logo.png" alt="Career Insights logo" class="hidden-xs hidden-sm">
                                 <img src="<?php public_path()?>/img/logo.png" alt="Career Insights logo" class="visible-xs visible-sm"><span class="sr-only">Career Insights - go to homepage</span>
                             </a>
@@ -155,7 +155,7 @@ _________________________________________________________ -->
                         <h4 class="modal-title" id="Login">Customer login</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="customer-orders.html" method="post" data-toggle="validator">
+                        <form action="/admin" method="post" data-toggle="validator">
                             <div class="form-group">
                                 <input type="email" class="form-control" id="email_modal" placeholder="email" required>
                                 <div class="help-block with-errors"></div>

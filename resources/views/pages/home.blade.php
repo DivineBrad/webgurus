@@ -60,6 +60,7 @@
     <div id="all">
     @include('includes.header')
 
+<<<<<<< HEAD
     
 
         <section>
@@ -138,6 +139,10 @@
             <!-- *** HOMEPAGE CAROUSEL END *** -->
         </section>
 
+=======
+        
+    @include('includes.Slider')
+>>>>>>> f9b6431969593fa8faa34c39efcc9ba32c3dc6f2
        
 
         <section class="bar background-image-fixed-2 no-mb color-white text-center">
@@ -177,6 +182,7 @@
            
                         @foreach($testimonials as $testimonial)
                         <ul class="owl-carousel testimonials same-height-row">
+<<<<<<< HEAD
                        
                             <li class="item">
                                 <div class="testimonial same-height-always">
@@ -188,10 +194,19 @@
                                         </p>
                                     </div>
 
+=======
+                        @foreach($testimonials as $testimonial)
+                            <li class="item">
+                                <div class="testimonial same-height-always">
+                                    <div class="text">
+                                        <p> {{$testimonial->testimony}}</p>
+                                    </div>
+>>>>>>> f9b6431969593fa8faa34c39efcc9ba32c3dc6f2
                                     <div class="bottom">
                                         <div class="icon"><i class="fa fa-quote-left"></i>
                                         </div>
                                         <div class="name-picture">
+<<<<<<< HEAD
                                             
                                        
                                             <h5>
@@ -200,10 +215,16 @@
                                         <p>
                                             <p> {{$testimonial->company}}</p>
                                             </p>
+=======
+                                            <img class="" alt="" src={{$testimonial->photo}}>
+                                            <h5>{{$testimonial->name}}y</h5>
+                                            <p>{{$testimonial->position}}, {{$testimonial->company}}</p>
+>>>>>>> f9b6431969593fa8faa34c39efcc9ba32c3dc6f2
                                         </div>
                                     </div>
                                 </div>
                             </li>
+                            @endforeach
                             
                         </ul>
                       @endforeach

@@ -8,16 +8,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Career Insights | Home</title>
+    <title>Career Insights</title>
 
     <meta name="keywords" content="">
 
@@ -31,16 +27,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
 
-    <!-- Css animations  -->
-    <link href="<?php public_path()?>css/animate.css" rel="stylesheet">
-
-    <link href="<?php public_path()?>css/bootstrap-touch-slider.css" rel="stylesheet" media="all">
-
+    
     <!-- Theme stylesheet, if possible do not edit this stylesheet -->
-    <link href="<?php public_path()?>css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+    <link href="{!! asset('css/style.blue.css') !!}" rel="stylesheet" id="theme-stylesheet">
 
     <!-- Custom stylesheet - for your changes -->
-    <link href="<?php public_path()?>css/custom.css" rel="stylesheet">
+    <link href="{!! asset('css/custom.css') !!}" rel="stylesheet">
 
     <!-- Responsivity for older IE -->
     <!--[if lt IE 9]>
@@ -58,13 +50,10 @@
     <link rel="apple-touch-icon" sizes="120x120" href="<?php public_path()?>/img/apple-touch-icon-120x120.png" />
     <link rel="apple-touch-icon" sizes="144x144" href="<?php public_path()?>/img/apple-touch-icon-144x144.png" />
     <link rel="apple-touch-icon" sizes="152x152" href="<?php public_path()?>/img/apple-touch-icon-152x152.png" />
-      <!-- owl carousel css -->
-
-      <link href="<?php public_path()?>/css/owl.carousel.css" rel="stylesheet">
-    <link href="<?php public_path()?>/css/owl.theme.css" rel="stylesheet">
+      
 </head>
 <body>
-    <div id="app">
+    <div id="app"> 
     @include('includes.header')
         
 

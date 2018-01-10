@@ -68,6 +68,16 @@ var insightsApp = {
           console.log(indicator) ;     
         return indicator;
       },
+      matchArray : function(list, name) {
+        var indicator=null;
+        for (var i=0;i<list.length;i++){
+            if(list[i]==name){
+               indicator=list[i];
+               break;
+             }
+         }
+         return indicator;
+    },
       showDescription : function (list){
         
         $("#indicator-input").on('mouseenter', function (){
@@ -109,29 +119,42 @@ var insightsApp = {
                    console.log("Current List");
                    console.log(currentList);
                    listItem= insightsApp.searchList(currentList,userInput);
+                   
                    console.log("List item in action indicator");
                    console.log(listItem);
                     if (listItem===null){ // If no match then user typed something different from list
                         $("#instructions").text("You must choose an indicator from the list");
 
                     }
-                    else { // if there is a match algorithm continues 
+                    else { // if there is a match method continues 
                         $("#instructions").text(insightsApp.instructions);
                  // Switch cases depending on where in the process the person is 
                  switch(insightsApp.status){
                     case 1: // Case for skills
-                    
-                        insightsApp.skillsList.data.push($("#indicator-input").val());
-                        $("#skills-txt").html($("#skills-txt").html()+"<span class='tag'>"
-                        +$("#indicator-input").val()+"</span><span class='tag-delete'>x</span> ");
-                        $("#indicator-input").val("");
-                        insightsApp.updateStatus();
-                        insightsApp.displayInstructions();
-                        insightsApp.deleteTagEvent(insightsApp.skillsList.data);
+                    //check if there is already a tag in the specific array
+                        matchItem = insightsApp.matchArray (insightsApp.skillsList.data,userInput);
+                        console.log (userInput);
+                        console.log (matchItem);
+                        if (matchItem===null){
+                            insightsApp.skillsList.data.push($("#indicator-input").val());
+                            $("#skills-txt").html($("#skills-txt").html()+"<span class='tag'>"
+                            +$("#indicator-input").val()+"</span><span class='tag-delete'>x</span> ");
+                            $("#indicator-input").val("");
+                            insightsApp.updateStatus();
+                            insightsApp.displayInstructions();
+                            insightsApp.deleteTagEvent(insightsApp.skillsList.data);
+                        }
+                        else {// If there was a match to previous item. Give message
+                            $("#instructions").text("You must choose an item that you have not chosen from skills list already");
+                            
+                        }
+                        
                         
                         
                     break;
                     case 2: // Case for traits
+                    matchItem = insightsApp.matchArray (insightsApp.traitsList.data,userInput);
+                    if (matchItem===null){
                         insightsApp.traitsList.data.push($("#indicator-input").val());
                         $("#traits-txt").html($("#traits-txt").html()+"<span class='tag'>"
                         +$("#indicator-input").val()+"</span><span class='tag-delete'>x</span> ");
@@ -139,9 +162,17 @@ var insightsApp = {
                         insightsApp.updateStatus();
                         insightsApp.displayInstructions();
                         insightsApp.deleteTagEvent(insightsApp.traitsList.data);
+                    }
+                    else {// If there was a match to previous item. Give message
+                        $("#instructions").text("You must choose an item that you have not chosen from traits list already");
                         
+                    }
+                    
+
                     break;
                     case 3: // Case for passion
+                    matchItem = insightsApp.matchArray (insightsApp.passionList.data,userInput);
+                    if (matchItem===null){
                         insightsApp.passionList.data.push($("#indicator-input").val());
                         $("#passions-txt").html($("#passions-txt").html()+"<span class='tag'>"
                         +$("#indicator-input").val()+"</span><span class='tag-delete'>x</span> ");
@@ -149,15 +180,26 @@ var insightsApp = {
                         insightsApp.updateStatus();
                         insightsApp.displayInstructions();
                         insightsApp.deleteTagEvent(insightsApp.passionList.data);
+                    }
+                    else {// If there was a match to previous item. Give message
+                        $("#instructions").text("You must choose an item that you have not chosen from passion list already");
+                        
+                    }
+
                     break;
-                    case 4 :
-                    insightsApp.sendList(insightsApp.traitsList,
-                    insightsApp.skillsList,insightsApp.passionList);
-                    break;
+                    
                  }
                                                
              }
-            } // End of Else block 
+            } // End of first if block
+            else if (insightsApp.status==4) {
+                $("#indicator-input").hide();
+                insightsApp.sendList(insightsApp.skillsList,
+                 insightsApp.traitsList,insightsApp.passionList);
+
+            } 
+            console.log ("Within Action Method---------");
+            console.log (insightsApp.status);
          });
         
     },
@@ -184,19 +226,21 @@ var insightsApp = {
                list.splice(i,1);
             }
         }
-        console.log("New list ");
+        console.log("New list");
         console.log(list);
     
     },
     skipStep : function (newStatus) {
-    $("btn-additional").on('click', function(){
+    $("#btn-additional").on('click', function(){
         if (typeof newStatus=='undefined'){
             insightsApp.status++;
             insightsApp.displayInstructions();
+           
         }
         else {
             insightsApp.updateStatus(newStatus);
             insightsApp.displayInstructions();
+      
         }
         
     });
@@ -266,7 +310,7 @@ var insightsApp = {
                     insightsApp.showDescription(indicators);
                         }
                  insightsApp.getIndicators(showList,searchList,insightsApp.autoApi);
-                
+                 $("#btn-additional").hide();
                                             
             }
             
@@ -274,6 +318,10 @@ var insightsApp = {
                 insightsApp.skillsList.data.length<5 ) {
                 $("#btn-additional").html("Skip to Traits");
                 $("#btn-additional").fadeIn(1000);
+
+                }
+                else {
+                    $("#btn-additional").hide();
                 }
                 insightsApp.runAutoComplete();
             break;
@@ -290,11 +338,15 @@ var insightsApp = {
                 insightsApp.showDescription(indicators);
                     }
              insightsApp.getIndicators(showList,searchList,insightsApp.autoApi);
+             $("#btn-additional").hide();
             }
             else if (insightsApp.traitsList.data.length>2 &&
                 insightsApp.traitsList.data.length<5 ) {
                 $("#btn-additional").html("Skip to Passion");
                 $("#btn-additional").fadeIn(1000);
+            }
+            else {
+                $("#btn-additional").hide();
             }
             
             insightsApp.runAutoComplete();
@@ -313,26 +365,33 @@ var insightsApp = {
                 insightsApp.showDescription(indicators);
                     }
              insightsApp.getIndicators(showList,searchList,insightsApp.autoApi);
+             $("#btn-additional").hide();
             }
             else if (insightsApp.passionList.data.length == 1 ) {
                 $("#btn-additional").html("Skip to Insights");
                 $("#btn-additional").fadeIn(1000);
+                
+            }
+            else {
+                $("#btn-additional").hide();
             }
             insightsApp.runAutoComplete();
             break;
             case 4:
+            $("#btn-additional").hide();
             insightsApp.instructions ="If you are satisfied with your choices";
             $("#instructions").html(insightsApp.instructions);
             $("#btn-indicator").html("Get Insights");
             
             break;
             case 5:
+            $("#btn-additional").hide();
             insightsApp.instructions ="If you are satisfied with your choices";
             $("#instructions").html(insightsApp.instructions);
             break;
         }
     },
-    sendList : function(traitsList,skillsList,passionList) {
+    sendList : function(skillsList,traitsList,passionList) {
         var indicatorList = {
             skills : skillsList,
             traits : traitsList,
@@ -360,12 +419,12 @@ var insightsApp = {
      });
     },
     
-    getInsights : function (){
-     $("#get-insights").on('click', function(){
-         insightsApp.sendList();
-         //alert("working");
-             });
-    },
+    // getInsights : function (){
+    //  $("#get-insights").on('click', function(){
+    //      insightsApp.sendList();
+    //      //alert("working");
+    //          });
+    // },
     
          getResults : function (url, data) {
                  var form = $("#results_form");
@@ -388,15 +447,19 @@ var insightsApp = {
             //call easy Autocomplete
             $("#indicator-input").easyAutocomplete(options);
 
+     },
+     startApp : function () {
+        insightsApp.displayInstructions();
+        insightsApp.actionIndicator();
+        //insightsApp.getInsights();
+        insightsApp.skipStep();
      }
  } // End of Insights App Object
  
- // Calling methods from Insights App object 
+ // Calling startApp method to begin app
 
-     insightsApp.displayInstructions();
-     insightsApp.actionIndicator();
-    insightsApp.getInsights();
     
+    insightsApp.startApp();
 
 
      

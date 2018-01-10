@@ -37,6 +37,7 @@ class CreateSiteTables extends Migration
             $table->string('position');
             $table->string('company');
             $table->text('testimony');
+            $table->string('photo');
             $table->timestamps();
         });
         Schema::create('Admin_Users', function (Blueprint $table) {
@@ -51,6 +52,16 @@ class CreateSiteTables extends Migration
             $table->string('indicator');
             $table->string('description');
             $table->integer('type_id')->unsigned();
+            $table->timestamps();
+        });
+        Schema::create('Sliders', function (Blueprint $table) {
+            $table->increments('slider_id');
+            $table->string('slider_name');
+            $table->string('slider_img');
+            $table->string('slider_header');
+            $table->string('description');
+            $table->string('updated_at');
+            $table->string('created_at');
             $table->timestamps();
         });
         Schema::create('Indicator_Types', function (Blueprint $table) {

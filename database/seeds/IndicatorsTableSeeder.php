@@ -35,30 +35,55 @@ class IndicatorsTableSeeder extends Seeder
             'type_id' => 1,
             ]
             );
-            DB::table('indicators')->insert([
-                'indicator' => 'extrovert',
-                'description' =>'Likes going out and meeting and speaking to people',
-                'type_id' => 2,
-                ]
-                );   
-            DB::table('indicators')->insert([
-                'indicator' => 'introvert',
-                'description' =>'Prefers doing activities alone, not very outgoing',
-                'type_id' => 2,
-                ]
-                );   
-            DB::table('indicators')->insert([
-                'indicator' => 'teaching',
-                'description' =>'Likes explaining concepts to other persons',
-                'type_id' => 2,
-                ]
-                );  
-            DB::table('indicators')->insert([
-                'indicator' => 'problem solving',
-                'description' =>'Likes understanding a problem and developing solutions',
-                'type_id' => 2,
-                ]
-                );     
+        
+        DB::table('indicators')->insert([
+            'indicator' => 'extrovert',
+            'description' =>'Likes going out and meeting and speaking to people',
+            'type_id' => 2,
+            ]
+            );   
+        DB::table('indicators')->insert([
+            'indicator' => 'introvert',
+            'description' =>'Prefers doing activities alone, not very outgoing',
+            'type_id' => 2,
+            ]
+            );   
+        DB::table('indicators')->insert([
+            'indicator' => 'teaching',
+            'description' =>'Likes explaining concepts to other persons',
+            'type_id' => 2,
+            ]
+            );  
+        DB::table('indicators')->insert([
+            'indicator' => 'problem solving',
+            'description' =>'Likes understanding a problem and developing solutions',
+            'type_id' => 2,
+            ]
+            );  
+        DB::table('indicators')->insert([
+            'indicator' => 'teaching',
+            'description' =>'Loves explaining and teaching others about a topic',
+            'type_id' => 3,
+            ]
+            );  
+        DB::table('indicators')->insert([
+            'indicator' => 'debate',
+            'description' =>'Loves to logically present an argument and support it with facts',
+            'type_id' => 3,
+            ]
+            );
+        DB::table('indicators')->insert([
+            'indicator' => 'programming course',
+            'description' =>'Trained in writting code in programing language',
+            'type_id' => 1,
+            ]
+            );   
+        DB::table('indicators')->insert([
+            'indicator' => 'rhetoric',
+            'description' =>'training in the art of effective or persuasive speaking or writing ',
+            'type_id' => 1,
+            ]
+            ); 
                   
     }
 
