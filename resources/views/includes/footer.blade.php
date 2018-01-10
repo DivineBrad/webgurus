@@ -12,21 +12,31 @@ _________________________________________________________ -->
                     <hr>
 
                     <h4>Join our monthly newsletter</h4>
+                   
 
-                    <form>
+                    <form method="post" action="/subscribe">
+                    {{ csrf_field() }}
                         <div class="input-group">
 
-                            <input type="text" class="form-control">
-
+                            <input type="email" name="email" class="form-control" />
                             <span class="input-group-btn">
 
-                        <button class="btn btn-default" type="button"><i class="fa fa-send"></i></button>
+                        <button class="btn btn-default" type="submit"><i class="fa fa-send"></i></button>
 
                     </span>
 
                         </div>
                         <!-- /input-group -->
                     </form>
+                    @if ($errors->any())
+                        <div class="alert alert-danger flash">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
                     <hr class="hidden-md hidden-lg hidden-sm">
 

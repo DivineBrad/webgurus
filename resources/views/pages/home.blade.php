@@ -63,6 +63,14 @@
         
     @include('includes.Slider')
        
+    @if(Session::has('newsletter'))
+                    <div class="alert alert-success" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    <strong>Success!</strong> You are now subscribed to our Newsletter!
+                    </div>
+                    @endif
 
         <section class="bar background-image-fixed-2 no-mb color-white text-center">
             <div class="dark-mask"></div>
@@ -162,6 +170,13 @@ _________________________________________________________ -->
     <!-- /#all -->
 
     <!-- #### JAVASCRIPT FILES ### -->
+    <script>
+    window.setTimeout(function() { 
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+    });
+}, 4000);
+    </script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     

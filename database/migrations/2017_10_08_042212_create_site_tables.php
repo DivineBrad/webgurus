@@ -60,13 +60,17 @@ class CreateSiteTables extends Migration
             $table->string('slider_img');
             $table->string('slider_header');
             $table->string('description');
-            $table->string('updated_at');
-            $table->string('created_at');
             $table->timestamps();
         });
         Schema::create('Indicator_Types', function (Blueprint $table) {
             $table->increments('type_id');
             $table->string('type');
+            $table->timestamps();
+        });
+        Schema::create('Newsletter_users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('email')->unique();
+            $table->string('user_id')->nullable();            
             $table->timestamps();
         });
 

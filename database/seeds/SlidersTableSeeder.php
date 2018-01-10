@@ -31,8 +31,7 @@ class SlidersTableSeeder extends Seeder
             'slider_header' => 'We provide Insights',
             'description' =>'Get ready for the light bulb moment! .',
             ]
-            ); 
-                  
+            );                
     }
 
 }
