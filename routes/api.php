@@ -5,7 +5,9 @@ use App\Http\Controllers\InsightController;
 use App\CareerPoints;
 use App\IndicatorPoints;
 use App\Indicator;
+use App\Slider;
 use App\Http\Resources\Indicator as IndicatorResource;
+use App\Http\Resources\Slider as SliderResource;
 
 use App\IndicatorType;
 use App\Http\Resources\IndicatorType as IndicatorTypeResource;
@@ -20,12 +22,19 @@ use App\Http\Resources\IndicatorType as IndicatorTypeResource;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+Route::get('/sliders', function () {
+    return SliderResource::Collection(Slider::all());
+   
+   
+});
 Route::get('/indicators', function () {
     return IndicatorResource::Collection(Indicator::all());
    
    
 }); 
+
+
+
 Route::get('/indicator/{id}', function ($id) {
     return new IndicatorResource(Indicator::findOrFail($id));
    

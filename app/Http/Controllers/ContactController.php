@@ -1,11 +1,30 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Mail;
+use App\Mail\ContactUs;
+use App\Mail\ContactUserInfo;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
+    /**
+     * Reply and email to customers
+     *
+     * @param  Request  $request
+     * @param  email
+     * @return Response
+     */
+    public function sendEmail(Request $request)
+    {
+        $email = $request->input('email');
+
+        Mail::to($email)->send(new ContactUs());
+
+        Mail::to("johneylin1314@gmail.com")->send(new ContactUserInfo($request));
+
+        return redirect()->to('/');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +42,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

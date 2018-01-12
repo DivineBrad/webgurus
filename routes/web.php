@@ -15,9 +15,15 @@ use Illuminate\Http\Request;
 |
 */
 
+<<<<<<< HEAD
+//  Route::get('/', function () {
+//     return view('pages.home');
+// }); 
+=======
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
+>>>>>>> f9b6431969593fa8faa34c39efcc9ba32c3dc6f2
 
 Route::get('/', 'HomeController@index');
 
@@ -69,6 +75,10 @@ Route::get('careers/link/indicators/{id}', function ($id) {
 
 });
 
+Route::post('/send','ContactController@sendEmail');
+Route::post('/subscribe','HomeController@joinNewsletter');
+
+
 
 Route::resource('/test','TestController');
 
@@ -82,10 +92,19 @@ Route::resource('/test','TestController');
 
 Route::resource('insights','InsightController');
 Route::resource('indicators','IndicatorController');
+Route::resource('sliders','SliderController');
 Route::resource('careers','CareerController');
 Route::resource('contact','ContactController');
 Route::resource('admin','AdminController');
 Route::resource('admin/login','AdminLoginController');
+Route::resource('about','AboutController');
+Route::resource('faq','FaqController');
+Route::resource('policy','PolicyController');
 //Route::resource('admin/authenticate','AdminAuthenticateController');
 
 
+<<<<<<< HEAD
+Route::get('/', 'HomeController@index');
+//Route::get('/home', 'HomeController@index')->name('home');
+=======
+>>>>>>> f9b6431969593fa8faa34c39efcc9ba32c3dc6f2

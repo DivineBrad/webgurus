@@ -72,25 +72,22 @@
             </div>
         </div>
 
+     
+            
         <div id="content">
             <div class="container">
 
                 <section>
+                
                     <div class="row">
                         <div class="col-md-12">
-
+                        @foreach($about as $about)
                             <div class="heading">
-                                <h2>About <b><i>Career Insights</i></b></h2>
+                                <h2>{{$about->heading1}}</h2>
                             </div>
 
-                            <p class="lead"><p  style="font-size: 20px; text-align:justify">Welcome to <b><i>Career Insights</i></b> on the market!  
-                            Our success is driven by the highest quality customer service.
+                            <p class="lead"><p  style="font-size: 20px; text-align:justify">{{$about->para1}}{{$about->para4}}{{$about->para6}}{{$about->para7}}{{$about->para5}}</p>
                             
-	                        <b><i>Career Insights</i></b> is the world's largest career research and guidance website which helps persons 
-                            to choose a correct career path based on their personality traits, skills and their passions.<br>
-                            Our research into personality,
-                             behaviours and professinal skills together with an understanding of multiple industries, allows us to give useful Insights to persons which gives the useful guidance in the career decisions. 
-                            </p>
                         </div>
                     </div>
 
@@ -103,7 +100,7 @@
 
                                                 <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3a">
 
-                                                    Reason's behind <b><i>Careerinsights</i></b> being number one.
+                                                {{$about->heading2}}
 
                                                 </a>
 
@@ -116,11 +113,11 @@
                                                     <img src="img/template-easy-customize.png" alt="" class="img-responsive">
                                                 </div>
                                                 <div class="col-md-8">
-                                                   <b>Top three reasons why <b><i>Careerinsights</i></b> is different than other Career suggesting Boards:</b><br><br>
+                                                   <b>{{$about->para2}}</b><br><br>
 	<ol style="font-size: 20px; text-align:justify">
-		<li>Provides deep insights into the best career options for you.</li>
-		<li>Allows comparison of careers across industries.</li>
-		<li>Provides insights into your own personality traits, skills and passion.</li>
+		<li>{{$about->para8}}</li>
+		<li>{{$about->para9}}</li>
+		<li>{{$about->para0}}</li>
 	</ol>
                                                 </div>
                                             </div>
@@ -133,7 +130,7 @@
 
                                                 <a data-toggle="collapse" data-parent="#accordionThree" href="#collapse3b">
 
-                                                    <b><i>Careerinsights</i></b> advanced search.
+                                                    <b>{{$about->heading3}}
 
                                                 </a>
 
@@ -146,14 +143,13 @@
                                                     <img src="img/template-easy-code.png" alt="" class="img-responsive">
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <p style="font-size: 20px; text-align:justify">Use <b><i>Careerinsights</i></b>  to gain 
-                                                    a deep understanding of which career options best suit your personality, skills and passions.</p>
+                                                    <p style="font-size: 20px; text-align:justify">{{$about->para3}}</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
+                                @endforeach          
                             
                 </section>
                 

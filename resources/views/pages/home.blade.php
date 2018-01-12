@@ -60,6 +60,9 @@
     <div id="all">
     @include('includes.header')
 
+<<<<<<< HEAD
+    
+
         <section>
             <!-- *** HOMEPAGE CAROUSEL ***
  _________________________________________________________ -->
@@ -136,7 +139,19 @@
             <!-- *** HOMEPAGE CAROUSEL END *** -->
         </section>
 
+=======
+        
+    @include('includes.Slider')
+>>>>>>> f9b6431969593fa8faa34c39efcc9ba32c3dc6f2
        
+    @if(Session::has('newsletter'))
+                    <div class="alert alert-success" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    <strong>Success!</strong> You are now subscribed to our Newsletter!
+                    </div>
+                    @endif
 
         <section class="bar background-image-fixed-2 no-mb color-white text-center">
             <div class="dark-mask"></div>
@@ -172,20 +187,47 @@
                         <!-- *** TESTIMONIALS CAROUSEL ***
  _________________________________________________________ -->
 
+           
+                        @foreach($testimonials as $testimonial)
                         <ul class="owl-carousel testimonials same-height-row">
+<<<<<<< HEAD
+                       
+                            <li class="item">
+                                <div class="testimonial same-height-always">
+                                    <div class="text">
+                                    <p>
+                                        <p> {{$testimonial->testimony}}</p>
+                                        
+                                    
+                                        </p>
+                                    </div>
+
+=======
                         @foreach($testimonials as $testimonial)
                             <li class="item">
                                 <div class="testimonial same-height-always">
                                     <div class="text">
                                         <p> {{$testimonial->testimony}}</p>
                                     </div>
+>>>>>>> f9b6431969593fa8faa34c39efcc9ba32c3dc6f2
                                     <div class="bottom">
                                         <div class="icon"><i class="fa fa-quote-left"></i>
                                         </div>
                                         <div class="name-picture">
+<<<<<<< HEAD
+                                            
+                                       
+                                            <h5>
+                                            <p> {{$testimonial->name}}</p>
+                                            </h5>
+                                        <p>
+                                            <p> {{$testimonial->company}}</p>
+                                            </p>
+=======
                                             <img class="" alt="" src={{$testimonial->photo}}>
                                             <h5>{{$testimonial->name}}y</h5>
                                             <p>{{$testimonial->position}}, {{$testimonial->company}}</p>
+>>>>>>> f9b6431969593fa8faa34c39efcc9ba32c3dc6f2
                                         </div>
                                     </div>
                                 </div>
@@ -193,8 +235,9 @@
                             @endforeach
                             
                         </ul>
+                      @endforeach
                         <!-- /.owl-carousel -->
-
+                       
                         <!-- *** TESTIMONIALS CAROUSEL END *** -->
                     </div>
 
@@ -236,6 +279,13 @@ _________________________________________________________ -->
     <!-- /#all -->
 
     <!-- #### JAVASCRIPT FILES ### -->
+    <script>
+    window.setTimeout(function() { 
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+    });
+}, 4000);
+    </script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     
