@@ -65,6 +65,12 @@ Route::get('careers/link/indicators/{id}', function ($id) {
 
 Route::post('/send','ContactController@sendEmail');
 Route::post('/subscribe','HomeController@joinNewsletter');
+Route::get('admin/newsletter','NewsletterController@create');
+Route::post('/post-newsletter','NewsletterController@store');
+Route::post('/delete-newsletter-use/{id}','NewsletterController@destroy');
+
+
+
 
 
 
@@ -85,6 +91,6 @@ Route::resource('careers','CareerController');
 Route::resource('contact','ContactController');
 Route::resource('admin','AdminController');
 Route::resource('admin/login','AdminLoginController');
-//Route::resource('admin/authenticate','AdminAuthenticateController');
+Route::resource('newsletters','NewsletterController');
 
 

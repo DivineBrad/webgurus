@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use DB;
 use Auth;
 use App\Newsletter_users;
+use Mail;
+use App\Mail\NewsletterSubscribedConfirmation;
 use Validator;
 
 class HomeController extends Controller
@@ -39,7 +41,7 @@ class HomeController extends Controller
     public function joinNewsletter(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email' => 'email|max:40',
+            'email' => 'email|max:40|unique:newsletter_users',
         ]);
 
         if ($validator->fails()) {
@@ -54,6 +56,7 @@ class HomeController extends Controller
             $newsletter_user->user_id =$id;
             if($newsletter_user->save()){
                 \Session::flash('newsletter','You have successfully subscribed to our newsletters. Get ready to hear from us');
+                Mail::to($newsletter_user->email)->send(new NewsletterSubscribedConfirmation($newsletter_user->id));                 
                 return redirect('/');
             }
         }
