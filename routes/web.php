@@ -15,15 +15,9 @@ use Illuminate\Http\Request;
 |
 */
 
-<<<<<<< HEAD
-//  Route::get('/', function () {
-//     return view('pages.home');
-// }); 
-=======
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
->>>>>>> f9b6431969593fa8faa34c39efcc9ba32c3dc6f2
 
 Route::get('/', 'HomeController@index');
 
@@ -103,8 +97,3 @@ Route::resource('policy','PolicyController');
 //Route::resource('admin/authenticate','AdminAuthenticateController');
 
 
-<<<<<<< HEAD
-Route::get('/', 'HomeController@index');
-//Route::get('/home', 'HomeController@index')->name('home');
-=======
->>>>>>> f9b6431969593fa8faa34c39efcc9ba32c3dc6f2

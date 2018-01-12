@@ -112,7 +112,7 @@ class InsightController extends Controller
         
        // Mail::to($recipients)->send(new ShareInsights($request));
         Mail::to($recipients)->send(new ShareInsights($request));
-        return redirect()->to('/');
+        return redirect("/");
     }
 
 

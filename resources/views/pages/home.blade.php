@@ -60,89 +60,10 @@
     <div id="all">
     @include('includes.header')
 
-<<<<<<< HEAD
     
 
-        <section>
-            <!-- *** HOMEPAGE CAROUSEL ***
- _________________________________________________________ -->
-
-            <div class="home-carousel ">
-
-                <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line " data-ride="carousel" data-pause="click" data-interval="4000" >
-
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
-                <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
-                <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
-            </ol>
-
-            <!-- Wrapper For Slides -->
-            <div class="carousel-inner" role="listbox">
-
-                <!-- Third Slide -->
-                <div class="item active">
-
-                    <!-- Slide Background -->
-                    <img src="<?php public_path()?>/img/slide1.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-                    <div class="bs-slider-overlay"></div>
-
-                    <div class="container">
-                        <div class="row">
-                            <!-- Slide Text Layer -->
-                            <div class="slide-text slide_style_left">
-                                <h1 data-animation="animated zoomInRight">Your dream Career awaits!</h1>
-                                <p data-animation="animated fadeInLeft">We guide on your career path.</p>
-                                <a href="/insights" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">Get Insights</a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Slide -->
-
-                <!-- Second Slide -->
-                <div class="item">
-
-                    <!-- Slide Background -->
-                    <img src="<?php public_path()?>/img/slide2.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-                    <div class="bs-slider-overlay"></div>
-                    <!-- Slide Text Layer -->
-                    <div class="slide-text slide_style_center">
-                        <h1 data-animation="animated flipInX">Find the best career for YOU!</h1>
-                        <p data-animation="animated lightSpeedIn">We analyze your skills, traits and passions.</p>
-                        <a href="/insights" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">Get Insights</a>
-                        
-                    </div>
-                </div>
-                <!-- End of Slide -->
-
-                <!-- Third Slide -->
-                <div class="item">
-
-                    <!-- Slide Background -->
-                    <img src="<?php public_path()?>/img/slide3.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-                    <div class="bs-slider-overlay"></div>
-                    <!-- Slide Text Layer -->
-                    <div class="slide-text slide_style_right">
-                        <h1 data-animation="animated zoomInLeft">We provide Insights</h1>
-                        <p data-animation="animated fadeInRight">Get ready for the light bulb moment! .</p>
-                        <a href="/insights" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">Get Insights</a>
-                        
-                    </div>
-                </div>
-                <!-- End of Slide -->
-
-            </div>
-
-            <!-- *** HOMEPAGE CAROUSEL END *** -->
-        </section>
-
-=======
         
     @include('includes.Slider')
->>>>>>> f9b6431969593fa8faa34c39efcc9ba32c3dc6f2
        
     @if(Session::has('newsletter'))
                     <div class="alert alert-success" role="alert">
@@ -184,50 +105,23 @@
                         <p class="lead">We have thousands of person find the passion, the dream career and be the best that they can be.</p>
 
 
-                        <!-- *** TESTIMONIALS CAROUSEL ***
+                       <!-- *** TESTIMONIALS CAROUSEL ***
  _________________________________________________________ -->
 
-           
-                        @foreach($testimonials as $testimonial)
-                        <ul class="owl-carousel testimonials same-height-row">
-<<<<<<< HEAD
-                       
-                            <li class="item">
-                                <div class="testimonial same-height-always">
-                                    <div class="text">
-                                    <p>
-                                        <p> {{$testimonial->testimony}}</p>
-                                        
-                                    
-                                        </p>
-                                    </div>
-
-=======
+ <ul class="owl-carousel testimonials same-height-row">
                         @foreach($testimonials as $testimonial)
                             <li class="item">
                                 <div class="testimonial same-height-always">
                                     <div class="text">
                                         <p> {{$testimonial->testimony}}</p>
                                     </div>
->>>>>>> f9b6431969593fa8faa34c39efcc9ba32c3dc6f2
                                     <div class="bottom">
                                         <div class="icon"><i class="fa fa-quote-left"></i>
                                         </div>
                                         <div class="name-picture">
-<<<<<<< HEAD
-                                            
-                                       
-                                            <h5>
-                                            <p> {{$testimonial->name}}</p>
-                                            </h5>
-                                        <p>
-                                            <p> {{$testimonial->company}}</p>
-                                            </p>
-=======
                                             <img class="" alt="" src={{$testimonial->photo}}>
                                             <h5>{{$testimonial->name}}y</h5>
                                             <p>{{$testimonial->position}}, {{$testimonial->company}}</p>
->>>>>>> f9b6431969593fa8faa34c39efcc9ba32c3dc6f2
                                         </div>
                                     </div>
                                 </div>
@@ -235,9 +129,8 @@
                             @endforeach
                             
                         </ul>
-                      @endforeach
                         <!-- /.owl-carousel -->
-                       
+
                         <!-- *** TESTIMONIALS CAROUSEL END *** -->
                     </div>
 

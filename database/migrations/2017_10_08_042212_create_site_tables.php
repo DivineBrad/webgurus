@@ -67,7 +67,6 @@ class CreateSiteTables extends Migration
             $table->string('type');
             $table->timestamps();
         });
-<<<<<<< HEAD
         Schema::create('About', function (Blueprint $table) {
             $table->increments('about_id');
             $table->string('heading1');
@@ -136,14 +135,12 @@ class CreateSiteTables extends Migration
             
         });
 
-=======
         Schema::create('Newsletter_users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email')->unique();
             $table->string('user_id')->nullable();            
             $table->timestamps();
         });
->>>>>>> 53a70c120cec0c1cbd347d313432733a1d98353d
 
     }
 
