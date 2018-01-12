@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Mail\ShareInsights;
+use Mail;
 use Illuminate\Http\Request;
 use App\Indicator;
 use App\CareerPoints;
@@ -19,6 +20,10 @@ class InsightController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    
+
+
     public function index()
     {
        /*  $indicators = Indicator::all();
@@ -96,6 +101,20 @@ class InsightController extends Controller
     {
         //
     }
+
+
+    public function share(Request $request)
+    {
+        $sender = $request->input("sender");
+        $to = $request->input("recipients");
+       // $recipients = str_replace(",",";",$to);
+        $recipients = explode(',',$to);
+        
+       // Mail::to($recipients)->send(new ShareInsights($request));
+        Mail::to($recipients)->send(new ShareInsights($request));
+        return redirect()->to('/');
+    }
+
 
     // Custom Function to get then pass the results to the /insights/results view
     public function results(Request $request)

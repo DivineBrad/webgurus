@@ -87,7 +87,7 @@
 
                     <div class="col-12 ">
                         <div class="box">
-                            <h5 class="text-uppercase">Insights Results</h5>
+                            <h5 class="text-uppercase">Insights TEST Results</h5>
                             <div>
                             <p>Based on your skills, personality traits and passion, 
                              there careers below present strong options to explore! </p>
@@ -99,14 +99,50 @@
                            {{$item['career']}}
                            </li>
                             @endforeach
-                            <script>
                            
-                             </script>
                             </ul>
                             </div>
                            
                         </div>
                     </div>
+                    <div id ="share_results">
+
+                           Share results with friends, family or collegues.
+                           
+                            <form method="POST" action="/insights/share">
+                                {{ csrf_field() }}
+
+                                <div class="form-group row">
+                                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+                                </div>
+                                </div>
+                                <div class="form-group row">
+                                <label for="email" class="col-sm-2 col-form-label">Your Email</label>
+                                <div class="col-sm-6">
+                                    <input type="email" class="form-control" id="email" placeholder="Email" name="sender">
+                                </div>
+                                </div>
+                                <div class="form-group row">
+                                <label for="email" class="col-sm-2 col-form-label">Receivers's Email </label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="email" placeholder="(seperate multiple emails with commans)" name="recipients">
+                                </div>
+                                </div>
+                                
+                                <!-- Hidden Form fields for results-->
+                                <input type="hidden" name="results_items" value='{!! json_encode($results) !!}'>
+
+                                <div class="form-group row">
+                                <div class="offset-sm-2 col-sm-4">
+                                <input type="submit" class="btn btn-primary" value="share" />
+                                </div>
+                                </div>
+                            </form>
+                          
+
+                        </div>
 
                 </div>
                 <!-- /.row -->

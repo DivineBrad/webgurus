@@ -52,6 +52,12 @@ Route::post('insights/results', function (Request $request) {
     $insightController->results($request);
 
 });
+Route::post('insights/share', function (Request $request) {
+    $insightController = new InsightController();
+    $insightController->share($request);
+
+});
+
 Route::post('careers/add/indicators', function (Request $request) {
     $careerController = new CareerController();
     $careerController->addIndicators($request);
