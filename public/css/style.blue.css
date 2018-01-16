@@ -319,6 +319,9 @@ ul.list-style-none {
   text-decoration: none !important;
   border-top: solid 5px #294d76;
 }
+.nav_login > li > a {
+  text-decoration: none !important;
+}
 @media (max-width: 768px) {
   .navbar ul.nav > li.active > a,
   .navbar ul.nav > li.open > a {
@@ -2658,7 +2661,7 @@ fieldset[disabled] .btn-template-primary.active {
 }
 /* nav */
 .nav > li > a {
-  padding: 10px 15px;
+  padding: 0px 15px;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -2947,8 +2950,8 @@ fieldset[disabled] .btn-template-primary.active {
   margin: 10.5px -15px;
 }
 .navbar-nav > li > a {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   line-height: 20px;
 }
 @media (max-width: 767px) {
@@ -2975,6 +2978,9 @@ fieldset[disabled] .btn-template-primary.active {
   .navbar-nav > li > a {
     padding-top: 21px;
     padding-bottom: 21px;
+  }
+  .nav_login > li > a{
+    text-decoration: none !important;
   }
   .navbar-nav.navbar-right:last-child {
     margin-right: -15px;

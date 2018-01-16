@@ -20,7 +20,7 @@ _________________________________________________________ -->
                             </div>
 
                             <div class="login">
-                            <ul class="nav navbar-nav navbar-right">
+                            <ul class="nav_login">
                             
                             <!-- Authentication Links -->
                         @guest
