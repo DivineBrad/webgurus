@@ -63,7 +63,7 @@ class NewsFeedTableSeeder extends Seeder
         DB::table('newsfeed')->insert([
             
             'news_id' => 3,
-            'title' => 'Don\’t expect a big pay hike in 2018, what didn\'t go wrong in 2017, and more trending stories',
+            'title' => 'Don\'t expect a big pay hike in 2018, what didn\'t go wrong in 2017, and more trending stories',
             'date' => Carbon::create('2018','01','01'),
             'info' => 'During the week, the Daily Rundown brings you the day’s trending professional news. On the weekend, we try to keep you current on the big ideas that can help you see what’s coming. Read on and join the conversation.
 
