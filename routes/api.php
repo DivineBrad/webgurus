@@ -6,9 +6,10 @@ use App\CareerPoints;
 use App\IndicatorPoints;
 use App\Indicator;
 use App\Slider;
+use App\Menu;
 use App\Http\Resources\Indicator as IndicatorResource;
 use App\Http\Resources\Slider as SliderResource;
-
+use App\Http\Resources\Menu as MenuResource;
 use App\IndicatorType;
 use App\Http\Resources\IndicatorType as IndicatorTypeResource;
 
@@ -24,6 +25,12 @@ use App\Http\Resources\IndicatorType as IndicatorTypeResource;
 */
 Route::get('/sliders', function () {
     return SliderResource::Collection(Slider::all());
+   
+   
+});
+
+Route::get('/menus', function () {
+    return MenuResource::Collection(Menu::all());
    
    
 });

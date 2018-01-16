@@ -87,6 +87,7 @@ Route::resource('/test','TestController');
 Route::resource('insights','InsightController');
 Route::resource('indicators','IndicatorController');
 Route::resource('sliders','SliderController');
+Route::resource('menus','MenuController');
 Route::resource('careers','CareerController');
 Route::resource('contact','ContactController');
 Route::resource('admin','AdminController');
