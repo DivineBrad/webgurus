@@ -142,6 +142,14 @@ class CreateSiteTables extends Migration
             $table->timestamps();
         });
 
+        Schema::create('NewsFeed',function(Blueprint $table) {
+            $table->increments('news_id');
+            $table->string('title');
+            $table->date('date');
+            $table->longtext('info');
+            $table->timestamps();
+        });
+
     }
 
     /**

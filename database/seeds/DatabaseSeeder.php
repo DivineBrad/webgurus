@@ -26,6 +26,9 @@ class DatabaseSeeder extends Seeder
            Newsletter_usersTableSeeder::Class,
            TestimonialsTableSeeder::Class,
            SlidersTableSeeder::Class,
+           NewsFeedTableSeeder::Class,
+           UsersTableSeeder::Class,
+           AdminUsersTableSeeder::Class,
        ]
        );
     

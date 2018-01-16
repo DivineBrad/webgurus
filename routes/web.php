@@ -71,6 +71,7 @@ Route::get('careers/link/indicators/{id}', function ($id) {
 
 Route::post('/send','ContactController@sendEmail');
 Route::post('/subscribe','HomeController@joinNewsletter');
+Route::get('/newsfeed','NewsFeedController@Userindex');
 
 
 
@@ -89,6 +90,7 @@ Route::resource('indicators','IndicatorController');
 Route::resource('sliders','SliderController');
 Route::resource('menus','MenuController');
 Route::resource('careers','CareerController');
+Route::resource('newsfeeds','NewsFeedController');
 Route::resource('contact','ContactController');
 Route::resource('admin','AdminController');
 Route::resource('admin/login','AdminLoginController');

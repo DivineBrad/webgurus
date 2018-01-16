@@ -105,6 +105,9 @@ _________________________________________________________ -->
                                         <li><a href="/faq">FAQ</a>
                                         <li><a href="/policy">Privacy Policy</a>
                                         </li>
+                                        <li><a href="/newsfeed">News</a>
+                                        </li>
+
 
                                     </ul>
                                 </li>
