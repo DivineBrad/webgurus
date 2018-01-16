@@ -146,7 +146,7 @@ class CreateSiteTables extends Migration
             $table->increments('news_id');
             $table->string('title');
             $table->date('date');
-            $table->string('info');
+            $table->longtext('info');
             $table->timestamps();
         });
 

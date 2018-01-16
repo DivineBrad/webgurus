@@ -83,9 +83,7 @@
                             <h5 class="text-uppercase">NewsFeed Detail List</h5>
                             @foreach($newsFeeds as $key => $value)
                             <div class="well">
-                            <div class="row">
                             
-                            <div class="col-md-2 col-md-offset-5">
                             
                                 <h1 class="section-header">
                                     <span>{{ $value->title}}</span>
@@ -95,8 +93,7 @@
                         
                                     <p>{{ $value->info}}</p>
                                 </article>
-                            </div>  
-                            </div>
+                            
                                 
                             </div>
                             @endforeach
