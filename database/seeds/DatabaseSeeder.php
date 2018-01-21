@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
            NewsFeedTableSeeder::Class,
            UsersTableSeeder::Class,
            AdminUsersTableSeeder::Class,
+           NewsFeedTableSeeder::Class,
        ]
        );
     
