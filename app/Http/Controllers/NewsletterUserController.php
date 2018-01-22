@@ -2,29 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use DB;
 use Illuminate\Http\Request;
-use App\Indicator;
-use App\Career;
-use App\NewsFeed;
+use Auth;
 use App\Newsletter_users;
+use Mail;
+use App\Mail\NewsletterSubscribedConfirmation;
+use Validator;
+use Exception;
+use Illuminate\Database\Eloquent\ModelNotFoundException as ModelNotFoundException;
 
-use App\AdminUser;
-use App\User;
-
-class AdminController extends Controller
+class NewsletterUserController extends Controller
 {
-    
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-       $this->middleware('admin');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -32,22 +20,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $indicator_count = Indicator::count();
-        $admin_count = AdminUser::count();
-        $user_count = User::count();
-        $career_count = Career::count();
-        $subscribed_count = Newsletter_users::count();
-        $newsfeed_count = NewsFeed::count();
-        return view('pages.admin.index')
-        ->with("indicator_count",$indicator_count)
-        ->with("admin_count",$admin_count)
-        ->with("user_count",$user_count)
-        ->with("subscribed_count",$subscribed_count)
-        ->with("newsfeed_count",$newsfeed_count)
-        ->with("career_count",$career_count);
-        // $menus = DB::table('menus')->get();
-        // return view('pages.admin.index')
-        // ->with('menus',$menus);
+        //
     }
 
     /**
@@ -69,6 +42,27 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         //
+        $validator = Validator::make($request->all(), [
+            'email' => 'email|max:40|unique:newsletter_users',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        else{
+            $id=Auth::id();
+            $newsletter_user=new Newsletter_users();
+            $newsletter_user->email = $request->email;
+            $newsletter_user->user_id =$id;
+            if($newsletter_user->save()){
+                \Session::flash('newsletter','You have successfully subscribed to our newsletters. Get ready to hear from us');
+                Mail::to($newsletter_user->email)->send(new NewsletterSubscribedConfirmation($newsletter_user->id));                 
+                return redirect('/');
+            }
+        }
+     
     }
 
     /**
@@ -114,5 +108,19 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+        
+    }
+
+    public function unsubscribe(Request $request){
+        $id=$request->query('id');
+        // try{
+        $newsletterUser=Newsletter_users::findOrFail($id)->delete();
+            
+        // }
+        // catch(Exception $e){
+        //     throw new ModelNotFoundException($e->getMessage());
+        // }
+        
+        return redirect('/');
     }
 }

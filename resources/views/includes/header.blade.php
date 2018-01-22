@@ -80,7 +80,7 @@ _________________________________________________________ -->
                         <!--/.navbar-header -->
 
                         <div class="navbar-collapse collapse" id="navigation">
-
+                        
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="active">
                                     <a href="/" >Home <b class="caret"></b></a>
@@ -91,12 +91,12 @@ _________________________________________________________ -->
                                     
                                 </li>
                                 <li class="use-yamm yamm-fw">
-                                    <a href="/career-insights" >Careers</a>
+                                    <a href="/career-insights" >Career</a>
                                     
                                 </li>
 
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="/about">About Us</a>
                                         </li>
@@ -112,7 +112,7 @@ _________________________________________________________ -->
                                     </ul>
                                 </li>
                             </ul>
-
+                              
                         </div>
                         <!--/.nav-collapse -->
 

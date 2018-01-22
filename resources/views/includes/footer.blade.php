@@ -14,7 +14,7 @@ _________________________________________________________ -->
                     <h4>Join our monthly newsletter</h4>
                    
 
-                    <form method="post" action="/subscribe">
+                    <form method="post" action="/newsletter_user">
                     {{ csrf_field() }}
                         <div class="input-group">
 

@@ -23,4 +23,6 @@ class Career extends Model
         return $this->belongsToMany('App\Indicator','career_indicators','career_id','indicator_id');
     }
 
+    
+
 }

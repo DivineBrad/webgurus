@@ -13,7 +13,7 @@ class IndicatorController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('admin');
     }
 
 
@@ -25,12 +25,14 @@ class IndicatorController extends Controller
      */
     public function index()
     {
+        
         $indicators = DB::table('indicators')
         ->join('indicator_types', 'indicators.type_id', '=', 'indicator_types.type_id')
         ->select('indicators.*', 'indicator_types.type')
         ->get();
         return view('pages.indicators.index')
         ->with('indicators',$indicators);
+        
     }
 
     /**

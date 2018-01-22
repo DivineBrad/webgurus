@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Newsletter_users;
+use App\Newsletter;
+use App\Mail\NewsletterEmail;
+use Exception;
 
-class TestController extends Controller
+class NewsletterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +18,7 @@ class TestController extends Controller
      */
     public function index()
     {
-        
-        return view('pages.tests.index')
-        
+        //
     }
 
     /**
@@ -25,7 +28,9 @@ class TestController extends Controller
      */
     public function create()
     {
-        return view('pages.tests.create');
+        //
+        $subscribed_emails=Newsletter_users::all();
+        return view('pages.newsletters.create')->with('email_list',$subscribed_emails);
     }
 
     /**
@@ -36,6 +41,14 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
+        // foreach($request->recipients as recipient){
+        //     Mail:
+        // }
+        $newsletter=Newsletter::create(array('body' => $request->body));
+        if($newsletter->save()){
+            Mail::to($request->recipients)->send(new NewsletterEmail($newsletter)); 
+            return redirect('/admin/newsletter');       
+        }
         //
     }
 
@@ -47,7 +60,7 @@ class TestController extends Controller
      */
     public function show($id)
     {
-        echo "testing";
+        //
     }
 
     /**
@@ -82,5 +95,7 @@ class TestController extends Controller
     public function destroy($id)
     {
         //
+        
     }
+    
 }

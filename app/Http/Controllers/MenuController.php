@@ -14,7 +14,7 @@ class MenuController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('admin');
     }
 
 
@@ -53,9 +53,17 @@ class MenuController extends Controller
     {
 
         $menu = new Menu();
-        $menu->menu_name = $request->input('menu_name');
-        $menu->menu_link = $request->input('menu_link');
-        $menu->parent_id = $request->input('parent_id');
+        $menus->menu_name1 = $request->input('menu_name1');
+        $menus->menu_name2 = $request->input('menu_name2');
+        $menus->menu_name3 = $request->input('menu_name3');
+        $menus->menu_name4 = $request->input('menu_name4');
+        $menus->menu_sname1 = $request->input('menu_sname1');
+        $menus->menu_sname2 = $request->input('menu_sname2');
+        $menus->menu_sname3 = $request->input('menu_sname3');
+        $menus->menu_sname4 = $request->input('menu_sname4');
+        $menus->menu_sname5 = $request->input('menu_sname5');
+        $menus->menu_link = $request->input('menu_link');
+        $menus->parent_id = $request->input('parent_id');
         $menu->save();
         return redirect()->route('menus.index');
     }
@@ -83,7 +91,7 @@ class MenuController extends Controller
     {
         $menu = Menu::findOrFail($id);
         return view('pages.menus.edit')
-        ->with('menu',$menu);
+        ->with('menus',$menus);
     }
 
     /**
@@ -96,10 +104,18 @@ class MenuController extends Controller
     public function update(MenuFormRequest $request, $id)
     {
 
-        $menu = Menu::find($id);
-        $menu->menu_name = $request->input('menu_name');
-        $menu->menu_link = $request->input('menu_link');
-        $menu->parent_id = $request->input('parent_id');
+        $menus = Menu::find($id);
+        $menus->menu_name1 = $request->input('menu_name1');
+        $menus->menu_name2 = $request->input('menu_name2');
+        $menus->menu_name3 = $request->input('menu_name3');
+        $menus->menu_name4 = $request->input('menu_name4');
+        $menus->menu_sname1 = $request->input('menu_sname1');
+        $menus->menu_sname2 = $request->input('menu_sname2');
+        $menus->menu_sname3 = $request->input('menu_sname3');
+        $menus->menu_sname4 = $request->input('menu_sname4');
+        $menus->menu_sname5 = $request->input('menu_sname5');
+        $menus->menu_link = $request->input('menu_link');
+        $menus->parent_id = $request->input('parent_id');
         $slider->save();
 
         return redirect()->route('sliders.index');

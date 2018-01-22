@@ -8,7 +8,7 @@ class PolicyController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+       
     }
     /**
      * Display a listing of the resource.
@@ -17,11 +17,13 @@ class PolicyController extends Controller
      */
     public function index()
     {
+        $menus = DB::table('menus')->get();
         $policy = DB::table('policy')
         ->select('policy.*')
         ->get();
         return view('pages.policy')
-        ->with('policy',$policy);
+        ->with('policy',$policy)
+        ->with('menus',$menus);
     }
     /**
      * Show the form for creating a new resource.

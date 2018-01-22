@@ -7,7 +7,7 @@
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Career Insights | Indicators</title>
+    <title>Error</title>
 
     <meta name="keywords" content="">
 
@@ -16,6 +16,9 @@
     <!-- Bootstrap and Font Awesome css -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    
+      
 
     <!-- Css animations  -->
     <link href="<?php public_path() ?>/css/animate.css" rel="stylesheet">
@@ -42,7 +45,10 @@
     <link rel="apple-touch-icon" sizes="120x120" href="<?php public_path() ?>/img/apple-touch-icon-120x120.png" />
     <link rel="apple-touch-icon" sizes="144x144" href="<?php public_path() ?>/img/apple-touch-icon-144x144.png" />
     <link rel="apple-touch-icon" sizes="152x152" href="<?php public_path() ?>/img/apple-touch-icon-152x152.png" />
-    
+    <!-- owl carousel css -->
+
+    <link href="<?php public_path() ?>/css/owl.carousel.css" rel="stylesheet">
+    <link href="<?php public_path() ?>/css/owl.theme.css" rel="stylesheet">
 </head>
 
 <body>
@@ -52,22 +58,17 @@
         
     @include('includes.header')
 
-       
         <div id="heading-breadcrumbs">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>Admin Indicators</h1>
+                        <h1>Error</h1>
                     </div>
-
-
-
-                    
                     <div class="col-md-5">
                         <ul class="breadcrumb">
-                            <li><a href="/admin">Home</a>
+                            <li><a href="/">Home</a>
                             </li>
-                            <li>Indicators List </li>
+                            <li>Error</li>
                         </ul>
 
                     </div>
@@ -76,56 +77,19 @@
         </div>
 
         <div id="content">
-            
-
-
-            
-            <div class="container-fluid">
-
-            <div class="row">
-                                <!-- *** Admin LEFT COLUMN ***
-			 _________________________________________________________ -->
-             @include('includes.adminmenu')
-             
-                      <!-- *** Left  Menu COLUMN END *** -->
-            <div class="col-md-8  col-sm-8 col-xs-8 ">
-
-
-            <h5 class="text-uppercase">Indicators List</h5>
-
-
-
-            
-            <div id="career-list">
-            <table class="table">
-            <tr><th>ID</th><th>INDICATOR</th><th>DESCRIPTION</th><th>TYPE</th><th>SHOW</th><th>EDIT</th><th>DELETE</th></tr>
-            @foreach($indicators as $key => $value)
-            <tr><td>{{$value->indicator_id}}</td><td>{{$value->indicator}}</td><td>{{$value->description}}</td><td>{{$value->type}}</td>
-            <td><form action="{{ route('indicators.show', $value->indicator_id) }}" method="get"><input type="submit" value="detail" ></form></td>
-            <td><form action="{{ route('indicators.edit', $value->indicator_id) }}" method="get"><input type="submit" value="edit" ></form></td>
-            <td><form action="indicators/{{$value->indicator_id}}" method="post">
-            <input type="hidden" name="_method" value="DELETE" >
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="submit" value="delete " >
-            </form></td>
-            </tr>
-
-            @endforeach
-            </table>
-            </div>
-
-            </div>
-            </div>
-
-
-
+            <div class="container container-table">
+                <p>This user has already Unsubscribed </p>
             </div>
             <!-- /.container -->
         </div>
-        <!-- /#content -->
+        <!-- /#content -->   
 
 
+
+        <!-- *** FOOTER ***
+_________________________________________________________ -->
         @include('includes.footer')
+       
 
 
 
@@ -140,19 +104,20 @@
         window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
     </script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="js/jquery.easy-autocomplete.min.js"> </script>
-    <script src="js/data.js"></script>
-    <script>
-    var indicators =testData();
-    //document.write(indicators);
-    //displayArrayList(indicators, "indicator-list");
-    </script>
 
+
+
+    <script src="<?php resource_path()?>/js/jquery.cookie.js"></script>
+    <script src="<?php resource_path()?>/js/waypoints.min.js"></script>
+    <script src="<?php resource_path()?>/js/jquery.counterup.min.js"></script>
+    <script src="<?php resource_path()?>/js/jquery.parallax-1.1.3.js"></script>
+    <script src="<?php resource_path()?>/js/front.js"></script>
 
     
-
+   
 
 
 </body>
 
 </html>
+This Resource is not available

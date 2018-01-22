@@ -8,7 +8,7 @@ class FaqController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        
     }
     /**
      * Display a listing of the resource.
@@ -17,11 +17,13 @@ class FaqController extends Controller
      */
     public function index()
     {
+        $menus = DB::table('menus')->get();
         $faq = DB::table('faq')
         ->select('faq.*')
         ->get();
         return view('pages.faq')
-        ->with('faq',$faq);
+        ->with('faq',$faq)
+        ->with('menus',$menus);
     }
     /**
      * Show the form for creating a new resource.

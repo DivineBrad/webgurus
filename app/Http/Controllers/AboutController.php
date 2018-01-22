@@ -8,7 +8,7 @@ class AboutController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        
     }
     /**
      * Display a listing of the resource.
@@ -17,11 +17,13 @@ class AboutController extends Controller
      */
     public function index()
     {
+        $menus = DB::table('menus')->get();
         $about = DB::table('about')
         ->select('about.*')
         ->get();
         return view('pages.about')
-        ->with('about',$about);
+        ->with('about',$about)
+        ->with('menus',$menus);
     }
     /**
      * Show the form for creating a new resource.

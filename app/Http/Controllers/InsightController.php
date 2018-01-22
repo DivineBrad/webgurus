@@ -29,10 +29,12 @@ class InsightController extends Controller
        /*  $indicators = Indicator::all();
         return view('pages.insights.index')
         ->with('indicators',$indicators); */
-   
+        $menus = DB::table('menus')->get();
+
         $indicators = Indicator::all();
         return view('pages.insights.index')
-        ->with('indicators',$indicators);
+        ->with('indicators',$indicators)
+        ->with('menus',$menus);
     }
 
     /**

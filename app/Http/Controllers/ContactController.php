@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Mail;
+use DB;
 use App\Mail\ContactUs;
 use App\Mail\ContactUserInfo;
 use Illuminate\Http\Request;
@@ -32,7 +33,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('pages.contact');
+        $menus = DB::table('menus')->get();
+        return view('pages.contact')
+        ->with('menus',$menus);
     }
 
     /**

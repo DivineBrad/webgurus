@@ -141,12 +141,33 @@ class CreateSiteTables extends Migration
             $table->string('user_id')->nullable();            
             $table->timestamps();
         });
+        Schema::create('Newsletters', function (Blueprint $table) {
+            $table->increments('id');
+            $table->mediumText('body');           
+            $table->timestamps();
+        });
+
 
         Schema::create('NewsFeed',function(Blueprint $table) {
             $table->increments('news_id');
             $table->string('title');
             $table->date('date');
             $table->longtext('info');
+            $table->timestamps();
+        });
+        Schema::create('Menus', function(Blueprint $table){
+            $table->increments('menu_id');
+            $table->string('menu_name1');
+            $table->string('menu_name2');
+            $table->string('menu_name3');
+            $table->string('menu_name4');
+            $table->string('menu_sname1');
+            $table->string('menu_sname2');
+            $table->string('menu_sname3');
+            $table->string('menu_sname4');
+            $table->string('menu_sname5');
+            $table->string('menu_link');
+            $table->string('parent_id');
             $table->timestamps();
         });
 

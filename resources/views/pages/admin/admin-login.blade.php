@@ -117,7 +117,7 @@ _________________________________________________________ -->
                                         <input type="checkbox" id="terms">
                                         <label>  Allow email notification.</label>
                                 </div>
-                                <div class="text-center">
+                                <div class="form-group text-center">
                                     <button  class="btn btn-template-main"><i class="fa fa-user-md"></i> Register</button>
                                 </div>
                             </form>

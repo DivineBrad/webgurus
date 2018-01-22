@@ -17,7 +17,7 @@ class CareerController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('admin');
     }
 
 
@@ -30,13 +30,15 @@ class CareerController extends Controller
     public function index()
     {
 
-        
+        $menus = DB::table('menus')->get();
+
         $careers = DB::table('careers')
         ->join('career_groups', 'careers.group_id', '=', 'career_groups.group_id')
         ->select('careers.*', 'career_groups.group_title')
         ->get();
         return view('pages.careers.index')
-        ->with('careers',$careers);
+        ->with('careers',$careers)
+        ->with('menus',$menus);
     }
 
     /**
@@ -46,11 +48,15 @@ class CareerController extends Controller
      */
     public function create()
     {
+        
+       $menus = DB::table('menus')->get();
         // query for career_groups
         $careergroups = DB::table('career_groups')
         ->get();
         return view('pages.careers.create')
-        ->with('careergroups',$careergroups);
+        ->with('careergroups',$careergroups)
+        ->with('menus',$menus);
+
 
     }
 
@@ -85,12 +91,16 @@ class CareerController extends Controller
      */
     public function show($id)
     {
+        
+        $menus = DB::table('menus')->get();
         $careergroups = DB::table('career_groups')
         ->get();
         $career = Career::findOrFail($id);
         return view('pages.careers.profile')
         ->with('careergroups',$careergroups)
-        ->with('career',$career);
+        ->with('career',$career)
+        ->with('menus',$menus);
+        
         
     }
 
@@ -102,24 +112,29 @@ class CareerController extends Controller
      */
     public function edit($id)
     {
+       $menus = DB::table('menus')->get();
         $careergroups = DB::table('career_groups')
         ->get();
         $career = Career::findOrFail($id);
         return view('pages.careers.edit')
         ->with('careergroups',$careergroups)
-        ->with('career',$career);
+        ->with('career',$career)
+        ->with('menus',$menus);
       
     }
 
     public function linkIndicators($id)
     {
-       
+       $menus = DB::table('menus');
         $indicators = DB::table('indicators')
         ->get();
         $career = Career::findOrFail($id);
         echo view('pages.careers.linkindicators')
         ->with('indicators',$indicators)
-        ->with('career',$career);
+        ->with('career',$career)
+        ->with('menus',$menus);
+        
+        
       
     }
 

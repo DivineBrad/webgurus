@@ -70,6 +70,18 @@ Route::get('careers/link/indicators/{id}', function ($id) {
 });
 
 Route::post('/send','ContactController@sendEmail');
+Route::get('admin/newsletter','NewsletterController@create');
+Route::post('/post-newsletter','NewsletterController@store');
+Route::get('/newsletter_user_delete','NewsletterUserController@unsubscribe');
+Route::get('/exception/no-user', function(){
+    return view('pages.errors.nouser');
+});
+Route::get('/exception/500', function(){
+    return view('pages.errors.500');
+});
+
+
+
 Route::post('/subscribe','HomeController@joinNewsletter');
 Route::get('/newsfeed','NewsFeedController@Userindex');
 
@@ -93,7 +105,9 @@ Route::resource('careers','CareerController');
 Route::resource('newsfeeds','NewsFeedController');
 Route::resource('contact','ContactController');
 Route::resource('admin','AdminController');
+Route::resource('newsletter_user','NewsletterUserController');
 Route::resource('admin/login','AdminLoginController');
+Route::resource('newsletters','NewsletterController');
 Route::resource('about','AboutController');
 Route::resource('faq','FaqController');
 Route::resource('policy','PolicyController');

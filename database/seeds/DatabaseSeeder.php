@@ -25,11 +25,14 @@ class DatabaseSeeder extends Seeder
            PolicyTableSeeder::Class,
            Newsletter_usersTableSeeder::Class,
            TestimonialsTableSeeder::Class,
+           NewslettersTableSeeder::Class,    
            SlidersTableSeeder::Class,
            NewsFeedTableSeeder::Class,
            UsersTableSeeder::Class,
            AdminUsersTableSeeder::Class,
+           MenuTableSeeder::Class,
            NewsFeedTableSeeder::Class,
+
        ]
        );
     
