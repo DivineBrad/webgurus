@@ -141,6 +141,12 @@ class CreateSiteTables extends Migration
             $table->string('user_id')->nullable();            
             $table->timestamps();
         });
+        Schema::create('Newsletters', function (Blueprint $table) {
+            $table->increments('id');
+            $table->mediumText('body');           
+            $table->timestamps();
+        });
+
 
         Schema::create('NewsFeed',function(Blueprint $table) {
             $table->increments('news_id');

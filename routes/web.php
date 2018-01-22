@@ -70,8 +70,23 @@ Route::get('careers/link/indicators/{id}', function ($id) {
 });
 
 Route::post('/send','ContactController@sendEmail');
+<<<<<<< HEAD
+Route::get('admin/newsletter','NewsletterController@create');
+Route::post('/post-newsletter','NewsletterController@store');
+Route::get('/newsletter_user_delete','NewsletterUserController@unsubscribe');
+Route::get('/exception/no-user', function(){
+    return view('pages.errors.nouser');
+});
+Route::get('/exception/500', function(){
+    return view('pages.errors.500');
+});
+
+
+
+=======
 Route::post('/subscribe','HomeController@joinNewsletter');
 Route::get('/newsfeed','NewsFeedController@Userindex');
+>>>>>>> a3679839f9f98023f545e4d1d57aa50aa77df00b
 
 
 
@@ -93,10 +108,15 @@ Route::resource('careers','CareerController');
 Route::resource('newsfeeds','NewsFeedController');
 Route::resource('contact','ContactController');
 Route::resource('admin','AdminController');
+Route::resource('newsletter_user','NewsletterUserController');
 Route::resource('admin/login','AdminLoginController');
+<<<<<<< HEAD
+Route::resource('newsletters','NewsletterController');
+=======
 Route::resource('about','AboutController');
 Route::resource('faq','FaqController');
 Route::resource('policy','PolicyController');
 //Route::resource('admin/authenticate','AdminAuthenticateController');
+>>>>>>> a3679839f9f98023f545e4d1d57aa50aa77df00b
 
 
