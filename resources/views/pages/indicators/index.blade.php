@@ -59,6 +59,10 @@
                     <div class="col-md-7">
                         <h1>Admin Indicators</h1>
                     </div>
+
+
+
+                    
                     <div class="col-md-5">
                         <ul class="breadcrumb">
                             <li><a href="/">Home</a>
@@ -72,9 +76,26 @@
         </div>
 
         <div id="content">
-            <div class="container">
+            
+
+
+            
+            <div class="container-fluid">
+
+            <div class="row">
+                                <!-- *** Admin LEFT COLUMN ***
+			 _________________________________________________________ -->
+             @include('includes.adminmenu')
+             
+                      <!-- *** Left  Menu COLUMN END *** -->
+            <div class="col-md-8  col-sm-8 col-xs-8 ">
+
 
             <h5 class="text-uppercase">Indicators List</h5>
+
+
+
+            
             <div id="career-list">
             <table class="table">
             <tr><th>ID</th><th>INDICATOR</th><th>DESCRIPTION</th><th>TYPE</th><th>SHOW</th><th>EDIT</th><th>DELETE</th></tr>
@@ -92,6 +113,11 @@
             @endforeach
             </table>
             </div>
+
+            </div>
+            </div>
+
+
 
             </div>
             <!-- /.container -->

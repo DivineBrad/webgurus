@@ -66,7 +66,7 @@
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
-                            <li><a href="index.html">Home</a>
+                            <li><a href="/">Home</a>
                             </li>
                             <li>Careers</li>
                         </ul>
@@ -77,8 +77,16 @@
         </div>
 
         <div id="content">
-            <div class="container">
+        <div class="container-fluid">
 
+            <div class="row">
+
+                        <!-- *** Admin LEFT COLUMN ***
+			 _________________________________________________________ -->
+             @include('includes.adminmenu')
+             
+                      <!-- *** Left  Menu COLUMN END *** -->
+            <div class="col-md-8  col-sm-8 col-xs-8 ">
                 
                             <h5 class="text-uppercase">Career List</h5>
                             <div id="career-list">
@@ -102,8 +110,9 @@
 
                             
                             
-                           
-
+            </div>         
+            </div>
+              <!-- /.row -->
             </div>
             <!-- /.container -->
         </div>

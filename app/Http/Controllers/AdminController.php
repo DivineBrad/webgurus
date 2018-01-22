@@ -3,6 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Indicator;
+use App\Career;
+use App\NewsFeed;
+use App\Newsletter_users;
+
+use App\AdminUser;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -24,7 +31,19 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('pages.admin.index');
+        $indicator_count = Indicator::count();
+        $admin_count = AdminUser::count();
+        $user_count = User::count();
+        $career_count = Career::count();
+        $subscribed_count = Newsletter_users::count();
+        $newsfeed_count = NewsFeed::count();
+        return view('pages.admin.index')
+        ->with("indicator_count",$indicator_count)
+        ->with("admin_count",$admin_count)
+        ->with("user_count",$user_count)
+        ->with("subscribed_count",$subscribed_count)
+        ->with("newsfeed_count",$newsfeed_count)
+        ->with("career_count",$career_count);
     }
 
     /**

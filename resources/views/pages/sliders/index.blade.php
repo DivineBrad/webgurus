@@ -72,7 +72,16 @@
         </div>
 
         <div id="content">
-            <div class="container">
+        <div class="container-fluid">
+
+            <div class="row">
+
+                        <!-- *** Admin LEFT COLUMN ***
+			 _________________________________________________________ -->
+             @include('includes.adminmenu')
+             
+                      <!-- *** Left  Menu COLUMN END *** -->
+            <div class="col-md-8  col-sm-8 col-xs-8 ">
 
             <h5 class="text-uppercase">Sliders List</h5>
             <div id="career-list">
@@ -93,6 +102,11 @@
             </table>
             </div>
 
+
+                         
+            </div>         
+            </div>
+              <!-- /.row -->
             </div>
             <!-- /.container -->
         </div>

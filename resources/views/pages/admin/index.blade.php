@@ -57,59 +57,110 @@
 
 <body>
 
-    <div id="all">
+    <div id="all" class="">
     @include('includes.header')
 
-        <main>
-        <div class = "row">
-           <!-- *** LEFT COLUMN ***
-			 _________________________________________________________ -->
-
-             <div class="col-md-6">
-                        <!-- *** ADMIN MENU ***
- _________________________________________________________ -->
-                        <div class="panel panel-default sidebar-menu" id="admin-menu">
-
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Admin Section</h3>
-                            </div>
-
-                            <div class="panel-body">
-
-                                <ul class="nav nav-pills nav-stacked">
-                                    <li>
-                                        <a href="/careers"><i class="fa fa-list"></i> Careers</a>
-                                    </li>
-                                    <li>
-                                        <a href="/indicators"><i class="fa fa-list"></i> Indicators</a>
-                                    </li>
-                                    
-                                    <li class="dropdown ">
-                                    <a class="dropdown-toggle fa fa-list" data-toggle="dropdown" href="#">Page Content
-                                    <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                    <li><a href="#">Slides</a></li>
-                                    <li><a href="#">Testimonials</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">About</a></li>
-                                    </ul>
-
-                                    <li>
-                                        <a href="/"><i class="fa fa-sign-out"></i> Logout</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                        <!-- /.col-md-3 -->
-
-                        <!-- *** Admin Menu *** -->
+      
+    <div id="heading-breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1>Admin Dashboard</h1>
                     </div>
 
-                    <!-- *** Left COLUMN END *** -->
+
+
+                    
+                    <div class="col-md-5">
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home</a>
+                            </li>
+                            <li>Admin Dashboard </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main>
+        <div class="container-fluid">
+        <div class = "row " >
+         
+         
+        <!-- *** Admin LEFT COLUMN ***
+			 _________________________________________________________ -->
+             @include('includes.adminmenu')
+
+         <!-- *** Left  Menu COLUMN END *** -->
+
+
+                <!-- Admin Main Content -->
+
+
+               <!-- <div class="col-md-8  col-sm-8 col-xs-8 ">
+
+                </div>
+                -->
+
+                <div class="col-md-3  col-sm-3 col-xs-3 admin-panel-info ">
+                    <div class="panel panel-primary "> 
+                        <div class="panel-heading admin-panel-title"> Indicators  </div>
+                        <div class="admin-summary"> Indcator Records in DB</div>
+                        <div class="admin-number">{{$indicator_count}}</div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3  col-sm-3 col-xs-3 admin-panel-info">
+                <div class="panel panel-primary "> 
+                    <div class="panel-heading admin-panel-title"> Careers </div>
+                    <div class="admin-summary">  Careers Records in DB</div>
+                    <div class="admin-number">{{$career_count}}</div>
+                </div>
+            </div>
+
+                <div class="col-md-3  col-sm-3 col-xs-3 admin-panel-info">
+                <div class="panel panel-primary "> 
+                    <div class="panel-heading admin-panel-title"> News Items  </div>
+                    <div class="admin-summary"> News Items in DB</div>
+                    <div class="admin-number">{{$newsfeed_count}}</div>
+                </div>
+            </div>
+            <div class="col-md-3  col-sm-3 col-xs-3 admin-panel-info">
+            <div class="panel panel-primary "> 
+                <div class="panel-heading admin-panel-title">  Admin Users </div>
+                <div class="admin-summary"> Admins in DB</div>
+                <div class="admin-number">{{$admin_count}}</div>
+                 </div>
+            </div>
+                <div class="col-md-3  col-sm-3 col-xs-3 admin-panel-info">
+                <div class="panel panel-primary "> 
+                    <div class="panel-heading admin-panel-title"> Users  </div>
+                    <div class="admin-summary"> Registered Users</div>
+                    <div class="admin-number">{{$user_count}}</div>
+                </div>
+            </div>
+                  
+            <div class="col-md-3  col-sm-3 col-xs-3 admin-panel-info">
+            <div class="panel panel-primary "> 
+                <div class="panel-heading admin-panel-title"> Subscribed </div>
+                <div class="admin-summary"> Subscribed to NewsLetter </div>
+                <div class="admin-number">{{$subscribed_count}}</div>
+            </div>
+             </div>
+
+
+                  <!-- Admin Main Content END -->
+
+
+
+
 
                 </div>
                 <!-- /.row -->
+                </div>
+                <!-- /.container -->
 
         </div>
           
