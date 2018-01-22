@@ -66,7 +66,7 @@
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
-                            <li><a href="index.html">Home</a>
+                            <li><a href="/admin">Home</a>
                             </li>
                             <li>Careers</li>
                         </ul>
