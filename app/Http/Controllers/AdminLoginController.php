@@ -14,7 +14,9 @@ class AdminLoginController extends Controller
          */
         public function index()
         {
-            //
+            $menus = DB::table('menus')->get();
+            return view('pages.admin.index')
+            ->with('menus',$menus);
         }
     
 }

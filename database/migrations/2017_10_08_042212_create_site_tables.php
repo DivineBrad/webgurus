@@ -149,6 +149,21 @@ class CreateSiteTables extends Migration
             $table->longtext('info');
             $table->timestamps();
         });
+        Schema::create('Menus', function(Blueprint $table){
+            $table->increments('menu_id');
+            $table->string('menu_name1');
+            $table->string('menu_name2');
+            $table->string('menu_name3');
+            $table->string('menu_name4');
+            $table->string('menu_sname1');
+            $table->string('menu_sname2');
+            $table->string('menu_sname3');
+            $table->string('menu_sname4');
+            $table->string('menu_sname5');
+            $table->string('menu_link');
+            $table->string('parent_id');
+            $table->timestamps();
+        });
 
     }
 

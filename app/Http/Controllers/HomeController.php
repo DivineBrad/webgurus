@@ -30,6 +30,7 @@ class HomeController extends Controller
         // call from db
         $testimonials = DB::table('testimonials')->get();
         $sliders = DB::table('sliders')->get();
+        $menus = DB::table('menus')->get();
         
 
         $about = DB::table('about')->get();
@@ -40,6 +41,7 @@ class HomeController extends Controller
         ->with('about', $about)
         ->with('faq', $faq)
         ->with('policy', $policy)
+        ->with('menus', $menus)
         ->with('sliders', $sliders);
         
 

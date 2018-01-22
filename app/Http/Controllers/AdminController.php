@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -24,7 +25,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('pages.admin.index');
+        $menus = DB::table('menus')->get();
+        return view('pages.admin.index')
+        ->with('menus',$menus);
     }
 
     /**

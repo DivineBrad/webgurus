@@ -24,9 +24,11 @@ class NewsFeedController extends Controller
      */
     public function index()
     {
+        $menus = DB::table('menus')->get();
         $newsFeeds = NewsFeed::all();
         return view('pages.newsfeeds.index')
-        ->with('newsFeeds',$newsFeeds);
+        ->with('newsFeeds',$newsFeeds)
+        ->with('menus',$menus);
     }
 
     /**
