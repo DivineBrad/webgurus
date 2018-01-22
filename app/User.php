@@ -35,4 +35,9 @@ class User extends Authenticatable
     public function careers(){
         return $this->belongsToMany('App\Career','user_careers','user_id','career_id');
     }
+
+    public function isAdmin()
+    {
+        return $this->admin; // this looks for an admin column in your users table
+    }
 }

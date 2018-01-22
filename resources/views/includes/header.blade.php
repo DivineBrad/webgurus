@@ -20,7 +20,7 @@ _________________________________________________________ -->
                             </div>
 
                             <div class="login">
-                            <ul class="nav navbar-nav navbar-right">
+                            <ul class="nav_login">
                             
                             <!-- Authentication Links -->
                         @guest
@@ -105,6 +105,9 @@ _________________________________________________________ -->
                                         <li><a href="/faq">FAQ</a>
                                         <li><a href="/policy">Privacy Policy</a>
                                         </li>
+                                        <li><a href="/newsfeed">News</a>
+                                        </li>
+
 
                                     </ul>
                                 </li>

@@ -52,6 +52,12 @@ Route::post('insights/results', function (Request $request) {
     $insightController->results($request);
 
 });
+Route::post('insights/share', function (Request $request) {
+    $insightController = new InsightController();
+    $insightController->share($request);
+
+});
+
 Route::post('careers/add/indicators', function (Request $request) {
     $careerController = new CareerController();
     $careerController->addIndicators($request);
@@ -64,6 +70,7 @@ Route::get('careers/link/indicators/{id}', function ($id) {
 });
 
 Route::post('/send','ContactController@sendEmail');
+<<<<<<< HEAD
 Route::get('admin/newsletter','NewsletterController@create');
 Route::post('/post-newsletter','NewsletterController@store');
 Route::get('/newsletter_user_delete','NewsletterUserController@unsubscribe');
@@ -76,6 +83,10 @@ Route::get('/exception/500', function(){
 
 
 
+=======
+Route::post('/subscribe','HomeController@joinNewsletter');
+Route::get('/newsfeed','NewsFeedController@Userindex');
+>>>>>>> a3679839f9f98023f545e4d1d57aa50aa77df00b
 
 
 
@@ -92,11 +103,20 @@ Route::resource('/test','TestController');
 Route::resource('insights','InsightController');
 Route::resource('indicators','IndicatorController');
 Route::resource('sliders','SliderController');
+Route::resource('menus','MenuController');
 Route::resource('careers','CareerController');
+Route::resource('newsfeeds','NewsFeedController');
 Route::resource('contact','ContactController');
 Route::resource('admin','AdminController');
 Route::resource('newsletter_user','NewsletterUserController');
 Route::resource('admin/login','AdminLoginController');
+<<<<<<< HEAD
 Route::resource('newsletters','NewsletterController');
+=======
+Route::resource('about','AboutController');
+Route::resource('faq','FaqController');
+Route::resource('policy','PolicyController');
+//Route::resource('admin/authenticate','AdminAuthenticateController');
+>>>>>>> a3679839f9f98023f545e4d1d57aa50aa77df00b
 
 

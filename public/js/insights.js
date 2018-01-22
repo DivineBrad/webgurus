@@ -382,7 +382,7 @@ var insightsApp = {
             insightsApp.instructions ="If you are satisfied with your choices";
             $("#instructions").html(insightsApp.instructions);
             $("#btn-indicator").html("Get Insights");
-            
+            $("#input-indicator-group").hide();
             break;
             case 5:
             $("#btn-additional").hide();

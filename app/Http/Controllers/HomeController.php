@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use DB;
+use Illuminate\Http\Request;
+
 use Auth;
 use App\Newsletter_users;
 use Mail;
@@ -32,10 +32,20 @@ class HomeController extends Controller
         // call from db
         $testimonials = DB::table('testimonials')->get();
         $sliders = DB::table('sliders')->get();
+        
 
+        $about = DB::table('about')->get();
+        $faq = DB::table('faq')->get();
+        $policy = DB::table('policy')->get();
         return view('pages.home')
-        ->with('testimonials', $testimonials)
+        ->with('testimonials', $testimonials)       
+        ->with('about', $about)
+        ->with('faq', $faq)
+        ->with('policy', $policy)
         ->with('sliders', $sliders);
+        
+
+        
     }
 
     public function joinNewsletter(Request $request)

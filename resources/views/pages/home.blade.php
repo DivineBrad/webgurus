@@ -60,6 +60,8 @@
     <div id="all">
     @include('includes.header')
 
+    
+
         
     @include('includes.Slider')
        
@@ -103,10 +105,10 @@
                         <p class="lead">We have thousands of person find the passion, the dream career and be the best that they can be.</p>
 
 
-                        <!-- *** TESTIMONIALS CAROUSEL ***
+                       <!-- *** TESTIMONIALS CAROUSEL ***
  _________________________________________________________ -->
 
-                        <ul class="owl-carousel testimonials same-height-row">
+ <ul class="owl-carousel testimonials same-height-row">
                         @foreach($testimonials as $testimonial)
                             <li class="item">
                                 <div class="testimonial same-height-always">
