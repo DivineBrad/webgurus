@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
+use Auth;
 use App\Newsletter_users;
-use App\Newsletter;
-use App\Mail\NewsletterEmail;
+use Mail;
+use App\Mail\NewsletterSubscribedConfirmation;
+use Validator;
 use Exception;
+use Illuminate\Database\Eloquent\ModelNotFoundException as ModelNotFoundException;
 
-class NewsletterController extends Controller
+class NewsletterUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,8 +31,6 @@ class NewsletterController extends Controller
     public function create()
     {
         //
-        $subscribed_emails=Newsletter_users::all();
-        return view('pages.newsletters.create')->with('email_list',$subscribed_emails);
     }
 
     /**
@@ -41,15 +41,28 @@ class NewsletterController extends Controller
      */
     public function store(Request $request)
     {
-        // foreach($request->recipients as recipient){
-        //     Mail:
-        // }
-        $newsletter=Newsletter::create(array('body' => $request->body));
-        if($newsletter->save()){
-            Mail::to($request->recipients)->send(new NewsletterEmail($newsletter)); 
-            return redirect('/admin/newsletter');       
-        }
         //
+        $validator = Validator::make($request->all(), [
+            'email' => 'email|max:40|unique:newsletter_users',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        else{
+            $id=Auth::id();
+            $newsletter_user=new Newsletter_users();
+            $newsletter_user->email = $request->email;
+            $newsletter_user->user_id =$id;
+            if($newsletter_user->save()){
+                \Session::flash('newsletter','You have successfully subscribed to our newsletters. Get ready to hear from us');
+                Mail::to($newsletter_user->email)->send(new NewsletterSubscribedConfirmation($newsletter_user->id));                 
+                return redirect('/');
+            }
+        }
+     
     }
 
     /**
@@ -97,5 +110,17 @@ class NewsletterController extends Controller
         //
         
     }
-    
+
+    public function unsubscribe(Request $request){
+        $id=$request->query('id');
+        // try{
+        $newsletterUser=Newsletter_users::findOrFail($id)->delete();
+            
+        // }
+        // catch(Exception $e){
+        //     throw new ModelNotFoundException($e->getMessage());
+        // }
+        
+        return redirect('/');
+    }
 }

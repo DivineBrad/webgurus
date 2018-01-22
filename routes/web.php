@@ -64,10 +64,15 @@ Route::get('careers/link/indicators/{id}', function ($id) {
 });
 
 Route::post('/send','ContactController@sendEmail');
-Route::post('/subscribe','HomeController@joinNewsletter');
 Route::get('admin/newsletter','NewsletterController@create');
 Route::post('/post-newsletter','NewsletterController@store');
-Route::post('/delete-newsletter-use/{id}','NewsletterController@destroy');
+Route::get('/newsletter_user_delete','NewsletterUserController@unsubscribe');
+Route::get('/exception/no-user', function(){
+    return view('pages.errors.nouser');
+});
+Route::get('/exception/500', function(){
+    return view('pages.errors.500');
+});
 
 
 
@@ -90,6 +95,7 @@ Route::resource('sliders','SliderController');
 Route::resource('careers','CareerController');
 Route::resource('contact','ContactController');
 Route::resource('admin','AdminController');
+Route::resource('newsletter_user','NewsletterUserController');
 Route::resource('admin/login','AdminLoginController');
 Route::resource('newsletters','NewsletterController');
 

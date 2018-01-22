@@ -1,12 +1,12 @@
 @component('mail::message')
-# Introduction
+# Newsletter Subscription
 
 Thank you for Subscribing.
 
-@component('mail::button', ['url' => ''])
+@component('mail::button', ['url' => url('/').'/newsletter_user_delete?id='.$id])
 Click Here to Unsubscribe
 @endcomponent
 
 Thanks,<br>
-{{ config('app.name') }}
+Career Insights
 @endcomponent

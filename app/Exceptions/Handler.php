@@ -4,6 +4,8 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Database\Eloquent\ModelNotFoundException as ModelNotFoundException;
+use Illuminate\Database\QueryException as QueryException;
 
 class Handler extends ExceptionHandler
 {
@@ -48,6 +50,14 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        $trace = $exception->getTraceAsString();
+        if ($exception instanceof ModelNotFoundException){
+            return redirect('/exception/no-user');
+        }
+
+        if ($exception instanceof QueryException){
+            return redirect('/exception/500');
+        }
         return parent::render($request, $exception);
     }
 }
