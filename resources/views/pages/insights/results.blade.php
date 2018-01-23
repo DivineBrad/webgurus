@@ -90,7 +90,7 @@
                             <h5 class="text-uppercase">Insights TEST Results</h5>
                             <div>
                             <p>Based on your skills, personality traits and passion, 
-                             there careers below present strong options to explore! </p>
+                             these careers below present strong options to explore! </p>
                             <p> You can compare careers by going  <a href="/career-insights">here</a></p>
                             <ul id="results-list">
                            

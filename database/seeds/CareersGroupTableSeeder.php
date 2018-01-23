@@ -36,5 +36,25 @@ class CareersGroupTableSeeder extends Seeder
             'description' => 'The application of knowledge to build and design systems',
             ]
             );
+        DB::table('career_groups')->insert([
+            'group_title' => 'Arts',
+            'description' => 'The use of visual, audio or perfomance in expressing creativity',
+            ]
+            );
+        DB::table('career_groups')->insert([
+            'group_title' => 'Sports',
+            'description' => 'The use of physical and mental ability in engaging in competitive activities',
+            ]
+            );
+         DB::table('career_groups')->insert([
+                'group_title' => 'Managerial',
+                'description' => 'Demonstrating leadership in guiding, motivating and organizing work activities of other people',
+                ]
+                );
+        DB::table('career_groups')->insert([
+            'group_title' => 'Science',
+            'description' => 'The study of the physical world through the scientific method',
+            ]
+            );
     }
 }

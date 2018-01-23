@@ -210,7 +210,19 @@ class InsightController extends Controller
             }
            
          }
-        return $career_points;  
+         //limit to top 3 results
+         $final_results = [];
+         $end;
+         if (sizeOf($career_points) <3 ){
+             $end = sizeOf($career_points);
+         }
+         else {
+             $end=3;
+         }
+         for ($i=0;$i<$end ;$i++){
+            $final_results[$i]=$career_points[$i];
+         }
+        return $final_results;  
         
     //return response()->json($indicator_array); 
         
